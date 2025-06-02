@@ -1,0 +1,6 @@
+Pattern,Precision_mean,Precision_std,Recall_mean,Recall_std,F1_mean,F1_std,AUC_mean,AUC_std,Support,TP,FP,FN
+behavior,0.0227,0.0,1.0,0.0,0.0444,0.0,0.9996,0.0,1,1,43,0
+control,0.037,0.0,0.0357,0.0,0.0364,0.0,0.5176,0.0,28,1,26,27
+default,0.0,0.0,0.0,0.0,0.0,0.0,0.4999,0.0,3,0,9,3
+overwrite,0.0,0.0,0.0,0.0,0.0,0.0,0.5,0.0,6,0,0,6
+value,0.0638,0.0,0.1579,0.0,0.0909,0.0,0.5785,0.0,19,3,44,16

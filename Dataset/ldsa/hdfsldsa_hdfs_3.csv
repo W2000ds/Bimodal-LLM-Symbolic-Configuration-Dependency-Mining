@@ -1,0 +1,135 @@
+id,Parameter1,Parameter2,bnf,type
+1000,dfs.namenode.replication.max-streams-hard-limit,dfs.namenode.replication.work.multiplier.per.iteration,dfs.namenode.replication.work.multiplier.per.iteration > 1 => dfs.namenode.replication.max-streams-hard-limit > dfs.namenode.replication.max-streams,behavior
+650,dfs.encrypt.data.transfer.algorithm,hadoop.security.key.provider.path,dfs.encrypt.data.transfer.algorithm != null => hadoop.security.key.provider.path != null,behavior
+341,dfs.namenode.kerberos.internal.spnego.principal,dfs.journalnode.kerberos.internal.spnego.principal,dfs.namenode.kerberos.internal.spnego.principal != null => dfs.journalnode.kerberos.internal.spnego.principal != null,behavior
+1039,dfs.secondary.namenode.keytab.file,hadoop.security.auth_to_local,dfs.secondary.namenode.keytab.file != null => hadoop.security.auth_to_local != null,behavior
+739,dfs.domain.socket.path,dfs.client.domain.socket.data.traffic,dfs.domain.socket.path != null => dfs.client.domain.socket.data.traffic = true,behavior
+895,dfs.client.retry.window.base,dfs.client.retry.interval,dfs.client.retry.window.base > 0 => dfs.client.retry.interval < dfs.client.retry.window.base,behavior
+466,dfs.namenode.resource.check.interval,dfs.namenode.resource.check.timeout,dfs.namenode.resource.check.interval > 0 => dfs.namenode.resource.check.timeout > dfs.namenode.resource.check.interval,behavior
+354,dfs.namenode.invalidate.work.pct.per.iteration,dfs.block.invalidate.limit,dfs.namenode.invalidate.work.pct.per.iteration != null => dfs.block.invalidate.limit != null,behavior
+1412,dfs.ha.fencing.methods,dfs.ha.standby.checkpoints,dfs.ha.fencing.methods = ANY => dfs.ha.standby.checkpoints = true,control
+934,dfs.datanode.network.counts.cache.max.size,dfs.datanode.handler.count,dfs.datanode.network.counts.cache.max.size > default => dfs.datanode.handler.count > default,control
+401,dfs.webhdfs.rest-csrf.enabled,dfs.webhdfs.rest-csrf.custom-header,dfs.webhdfs.rest-csrf.enabled = true => dfs.webhdfs.rest-csrf.custom-header != null,control
+853,dfs.block.replicator.classname,dfs.replication,dfs.block.replicator.classname != null => dfs.replication > 1,control
+1224,dfs.client.read.shortcircuit,dfs.domain.socket.path,dfs.client.read.shortcircuit = true => dfs.domain.socket.path != null,control
+337,dfs.namenode.secondary.https-address,dfs.http.policy,"dfs.namenode.secondary.https-address != null => dfs.http.policy in {{HTTPS_ONLY, HTTP_AND_HTTPS}}",control
+450,dfs.datanode.directoryscan.threads,dfs.datanode.directoryscan.throttle.limit.ms.per.sec,dfs.datanode.directoryscan.threads > default => dfs.datanode.directoryscan.throttle.limit.ms.per.sec > default,control
+738,dfs.client.socket.send.buffer.size,dfs.datanode.handler.count,dfs.client.socket.send.buffer.size > default => dfs.datanode.handler.count > default,control
+1082,dfs.ha.automatic-failover.enabled,dfs.ha.zkfc.port,dfs.ha.automatic-failover.enabled = true => dfs.ha.zkfc.port != null,control
+1421,dfs.https.port,dfs.http.policy,"dfs.http.policy = ""HTTPS_ONLY"" => dfs.https.port != null",control
+800,dfs.ha.zkfc.nn.http.timeout.ms,dfs.ha.fencing.ssh.connect-timeout,dfs.ha.zkfc.nn.http.timeout.ms > 5000 => dfs.ha.fencing.ssh.connect-timeout > dfs.ha.zkfc.nn.http.timeout.ms,control
+1232,dfs.client.read.shortcircuit,dfs.block.local-path-access.user,dfs.client.read.shortcircuit = true => dfs.block.local-path-access.user != null,control
+1259,dfs.namenode.top.num.users,dfs.namenode.top.enabled,dfs.namenode.top.enabled = true => dfs.namenode.top.num.users != null,control
+1560,dfs.webhdfs.use.ipc.callq,dfs.http.policy,dfs.http.policy = HTTPS_ONLY => dfs.webhdfs.use.ipc.callq = ANY,control
+720,dfs.namenode.list.cache.pools.num.responses,dfs.namenode.cache.pools.max,dfs.namenode.list.cache.pools.num.responses > 0 => dfs.namenode.cache.pools.max >= dfs.namenode.list.cache.pools.num.responses,control
+380,dfs.datanode.du.reserved,dfs.datanode.du.reserved.percentage,dfs.datanode.du.reserved > 0 => dfs.datanode.du.reserved.percentage < 100,control
+862,dfs.client.failover.proxy.provider,dfs.nameservices,dfs.nameservices != null => dfs.client.failover.proxy.provider != null,control
+1508,dfs.webhdfs.oauth2.access.token.provider,dfs.webhdfs.oauth2.enabled,dfs.webhdfs.oauth2.enabled = true => dfs.webhdfs.oauth2.access.token.provider != null,control
+1244,dfs.client.domain.socket.data.traffic,dfs.client.use.legacy.blockreader.local,dfs.client.use.legacy.blockreader.local = false => dfs.client.domain.socket.data.traffic = true,control
+832,dfs.http.policy,dfs.data.transfer.protection,"dfs.http.policy = ""HTTPS_ONLY"" => dfs.data.transfer.protection = ""privacy""",control
+1499,dfs.web.authentication.filter,dfs.web.authentication.kerberos.keytab,"dfs.web.authentication.filter = ""Kerberos"" => dfs.web.authentication.kerberos.keytab != null",control
+1563,dfs.use.dfs.network.topology,dfs.namenode.reject-unresolved-dn-topology-mapping,dfs.use.dfs.network.topology = true => dfs.namenode.reject-unresolved-dn-topology-mapping = true,control
+1162,dfs.webhdfs.enabled,dfs.web.authentication.kerberos.principal,dfs.web.authentication.kerberos.principal = null => dfs.webhdfs.enabled = false,control
+813,dfs.datanode.ipc.address,dfs.http.policy,dfs.http.policy = HTTPS => dfs.datanode.ipc.address = dfs.datanode.https.address,control
+1557,dfs.webhdfs.use.ipc.callq,dfs.webhdfs.enabled,dfs.webhdfs.enabled = true => dfs.webhdfs.use.ipc.callq = ANY,control
+926,dfs.client.block.write.retries,dfs.client.block.write.replace-datanode-on-failure.policy,dfs.client.block.write.replace-datanode-on-failure.policy = DEFAULT => dfs.client.block.write.retries > 0,control
+850,dfs.block.invalidate.limit,dfs.namenode.invalidate.work.pct.per.iteration,dfs.block.invalidate.limit > 0 => dfs.namenode.invalidate.work.pct.per.iteration > 0,control
+996,dfs.namenode.replication.max-streams,dfs.namenode.replication.max-streams-hard-limit,dfs.namenode.replication.max-streams > 0 => dfs.namenode.replication.max-streams-hard-limit > dfs.namenode.replication.max-streams,control
+1111,dfs.journalnode.kerberos.principal,dfs.journalnode.keytab.file,dfs.journalnode.kerberos.principal != null => dfs.journalnode.keytab.file != null,control
+351,dfs.namenode.write.stale.datanode.ratio,dfs.namenode.avoid.write.stale.datanode,dfs.namenode.write.stale.datanode.ratio > 0.5f => dfs.namenode.avoid.write.stale.datanode is valid and non-null,control
+1159,dfs.webhdfs.enabled,dfs.client.https.keystore.resource,dfs.client.https.keystore.resource = null => dfs.webhdfs.enabled = false,control
+418,dfs.replication,dfs.datanode.max.transfer.threads,dfs.replication > 3 => dfs.datanode.max.transfer.threads > 4096,control
+876,dfs.namenode.name.dir,dfs.namenode.edits.dir,dfs.namenode.edits.dir = ANY => dfs.namenode.name.dir = ANY,control
+1210,dfs.namenode.retrycache.expirytime.millis,dfs.namenode.enable.retrycache,dfs.namenode.enable.retrycache = true => dfs.namenode.retrycache.expirytime.millis > 0,control
+724,dfs.client.read.shortcircuit,dfs.domain.socket.path,dfs.client.read.shortcircuit = true => dfs.domain.socket.path != null,control
+882,dfs.namenode.edits.dir,dfs.namenode.edits.dir.required,dfs.namenode.edits.dir.required = true => dfs.namenode.edits.dir != null,control
+584,dfs.ha.namenodes.EXAMPLENAMESERVICE,dfs.namenode.http-address.EXAMPLENAMESERVICE.[namenode_id],"dfs.ha.namenodes.EXAMPLENAMESERVICE = {{ namenode1,namenode2 }} => dfs.namenode.http-address.EXAMPLENAMESERVICE.namenode1 = ANY && dfs.namenode.http-address.EXAMPLENAMESERVICE.namenode2 = ANY",control
+996,dfs.namenode.checkpoint.edits.dir,dfs.namenode.checkpoint.period,dfs.namenode.checkpoint.period = ANY => dfs.namenode.checkpoint.edits.dir = ANY,control
+1356,dfs.client.failover.random.order,dfs.ha.automatic-failover.enabled,dfs.ha.automatic-failover.enabled = true => dfs.client.failover.random.order = ANY,control
+854,dfs.block.replicator.classname,dfs.blocksize,dfs.block.replicator.classname != null => dfs.blocksize > 0,control
+1043,dfs.client.failover.sleep.base.millis,dfs.http.client.failover.sleep.base.millis,dfs.http.client.failover.sleep.base.millis = dfs.client.failover.sleep.base.millis,default
+1018,dfs.image.compress,dfs.image.compression.codec,dfs.image.compress = true => dfs.image.compression.codec != null,default
+1119,dfs.journalnode.kerberos.internal.spnego.principal,dfs.journalnode.keytab.file,dfs.journalnode.keytab.file = ANY => dfs.journalnode.kerberos.internal.spnego.principal = ANY,default
+259,dfs.namenode.rpc-bind-host,dfs.namenode.rpc-address,dfs.namenode.rpc-bind-host = null => dfs.namenode.rpc-address = dfs.namenode.rpc-address,default
+991,dfs.namenode.checkpoint.dir,dfs.namenode.checkpoint.edits.dir,dfs.namenode.checkpoint.edits.dir = null => dfs.namenode.checkpoint.dir = ANY,default
+932,dfs.client.block.write.replace-datanode-on-failure.enable,dfs.client.block.write.replace-datanode-on-failure.best-effort,dfs.client.block.write.replace-datanode-on-failure.best-effort = ANY => dfs.client.block.write.replace-datanode-on-failure.enable = true,default
+320,dfs.namenode.checkpoint.dir,dfs.namenode.checkpoint.edits.dir,dfs.namenode.checkpoint.dir = ANY => dfs.namenode.checkpoint.edits.dir = dfs.namenode.checkpoint.dir,default
+336,dfs.nameservices,dfs.nameservice.id,dfs.nameservices = null => dfs.nameservice.id = ANY,default
+793,dfs.namenode.lifeline.rpc-address,dfs.namenode.lifeline.rpc-bind-host,dfs.namenode.lifeline.rpc-bind-host = ANY => dfs.namenode.lifeline.rpc-address = {dfs.namenode.lifeline.rpc-bind-host:port},default
+306,dfs.namenode.lifeline.handler.ratio,dfs.namenode.lifeline.handler.count,dfs.namenode.lifeline.handler.ratio != null => dfs.namenode.lifeline.handler.count = ANY,overwrite
+329,dfs.client.cache.drop.behind.reads,dfs.datanode.drop.cache.behind.reads,dfs.client.cache.drop.behind.reads != null => dfs.datanode.drop.cache.behind.reads = ANY,overwrite
+371,dfs.journalnode.https-address,dfs.journalnode.http-bind-host,dfs.journalnode.https-address != null => dfs.journalnode.http-bind-host = ANY,overwrite
+260,dfs.namenode.rpc-bind-host,dfs.namenode.servicerpc-bind-host,dfs.namenode.rpc-bind-host != null => dfs.namenode.servicerpc-bind-host = ANY,overwrite
+358,dfs.encrypt.data.transfer,dfs.data.transfer.protection,dfs.encrypt.data.transfer = true => dfs.data.transfer.protection = ANY,overwrite
+267,dfs.namenode.http-address,dfs.namenode.http-bind-host,dfs.namenode.http-bind-host != null => dfs.namenode.http-address = ANY,overwrite
+313,dfs.datanode.plugins,dfs.client.cache.drop.behind.reads,dfs.datanode.plugins != null => dfs.client.cache.drop.behind.reads = ANY,overwrite
+364,dfs.trustedchannel.resolver.class,dfs.encrypt.data.transfer.cipher.key.bitlength,dfs.trustedchannel.resolver.class != null => dfs.encrypt.data.transfer.cipher.key.bitlength = ANY,overwrite
+330,dfs.client.cache.drop.behind.writes,dfs.datanode.drop.cache.behind.writes,dfs.client.cache.drop.behind.writes != null => dfs.datanode.drop.cache.behind.writes = ANY,overwrite
+264,dfs.namenode.lifeline.rpc-address,dfs.namenode.lifeline.rpc-bind-host,dfs.namenode.lifeline.rpc-address != null => dfs.namenode.lifeline.rpc-bind-host = ANY,overwrite
+377,dfs.client.cache.readahead,dfs.datanode.readahead.bytes,dfs.client.cache.readahead != null => dfs.datanode.readahead.bytes = ANY,overwrite
+369,dfs.journalnode.rpc-bind-host,dfs.journalnode.rpc-address,dfs.journalnode.rpc-bind-host != null => dfs.journalnode.rpc-address = ANY,overwrite
+263,dfs.namenode.servicerpc-address,dfs.namenode.servicerpc-bind-host,dfs.namenode.servicerpc-address != null => dfs.namenode.servicerpc-bind-host = ANY,overwrite
+1247,dfs.client.slow.io.warning.threshold.ms,dfs.datanode.slow.io.warning.threshold.ms,dfs.datanode.slow.io.warning.threshold.ms = dfs.client.slow.io.warning.threshold.ms,value
+916,dfs.namenode.replication.min,dfs.namenode.safemode.replication.min,dfs.namenode.replication.min < dfs.namenode.safemode.replication.min,value
+1135,dfs.namenode.avoid.read.stale.datanode,dfs.namenode.avoid.write.stale.datanode,dfs.namenode.avoid.write.stale.datanode = true => dfs.namenode.avoid.read.stale.datanode = true,value
+291,dfs.replication,dfs.namenode.maintenance.replication.min,dfs.replication > dfs.namenode.maintenance.replication.min,value
+865,dfs.namenode.replication.considerLoad,dfs.namenode.replication.considerLoad.factor,dfs.namenode.replication.considerLoad = true => dfs.namenode.replication.considerLoad.factor > 0,value
+1037,dfs.client.failover.max.attempts,dfs.client.failover.connection.retries.on.timeouts,dfs.client.failover.connection.retries.on.timeouts < dfs.client.failover.max.attempts,value
+1283,dfs.xframe.enabled,dfs.xframe.value,"dfs.xframe.enabled = ""true"" => dfs.xframe.value != ""null""",value
+1313,dfs.balancer.dispatcherThreads,dfs.balancer.moverThreads,dfs.balancer.moverThreads = dfs.balancer.dispatcherThreads,value
+352,dfs.namenode.stale.datanode.minimum.interval,dfs.namenode.stale.datanode.interval,dfs.namenode.stale.datanode.minimum.interval > 0 => dfs.namenode.stale.datanode.interval = (dfs.namenode.stale.datanode.minimum.interval * dfs.heartbeat.interval),value
+1460,dfs.namenode.replication.pending.timeout-sec,dfs.replication,dfs.replication > dfs.namenode.replication.min => dfs.namenode.replication.pending.timeout-sec = ANY,value
+1473,dfs.qjournal.get-journal-state.timeout.ms,dfs.qjournal.start-segment.timeout.ms,dfs.qjournal.start-segment.timeout.ms = dfs.qjournal.get-journal-state.timeout.ms,value
+890,dfs.namenode.edits.journal-plugin.qjournal,dfs.qjournal.select-input-streams.timeout.ms,"dfs.qjournal.select-input-streams.timeout.ms > 0 => dfs.namenode.edits.journal-plugin.qjournal = ""ANY""",value
+1419,dfs.http.port,dfs.https.port,dfs.http.port != dfs.https.port,value
+1226,dfs.client.read.shortcircuit,dfs.client.read.shortcircuit.streams.cache.size,dfs.client.read.shortcircuit = true => dfs.client.read.shortcircuit.streams.cache.size > 0,value
+1014,dfs.namenode.delegation.token.max-lifetime,dfs.namenode.delegation.token.renew-interval,dfs.namenode.delegation.token.renew-interval < dfs.namenode.delegation.token.max-lifetime,value
+956,dfs.namenode.handler.count,dfs.namenode.lifeline.handler.count,dfs.namenode.lifeline.handler.count = dfs.namenode.handler.count * dfs.namenode.lifeline.handler.ratio,value
+1336,dfs.balancer.max-no-move-interval,dfs.mover.max-no-move-interval,dfs.mover.max-no-move-interval > 0 => dfs.balancer.max-no-move-interval > 0,value
+917,dfs.namenode.replication.min,dfs.namenode.maintenance.replication.min,dfs.namenode.replication.min < dfs.namenode.maintenance.replication.min,value
+362,dfs.encrypt.data.transfer.cipher.suites,dfs.encrypt.data.transfer.cipher.key.bitlength,"dfs.encrypt.data.transfer.cipher.suites != null => dfs.encrypt.data.transfer.cipher.key.bitlength in {128, 192, 256}",value
+1096,dfs.namenode.kerberos.principal,dfs.web.authentication.kerberos.principal,dfs.namenode.kerberos.principal != null => dfs.web.authentication.kerberos.principal in { dfs.namenode.kerberos.principal },value
+1012,dfs.namenode.delegation.key.update-interval,dfs.namenode.delegation.token.max-lifetime,dfs.namenode.delegation.token.max-lifetime > dfs.namenode.delegation.key.update-interval,value
+1348,dfs.client.failover.proxy.provider,dfs.client.failover.max.attempts,dfs.client.failover.max.attempts > 0 => dfs.client.failover.proxy.provider = ANY,value
+1355,dfs.client.failover.random.order,dfs.client.failover.sleep.max.millis,dfs.client.failover.sleep.max.millis > 0 => dfs.client.failover.random.order = ANY,value
+982,dfs.namenode.decommission.interval,dfs.namenode.decommission.blocks.per.interval,dfs.namenode.decommission.interval > 0 => dfs.namenode.decommission.blocks.per.interval > 0,value
+1394,dfs.client.write.byte-array-manager.enabled,dfs.client.write.byte-array-manager.count-threshold,dfs.client.write.byte-array-manager.enabled = true => dfs.client.write.byte-array-manager.count-threshold > 0,value
+958,dfs.namenode.service.handler.count,dfs.namenode.lifeline.handler.ratio,dfs.namenode.service.handler.count = dfs.namenode.handler.count * dfs.namenode.lifeline.handler.ratio,value
+912,dfs.replication.max,dfs.namenode.maintenance.replication.min,dfs.replication.max > dfs.namenode.maintenance.replication.min => dfs.namenode.maintenance.replication.min = [1 .. dfs.replication.max],value
+1349,dfs.client.failover.proxy.provider,dfs.client.failover.sleep.base.millis,dfs.client.failover.sleep.base.millis > 0 => dfs.client.failover.proxy.provider = ANY,value
+1143,dfs.namenode.stale.datanode.interval,dfs.namenode.stale.datanode.minimum.interval,dfs.namenode.stale.datanode.minimum.interval > 0 => dfs.namenode.stale.datanode.interval >= dfs.namenode.stale.datanode.minimum.interval,value
+1558,dfs.webhdfs.use.ipc.callq,dfs.client.use.datanode.hostname,dfs.client.use.datanode.hostname = true => dfs.webhdfs.use.ipc.callq != true,value
+1030,dfs.datanode.drop.cache.behind.reads,dfs.client.cache.drop.behind.reads,dfs.client.cache.drop.behind.reads = dfs.datanode.drop.cache.behind.reads,value
+1033,dfs.datanode.drop.cache.behind.writes,dfs.client.cache.drop.behind.writes,dfs.client.cache.drop.behind.writes = ANY => dfs.datanode.drop.cache.behind.writes = ANY,value
+1292,dfs.http.client.retry.policy.spec,dfs.http.client.retry.max.attempts,"dfs.http.client.retry.max.attempts > 0 => dfs.http.client.retry.policy.spec = ""maxRetries="" + dfs.http.client.retry.max.attempts",value
+1453,dfs.namenode.replication.max-streams,dfs.namenode.replication.max-streams-hard-limit,dfs.namenode.replication.max-streams < dfs.namenode.replication.max-streams-hard-limit,value
+1358,dfs.client.read.short.circuit.replica.stale.threshold.ms,dfs.namenode.stale.datanode.interval,dfs.namenode.stale.datanode.interval > dfs.client.read.short.circuit.replica.stale.threshold.ms,value
+366,dfs.datanode.https.address,dfs.https.port,"dfs.https.port = <PortNumber> => dfs.datanode.https.address in {{ ""ANY:.."" + <PortNumber> + ""..ANY"" }}",value
+1305,dfs.http.client.failover.sleep.base.millis,dfs.client.failover.sleep.max.millis,dfs.client.failover.sleep.max.millis > dfs.client.failover.sleep.base.millis,value
+904,dfs.replication,dfs.replication.max,dfs.replication < dfs.replication.max,value
+965,dfs.namenode.safemode.threshold-pct,dfs.namenode.safemode.extension,dfs.namenode.safemode.threshold-pct = 0 => dfs.namenode.safemode.extension = 0,value
+959,dfs.namenode.service.handler.count,dfs.namenode.lifeline.handler.count,dfs.namenode.service.handler.count = dfs.namenode.lifeline.handler.count + dfs.namenode.handler.count,value
+929,dfs.client.block.write.retries,dfs.client.retry.max.attempts,dfs.client.retry.max.attempts > 0 => dfs.client.block.write.retries > 0,value
+911,dfs.replication.max,dfs.namenode.replication.min,dfs.replication.max > dfs.namenode.replication.min => dfs.namenode.replication.min = [1 .. dfs.replication.max],value
+1314,dfs.balancer.dispatcherThreads,dfs.datanode.balance.max.concurrent.moves,dfs.datanode.balance.max.concurrent.moves = dfs.balancer.dispatcherThreads,value
+410,dfs.http.client.failover.sleep.base.millis,dfs.http.client.failover.sleep.max.millis,dfs.http.client.failover.sleep.base.millis < dfs.http.client.failover.sleep.max.millis,value
+964,dfs.namenode.safemode.threshold-pct,dfs.namenode.safemode.min.datanodes,dfs.namenode.safemode.threshold-pct > 0 => dfs.namenode.safemode.min.datanodes > 0,value
+905,dfs.replication,dfs.namenode.replication.min,dfs.replication > dfs.namenode.replication.min,value
+1364,dfs.client.retry.interval-ms.get-last-block-length,dfs.client.retry.max.attempts,dfs.client.retry.max.attempts > 0 => dfs.client.retry.interval-ms.get-last-block-length = ANY,value
+790,dfs.namenode.servicerpc-bind-host,dfs.namenode.https-bind-host,dfs.namenode.https-bind-host = ANY => dfs.namenode.servicerpc-bind-host = ANY,value
+1229,dfs.client.read.shortcircuit,dfs.client.read.shortcircuit.buffer.size,dfs.client.read.shortcircuit = true => dfs.client.read.shortcircuit.buffer.size > 0,value
+1239,dfs.client.use.legacy.blockreader.local,dfs.client.use.legacy.blockreader,dfs.client.use.legacy.blockreader = true => dfs.client.use.legacy.blockreader.local = false,value
+1464,dfs.namenode.stale.datanode.minimum.interval,dfs.namenode.write.stale.datanode.ratio,dfs.namenode.write.stale.datanode.ratio > 0 => dfs.namenode.stale.datanode.minimum.interval > 0,value
+1413,dfs.ha.fencing.methods,dfs.namenode.handler.count,"dfs.namenode.handler.count > 10 => dfs.ha.fencing.methods in {""shell(/path/to/script)"", ""sshfence""}",value
+1327,dfs.balancer.getBlocks.size,dfs.balancer.getBlocks.min-block-size,dfs.balancer.getBlocks.min-block-size < dfs.balancer.getBlocks.size,value
+411,dfs.balancer.getBlocks.min-block-size,dfs.balancer.getBlocks.size,dfs.balancer.getBlocks.min-block-size < dfs.balancer.getBlocks.size => dfs.balancer.getBlocks.size > dfs.balancer.getBlocks.min-block-size,value
+1401,dfs.datanode.fsdataset.volume.choosing.policy,dfs.datanode.available-space-volume-choosing-policy.balanced-space-threshold,"dfs.datanode.fsdataset.volume.choosing.policy = ""AvailableSpaceVolumeChoosingPolicy"" => dfs.datanode.available-space-volume-choosing-policy.balanced-space-threshold > 0",value
+1207,dfs.client.cache.drop.behind.writes,dfs.datanode.drop.cache.behind.reads,dfs.client.cache.drop.behind.writes = true => dfs.datanode.drop.cache.behind.reads = true,value
+1071,dfs.internal.nameservices,dfs.ha.namenode.id,dfs.internal.nameservices in {dfs.ha.namenode.id},value
+1116,dfs.namenode.kerberos.internal.spnego.principal,dfs.namenode.kerberos.principal,dfs.namenode.kerberos.principal = dfs.namenode.kerberos.internal.spnego.principal,value
+1481,dfs.qjournal.prepare-recovery.timeout.ms,dfs.qjournal.write-txns.timeout.ms,dfs.qjournal.write-txns.timeout.ms = dfs.qjournal.prepare-recovery.timeout.ms,value
+789,dfs.namenode.servicerpc-bind-host,dfs.namenode.http-bind-host,dfs.namenode.http-bind-host = ANY => dfs.namenode.servicerpc-bind-host = ANY,value
+1227,dfs.client.read.shortcircuit,dfs.client.read.shortcircuit.streams.cache.expiry.ms,dfs.client.read.shortcircuit = true => dfs.client.read.shortcircuit.streams.cache.expiry.ms > 0,value
+946,dfs.blockreport.intervalMsec,dfs.blockreport.initialDelay,dfs.blockreport.initialDelay > 0 => dfs.blockreport.intervalMsec > dfs.blockreport.initialDelay,value
+853,dfs.datanode.https.address,datanode.https.port,"datanode.https.port = <Number> => dfs.datanode.https.address = <Expression> + "":"" + datanode.https.port",value
+1347,dfs.client.failover.proxy.provider,dfs.client.failover.random.order,dfs.client.failover.random.order = true => dfs.client.failover.proxy.provider = ANY,value

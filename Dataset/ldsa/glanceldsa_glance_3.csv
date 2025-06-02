@@ -1,0 +1,68 @@
+id,Parameter1,Parameter2,bnf,type
+18,s3_store_access_key,s3_store_secret_key,s3_store_access_key != null => s3_store_secret_key != null,behavior
+14,swift_store_multi_tenant,swift_store_multiple_containers_seed,swift_store_multi_tenant = false => swift_store_multiple_containers_seed = 0,control
+16,enabled_backends,rbd_store_pool,"enabled_backends in {{ ""rbd"" }} => rbd_store_pool != null",control
+59,enabled,debug,enabled=true => debug=ANY,control
+55,image_cache_driver,image_cache_dir,image_cache_driver != null => image_cache_dir != null,control
+10,enabled_backends,filesystem_store_datadir,"enabled_backends in {{ ""filesystem"" }} => filesystem_store_datadir != null",control
+62,enabled,log_use_syslog,enabled=true => log_use_syslog=ANY,control
+28,cinder_store_project_name,cinder_store_password,cinder_store_project_name != null => cinder_store_password != null,control
+26,swift_store_endpoint_type,swift_store_cacert,"swift_store_endpoint_type = ""internalURL"" => swift_store_cacert != null",control
+9,swift_store_user,swift_store_key,swift_store_user != null => swift_store_key != null,control
+18,enabled_backends,s3_store_host,"enabled_backends in {{ ""s3"" }} => s3_store_host != null",control
+25,cinder_store_project_name,cinder_store_user_domain_name,cinder_store_project_name != null => cinder_store_user_domain_name != null,control
+31,cinder_store_project_name,cinder_store_password,cinder_store_project_name != null => cinder_store_password != null,control
+11,enabled_backends,filesystem_store_datadirs,"enabled_backends in {{ ""filesystem"" }} => filesystem_store_datadirs != null",control
+10,swift_store_user,swift_store_auth_address,swift_store_user != null => swift_store_auth_address != null,control
+12,enabled_backends,swift_store_auth_address,"enabled_backends in {{ ""swift"" }} => swift_store_auth_address != null",control
+67,enabled,public_endpoint,enabled=true => public_endpoint!=null,control
+29,cinder_store_auth_address,cinder_store_password,cinder_store_auth_address != null => cinder_store_password != null,control
+27,swift_store_endpoint_type,swift_store_auth_insecure,"swift_store_endpoint_type = ""adminURL"" => swift_store_auth_insecure = false",control
+17,enabled_backends,vmware_server_host,"enabled_backends in {{ ""vmware"" }} => vmware_server_host != null",control
+60,enabled,log_file,enabled=true => log_file!=null,control
+34,cinder_store_auth_address,cinder_store_password,cinder_store_auth_address != null => cinder_store_password != null,control
+69,public_endpoint,bind_port,public_endpoint=true => bind_port!=null,control
+14,enabled_backends,swift_store_key,"enabled_backends in {{ ""swift"" }} => swift_store_key != null",control
+33,image_cache_driver,image_cache_enabled,image_cache_driver != null => image_cache_enabled = true,control
+32,cinder_store_project_name,cinder_store_auth_address,cinder_store_project_name != null => cinder_store_auth_address != null,control
+33,cinder_store_auth_address,cinder_store_user_name,cinder_store_auth_address != null => cinder_store_user_name != null,control
+57,image_cache_driver,image_cache_sqlite_db,image_cache_driver = 'sqlite' => image_cache_sqlite_db != null,control
+29,image_cache_driver,image_cache_size,"image_cache_driver in {'file', 'xfs'} => image_cache_size > 0",control
+37,vmware_server_username,vmware_server_password,vmware_server_username != null => vmware_server_password != null,control
+56,image_cache_driver,image_cache_max_size,image_cache_driver != null => image_cache_max_size != null,control
+8,debug,verbose,debug=true => verbose=true,control
+38,vmware_datastores,r_password,vmware_datastores != null => r_password != null,control
+58,enabled,verbose,enabled=true => verbose=ANY,control
+26,image_size_cap,image_size_total,image_size_cap > 0 => image_size_total > image_size_cap,control
+2,debug,verbose,debug = True => verbose = True,control
+30,cinder_store_project_name,cinder_store_user_name,cinder_store_project_name != null => cinder_store_user_name != null,control
+64,enabled,image_cache_dir,enabled=true => image_cache_dir!=null,control
+36,vmware_server_username,vmware_server_password,vmware_server_username != null => vmware_server_password != null,control
+40,enabled_backends,vmware_server_host,"enabled_backends = ""vmware"" => vmware_server_host != null",control
+44,vmware_api_insecure,vmware_server_host,vmware_api_insecure = true => vmware_server_host != null,control
+15,enabled_backends,swift_store_container,"enabled_backends in {{ ""swift"" }} => swift_store_container != null",control
+6,verbose,log-config,verbose=true => log-config!=null,control
+43,vmware_datastores,vmware_server_password,vmware_datastores != null => vmware_server_password != null,control
+26,cinder_store_auth_address,cinder_store_user_domain_name,cinder_store_auth_address != null => cinder_store_user_domain_name != null,control
+63,enabled,enabled_backends,enabled=true => enabled_backends!=null,control
+24,cinder_store_password,cinder_store_user_domain_name,cinder_store_password != null => cinder_store_user_domain_name != null,control
+17,auth_version,user_domain_name,auth_version = 3 => user_domain_name != null,control
+65,enabled,image_cache_driver,enabled=true => image_cache_driver!=null,control
+35,cinder_store_auth_address,cinder_store_project_name,cinder_store_auth_address != null => cinder_store_project_name != null,control
+52,cinder_api_insecure,cinder_ca_certificates_file,cinder_api_insecure = true => cinder_ca_certificates_file = null,control
+20,swift_store_create_container_on_put,swift_store_container,swift_store_create_container_on_put=true => swift_store_container!=null,control
+23,cinder_store_user_name,cinder_store_user_domain_name,cinder_store_user_name != null => cinder_store_user_domain_name != null,control
+1,debug,verbose,debug = true => verbose = true,control
+66,enabled,image_cache_max_size,enabled=true => image_cache_max_size!=null,control
+13,enabled_backends,swift_store_user,"enabled_backends in {{ ""swift"" }} => swift_store_user != null",control
+1,debug,verbose,debug=true => verbose=true,control
+5,verbose,debug,verbose=true => debug=true,control
+8,log_use_syslog,enabled_backends,log_use_syslog = true => enabled_backends != null,control
+27,cinder_store_user_name,cinder_store_password,cinder_store_user_name != null => cinder_store_password != null,control
+20,cinder_store_user_name,cinder_store_password,cinder_store_user_name != null => cinder_store_password != null,control
+13,swift_store_large_object_size,swift_store_large_object_chunk_size,swift_store_large_object_size = ANY => swift_store_large_object_chunk_size = 200,default
+30,auth_address,swift_store_auth_address,auth_address=ANY => swift_store_auth_address=auth_address,default
+32,auth_version,swift_store_auth_version,auth_version=ANY => swift_store_auth_version=auth_version,default
+31,auth_address,cinder_store_auth_address,auth_address=ANY => cinder_store_auth_address=auth_address,default
+16,auth_address,swift_store_auth_address,auth_address != null => swift_store_auth_address = ANY,overwrite
+19,filesystem_store_datadir,filesystem_store_datadirs,filesystem_store_datadir != null => filesystem_store_datadirs = ANY,overwrite

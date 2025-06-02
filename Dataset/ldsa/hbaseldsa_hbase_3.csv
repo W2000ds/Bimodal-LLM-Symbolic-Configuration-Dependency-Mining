@@ -1,0 +1,38 @@
+id,Parameter1,Parameter2,bnf,type
+1686,hbase.hregion.preclose.flush.size,hbase.hstore.blockingStoreFiles,hbase.hregion.preclose.flush.size > ANY => hbase.hstore.blockingStoreFiles > ANY,behavior
+1629,hbase.zookeeper.property.maxClientCnxns,hbase.zookeeper.property.syncLimit,hbase.zookeeper.property.maxClientCnxns > 100 => hbase.zookeeper.property.syncLimit > 5,behavior
+2361,hbase.zookeeper.property.dataDir,hbase.cluster.distributed,hbase.cluster.distributed = true => hbase.zookeeper.property.dataDir != null,control
+735,hbase.rest.csrf.enabled,hbase.rest-csrf.browser-useragents-regex,hbase.rest.csrf.enabled = true => hbase.rest-csrf.browser-useragents-regex != null,control
+1841,hbase.wal.dir.perms,hbase.regionserver.hlog.syncer.count,"hbase.wal.dir.perms in {{""700"", ""755"", ""777""}} => hbase.regionserver.hlog.syncer.count > 1",control
+1634,hbase.client.pause,hbase.rpc.timeout,hbase.client.pause > 100 => hbase.rpc.timeout > hbase.client.pause * hbase.client.retries.number,control
+1883,hbase.master.loadbalance.bytable,hbase.balancer.period,hbase.master.loadbalance.bytable = true => hbase.balancer.period < 300000,control
+2472,hbase.status.published,hbase.cluster.distributed,hbase.cluster.distributed = true => hbase.status.published = true,control
+2321,hbase.master.info.port,hbase.master.infoserver.redirect,hbase.master.infoserver.redirect = true => hbase.master.info.port = ANY,control
+719,hbase.data.umask.enable,hbase.data.umask,hbase.data.umask.enable = true => hbase.data.umask != null,control
+1646,hbase.client.max.perserver.tasks,hbase.regionserver.max.queue.size,hbase.client.max.perserver.tasks > {{X}} => hbase.regionserver.max.queue.size > {{Y}},control
+1729,hbase.hstore.compaction.ratio.offpeak,hbase.offpeak.start.hour,hbase.hstore.compaction.ratio.offpeak != ANY => hbase.offpeak.start.hour != null,control
+704,hbase.regionserver.hostname,hbase.regionserver.hostname.disable.master.reversedns,hbase.regionserver.hostname != null => hbase.regionserver.hostname.disable.master.reversedns = false,control
+1647,hbase.client.max.perregion.tasks,hbase.regionserver.handler.count,hbase.client.max.perregion.tasks > 0 => hbase.regionserver.handler.count > 0,control
+1650,hbase.client.perserver.requests.threshold,hbase.regionserver.handler.count,hbase.client.perserver.requests.threshold > {{X}} => hbase.regionserver.handler.count > {{Y}},control
+671,hbase.regionserver.port,hbase.regionserver.info.port,hbase.regionserver.port = ANY => hbase.regionserver.info.port = hbase.regionserver.port + 10,default
+2477,hbase.dynamic.jars.dir,hbase.rootdir,hbase.rootdir = ANY => hbase.dynamic.jars.dir = ${hbase.rootdir}/lib,default
+2419,hbase.hstore.compaction.max.size,hbase.hstore.blockingStoreFiles,hbase.hstore.blockingStoreFiles = ANY => hbase.hstore.compaction.max.size > hbase.hstore.compaction.min.size,value
+2355,hbase.zookeeper.dns.interface,hbase.zookeeper.dns.nameserver,hbase.zookeeper.dns.nameserver = hbase.zookeeper.dns.interface,value
+2335,hbase.ipc.server.callqueue.read.ratio,hbase.regionserver.handler.count,hbase.regionserver.handler.count > 0 => hbase.ipc.server.callqueue.read.ratio = ANY,value
+692,hbase.hregion.majorcompaction,hbase.hregion.majorcompaction.jitter,hbase.hregion.majorcompaction != 0 => hbase.hregion.majorcompaction.jitter = 0.50,value
+2376,hbase.client.retries.number,hbase.client.operation.timeout,hbase.client.operation.timeout > 0 => hbase.client.retries.number = ANY,value
+2337,hbase.ipc.server.callqueue.scan.ratio,hbase.ipc.server.callqueue.handler.factor,hbase.ipc.server.callqueue.scan.ratio * hbase.ipc.server.callqueue.handler.factor > 0,value
+2465,hbase.snapshot.restore.take.failsafe.snapshot,hbase.snapshot.restore.failsafe.name,hbase.snapshot.restore.failsafe.name != null => hbase.snapshot.restore.take.failsafe.snapshot = ANY,value
+2375,hbase.client.retries.number,hbase.rpc.timeout,hbase.rpc.timeout > 0 => hbase.client.retries.number = ANY,value
+2391,hbase.hregion.percolumnfamilyflush.size.lower.bound.min,hbase.hregion.memstore.flush.size,hbase.hregion.memstore.flush.size > hbase.hregion.percolumnfamilyflush.size.lower.bound.min => hbase.hregion.percolumnfamilyflush.size.lower.bound.min < hbase.hregion.memstore.flush.size,value
+2428,hbase.rpc.timeout,hbase.rpc.shortoperation.timeout,hbase.rpc.shortoperation.timeout < hbase.rpc.timeout,value
+2368,hbase.client.write.buffer,hbase.hregion.memstore.flush.size,hbase.client.write.buffer > 0 => hbase.hregion.memstore.flush.size > hbase.client.write.buffer,value
+2378,hbase.client.max.total.tasks,hbase.client.max.perregion.tasks,hbase.client.max.perregion.tasks < hbase.client.max.total.tasks,value
+2417,hbase.hstore.compaction.max.size,hbase.hstore.compaction.ratio,hbase.hstore.compaction.ratio = ANY => hbase.hstore.compaction.max.size > hbase.hstore.compaction.min.size,value
+2399,hbase.hstore.compactionThreshold,hbase.hstore.compaction.ratio,hbase.hstore.compactionThreshold = hbase.hstore.compaction.ratio => hbase.hstore.compaction.ratio = hbase.hstore.compactionThreshold,value
+711,hbase.auth.key.update.interval,hbase.auth.token.max.lifetime,hbase.auth.key.update.interval < hbase.auth.token.max.lifetime,value
+2369,hbase.client.pause,hbase.client.retries.number,hbase.client.retries.number > 0 => hbase.client.pause > 0,value
+2394,hbase.hregion.max.filesize,hbase.hstore.compactionThreshold,hbase.hstore.compactionThreshold < hbase.hregion.max.filesize => hbase.hregion.max.filesize > hbase.hstore.compactionThreshold,value
+2323,hbase.master.info.port,hbase.regionserver.info.port,hbase.regionserver.info.port = Y => hbase.master.info.port = Y + 1,value
+2397,hbase.hstore.compactionThreshold,hbase.hstore.compaction.min,hbase.hstore.compactionThreshold > hbase.hstore.compaction.min => hbase.hstore.compaction.min < hbase.hstore.compactionThreshold,value
+666,hbase.master.port,hbase.master.info.port,hbase.master.port = 16000 => hbase.master.info.port = 16010,value

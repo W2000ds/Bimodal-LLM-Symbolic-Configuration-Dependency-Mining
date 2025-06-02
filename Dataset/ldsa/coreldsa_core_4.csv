@@ -1,0 +1,70 @@
+id,Parameter1,Parameter2,bnf,type
+312,hadoop.security.crypto.jce.provider,hadoop.security.crypto.cipher.suite,hadoop.security.crypto.jce.provider != null => hadoop.security.crypto.cipher.suite in {{supported_cipher_suites}},behavior
+1540,zookeeper.recovery.retry.maxsleeptime,zookeeper.recovery.retry,<Dependency> ::= <Variable> = <Singlevalue> => <Variable> = <Singlevalue>,behavior
+293,file.blocksize,memory.buffer_size,file.blocksize > 8192 => memory.buffer_size > file.blocksize * 2,behavior
+1523,ssl.server.keystore.keypassword,dfs.client.https.keystore.resource,dfs.client.https.keystore.resource != null => ssl.server.keystore.keypassword != null,behavior
+273,fs.s3a.fast.upload,fs.s3a.fast.upload.buffer,"fs.s3a.fast.upload = true => fs.s3a.fast.upload.buffer in {{disk, array, bytebuffer}}",behavior
+242,hadoop.http.filter.initializers,hadoop.http.authentication.type,"hadoop.http.authentication.type != ""null"" => hadoop.http.filter.initializers = ""ANY""",control
+433,io.compression.codec.bzip2.library,io.native.lib.available,io.native.lib.available = true => io.compression.codec.bzip2.library != null,control
+107,hadoop.security.dns.interface,hadoop.security.dns.nameserver,hadoop.security.dns.interface != null => hadoop.security.dns.nameserver != null,control
+288,ipc.server.log.slow.rpc,ipc.server.rpc.retry.count,ipc.server.log.slow.rpc = true => ipc.server.rpc.retry.count in {{1..5}},control
+588,hadoop.http.cross-origin.max-age,hadoop.http.cross-origin.enabled,hadoop.http.cross-origin.enabled = true => hadoop.http.cross-origin.max-age = ANY,control
+693,hadoop.registry.rm.enabled,hadoop.registry.zk.quorum,hadoop.registry.rm.enabled = true => hadoop.registry.zk.quorum != null,control
+176,fs.s3a.fast.upload,fs.s3a.fast.upload.buffer,fs.s3a.fast.upload = true => fs.s3a.fast.upload.buffer != null,control
+104,hadoop.security.authentication,hadoop.security.instrumentation.requires.admin,"hadoop.security.authentication = ""kerberos"" => hadoop.security.instrumentation.requires.admin = true",control
+603,ha.zookeeper.session-timeout.ms,ha.zookeeper.acl,ha.zookeeper.acl != null => ha.zookeeper.session-timeout.ms = ANY,control
+278,hadoop.security.dns.interface,hadoop.security.dns.nameserver,hadoop.security.dns.interface = ANY => hadoop.security.dns.nameserver = ANY,control
+1749,hfile.block.cache.size,hbase.bucketcache.size,"hfile.block.cache.size > 0.4 => hbase.bucketcache.size in {{0.2, 0.3, 0.4}}",control
+246,fs.adl.oauth2.access.token.provider.type,fs.adl.oauth2.refresh.url,fs.adl.oauth2.access.token.provider.type != null => fs.adl.oauth2.refresh.url != null,control
+184,fs.azure.secure.mode,fs.azure.local.sas.key.mode,fs.azure.secure.mode = true => fs.azure.local.sas.key.mode != null,control
+115,hadoop.security.group.mapping.ldap.ssl,hadoop.security.group.mapping.ldap.ssl.keystore,hadoop.security.group.mapping.ldap.ssl = true => hadoop.security.group.mapping.ldap.ssl.keystore != null,control
+2105,security.applicationhistory.protocol.acl,yarn.acl.enable,yarn.acl.enable = true => security.applicationhistory.protocol.acl != null,control
+117,hadoop.security.group.mapping.ldap.ssl,hadoop.security.group.mapping.ldap.ssl.keystore.password.file,hadoop.security.group.mapping.ldap.ssl = true => hadoop.security.group.mapping.ldap.ssl.keystore.password.file != null,control
+766,hadoop.zk.retry-interval-ms,ha.zookeeper.quorum,hadoop.zk.retry-interval-ms > 0 => ha.zookeeper.quorum != null,control
+360,hadoop.security.group.mapping.ldap.groupbase,hadoop.security.group.mapping.ldap.url,hadoop.security.group.mapping.ldap.url != null => hadoop.security.group.mapping.ldap.groupbase != null,control
+568,hadoop.http.authentication.simple.anonymous.allowed,hadoop.security.authentication,"hadoop.security.authentication = ""simple"" => hadoop.http.authentication.simple.anonymous.allowed = ANY",control
+472,fs.s3a.connection.ssl.enabled,hadoop.ssl.enabled,hadoop.ssl.enabled = true => fs.s3a.connection.ssl.enabled = true,control
+292,file.blocksize,file.max_files,file.blocksize > 4096 => file.max_files < 1000,control
+321,hadoop.security.group.mapping.ldap.ssl.keystore.password,hadoop.security.group.mapping.ldap.ssl,hadoop.security.group.mapping.ldap.ssl = true => hadoop.security.group.mapping.ldap.ssl.keystore.password != null,control
+564,hadoop.http.authentication.signature.secret.file,hadoop.http.authentication.kerberos.principal,hadoop.http.authentication.kerberos.principal != null => hadoop.http.authentication.signature.secret.file != null,control
+319,hadoop.security.group.mapping.ldap.ssl.keystore.password.file,hadoop.security.group.mapping.ldap.ssl,hadoop.security.group.mapping.ldap.ssl = true => hadoop.security.group.mapping.ldap.ssl.keystore.password.file != null,control
+247,fs.adl.oauth2.access.token.provider.type,fs.adl.oauth2.refresh.token,fs.adl.oauth2.access.token.provider.type != null => fs.adl.oauth2.refresh.token != null,control
+660,ipc.client.fallback-to-simple-auth-allowed,hadoop.security.authorization,"hadoop.security.authorization = ""true"" => ipc.client.fallback-to-simple-auth-allowed = ""false""",control
+496,fs.s3a.fast.upload.buffer,fs.s3a.fast.upload,fs.s3a.fast.upload = true => fs.s3a.fast.upload.buffer = ANY,control
+242,io.compression.codecs,io.file.buffer.size,io.compression.codecs != null => io.file.buffer.size > 65536,control
+367,hadoop.security.group.mapping.ldap.search.filter.user,hadoop.security.group.mapping.ldap.bind.user,hadoop.security.group.mapping.ldap.bind.user != null => hadoop.security.group.mapping.ldap.search.filter.user != null,control
+243,fs.adl.oauth2.access.token.provider.type,fs.adl.oauth2.access.token.provider,fs.adl.oauth2.access.token.provider.type != null => fs.adl.oauth2.access.token.provider != null,control
+634,hadoop.ssl.enabled,hadoop.ssl.enabled.protocols,hadoop.ssl.enabled = true => hadoop.ssl.enabled.protocols != null,control
+116,hadoop.security.group.mapping.ldap.ssl,hadoop.security.group.mapping.ldap.ssl.keystore.password,hadoop.security.group.mapping.ldap.ssl = true => hadoop.security.group.mapping.ldap.ssl.keystore.password != null,control
+389,hadoop.security.group.mapping.ldap.search.group.hierarchy.levels,hadoop.security.group.mapping.ldap.base,hadoop.security.group.mapping.ldap.base != null => hadoop.security.group.mapping.ldap.search.group.hierarchy.levels = ANY,control
+585,hadoop.http.cross-origin.allowed-headers,hadoop.http.cross-origin.enabled,hadoop.http.cross-origin.enabled = true => hadoop.http.cross-origin.allowed-headers != null,control
+414,hadoop.security.service.user.name.key,hadoop.security.authorization,"hadoop.security.authorization = ""true"" => hadoop.security.service.user.name.key != null",control
+244,fs.adl.oauth2.access.token.provider.type,fs.adl.oauth2.client.id,fs.adl.oauth2.access.token.provider.type != null => fs.adl.oauth2.client.id != null,control
+202,net.topology.script.file.name,net.topology.node.switch.mapping.impl,net.topology.script.file.name != null => net.topology.node.switch.mapping.impl = org.apache.hadoop.net.ScriptBasedMapping,control
+501,fs.azure.secure.mode,fs.azure.authorization,"fs.azure.authorization = ""true"" => fs.azure.secure.mode = ""true""",control
+119,hadoop.security.credstore.java-keystore-provider.password-file,hadoop.security.group.mapping.ldap.ssl.keystore.password.file,hadoop.security.credstore.java-keystore-provider.password-file = ANY => hadoop.security.group.mapping.ldap.ssl.keystore.password.file = hadoop.security.credstore.java-keystore-provider.password-file,default
+300,s3.replication,s3.storage_overcommit_factor,s3.replication > 3 => s3.storage_overcommit_factor < 1.2,overwrite
+129,hadoop.security.group.mapping.ldap.bind.password,hadoop.security.group.mapping.ldap.bind.password.file,hadoop.security.group.mapping.ldap.bind.password != null => hadoop.security.group.mapping.ldap.bind.password.file = ANY,overwrite
+452,fs.s3.buffer.dir,fs.s3a.buffer.dir,fs.s3a.buffer.dir = ANY => fs.s3.buffer.dir = fs.s3a.buffer.dir,overwrite
+343,hadoop.security.group.mapping.ldap.bind.password.file,hadoop.security.group.mapping.ldap.bind.password,hadoop.security.group.mapping.ldap.bind.password != null => hadoop.security.group.mapping.ldap.bind.password.file = null,overwrite
+285,ipc.server.listen.queue.size,net.core.somaxconn,ipc.server.listen.queue.size > 0 => net.core.somaxconn >= ipc.server.listen.queue.size,overwrite
+712,hadoop.registry.zk.retry.interval.ms,hadoop.registry.zk.retry.ceiling.ms,hadoop.registry.zk.retry.ceiling.ms > hadoop.registry.zk.retry.interval.ms => hadoop.registry.zk.retry.interval.ms < hadoop.registry.zk.retry.ceiling.ms,value
+390,hadoop.security.group.mapping.ldap.search.group.hierarchy.levels,hadoop.security.group.mapping.ldap.search.filter.group,hadoop.security.group.mapping.ldap.search.filter.group != null => hadoop.security.group.mapping.ldap.search.group.hierarchy.levels = ANY,value
+267,hadoop.security.group.mapping,hadoop.security.groups.negative-cache.secs,hadoop.security.groups.negative-cache.secs > 0 => hadoop.security.group.mapping != null,value
+473,fs.s3a.proxy.host,fs.s3a.proxy.port,fs.s3a.proxy.host != null => fs.s3a.proxy.port != null,value
+533,s3.blocksize,s3native.blocksize,s3native.blocksize = s3.blocksize,value
+524,file.bytes-per-checksum,ftp.bytes-per-checksum,file.bytes-per-checksum = ftp.bytes-per-checksum,value
+195,ipc.client.rpc-timeout.ms,ipc.ping.interval,ipc.client.rpc-timeout.ms > ipc.ping.interval => ipc.client.rpc-timeout.ms = [ipc.ping.interval * ceil(ipc.client.rpc-timeout.ms / ipc.ping.interval)],value
+765,hadoop.zk.num-retries,hadoop.zk.timeout-ms,hadoop.zk.num-retries > 0 => hadoop.zk.timeout-ms > hadoop.zk.retry-interval-ms,value
+286,hadoop.security.groups.cache.secs,hadoop.security.groups.negative-cache.secs,hadoop.security.groups.negative-cache.secs = hadoop.security.groups.cache.secs,value
+327,hadoop.security.credential.provider.path,fs.s3a.security.credential.provider.path,fs.s3a.security.credential.provider.path = hadoop.security.credential.provider.path,value
+469,fs.s3a.session.token,fs.s3a.access.key,fs.s3a.access.key != null => fs.s3a.session.token != null,value
+440,fs.trash.interval,fs.trash.checkpoint.interval,fs.trash.checkpoint.interval = fs.trash.interval / 2,value
+685,hadoop.security.kms.client.authentication.retry-count,hadoop.security.kms.client.failover.sleep.base.millis,hadoop.security.kms.client.failover.sleep.base.millis > 0 => hadoop.security.kms.client.authentication.retry-count > 0,value
+511,ipc.client.ping,ipc.ping.interval,ipc.client.ping = true => ipc.ping.interval > 0,value
+755,fs.adl.oauth2.refresh.token,fs.adl.oauth2.refresh.url,fs.adl.oauth2.refresh.url != null => fs.adl.oauth2.refresh.token != null,value
+215,s3native.bytes-per-checksum,s3native.client-write-packet-size,s3native.bytes-per-checksum < s3native.client-write-packet-size,value
+584,hadoop.http.cross-origin.allowed-methods,hadoop.http.cross-origin.max-age,hadoop.http.cross-origin.max-age in {ANY} => hadoop.http.cross-origin.allowed-methods in {ANY},value
+139,hadoop.security.group.mapping.ldap.directory.search.timeout,hadoop.security.group.mapping.ldap.search.group.hierarchy.levels,hadoop.security.group.mapping.ldap.directory.search.timeout > 0 => hadoop.security.group.mapping.ldap.search.group.hierarchy.levels = [0..ANY],value
+284,hadoop.security.dns.log-slow-lookups.enabled,hadoop.security.dns.log-slow-lookups.threshold.ms,hadoop.security.dns.log-slow-lookups.enabled = true => hadoop.security.dns.log-slow-lookups.threshold.ms > 0,value
+687,hadoop.security.kms.client.encrypted.key.cache.low-watermark,hadoop.security.kms.client.encrypted.key.cache.size,hadoop.security.kms.client.encrypted.key.cache.size > hadoop.security.kms.client.encrypted.key.cache.low-watermark,value

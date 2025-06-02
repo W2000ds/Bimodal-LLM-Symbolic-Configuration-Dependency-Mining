@@ -1,0 +1,86 @@
+id,param1,param2,bnf,type
+1,osapi_volume_extension,osapi_volume_ext_list,osapi_volume_extension = 'api.contrib.select_extensions' => B in {{'api.extensions.standard_extensions'}},value
+2,glance_api_servers,glance_catalog_info,A = null => B != null,control
+3,use_chap_auth,chap,"A = true => B in {true, false}",control
+4,san_ip,storwize_san_secondary_ip,A != null => B in ANY,overwrite
+5,trace_flags,netapp_api_trace_pattern,trace_flags = 'api' => B = 'work',control
+6,driver_use_ssl,synology_ssl_verify,"$driver_use_ssl = true => $do_certificate_validation in {true, false}",control
+7,target_helper,iscsi_write_cache,target_helper = 'tgtadm' => A in { 'tgtadm' },value
+8,backup_gcs_block_size,backup_gcs_object_size,backup_gcs_block_size = <Number> => backup_gcs_object_size in {<Number>*backup_gcs_block_size},value
+9,backup_sha_block_size_bytes,backup_file_size,backup_sha_block_size_bytes = <ValueExpression> => backup_file_size in {{ backup_sha_block_size_bytes * n .. backup_sha_block_size_bytes * (n+1) - 1 }},value
+10,backup_swift_block_size,backup_swift_object_size,backup_swift_object_size mod backup_swift_block_size = 0,value
+11,availability_zone,"default_availability_zone,storage_availability_zone",B != null => A = B,overwrite
+12,backend_availability_zone,storage_availability_zone,B != null => A = B,default
+13,enabled_backends,volume_driver,"{ enabled_backends != null => volume_driver in { CONF[backend]['volume_driver'] for backend in filter(None, enabled_backends) } }",value
+14,auth_strategy,token_auth_url,"{ auth_strategy = ""keystone"" => token_auth_url != null }",control
+15,allow_availability_zone_fallback,default_availability_zone,{ allow_availability_zone_fallback = true => default_availability_zone != null },control
+16,glance_api_insecure,insecure,"{(use_ssl = true AND auth_strategy = ""noauth"") OR auth_strategy = ""keystone"" => insecure = glance_api_insecure}",control
+17,glance_request_timeout,timeout,"{ auth_strategy = ""keystone"" => glance_request_timeout != null }",control
+18,insecure,keyfile,"{ auth_strategy = ""keystone"" => keyfile != null & insecure = ANY }",control
+19,glance_api_insecure,keyfile,"{ CONF.auth_strategy = ""keystone"" => glance_api_insecure != null, glance_keyfile != null }",control
+20,glance_request_timeout,insecure,"{ auth_strategy = ""keystone"" => insecure = glance_api_insecure }",control
+21,allow_availability_zone_fallback,storage_availability_zone,{(allow_availability_zone_fallback = true) => (storage_availability_zone != null)},control
+22,backup_gcs_bucket,backup_driver,{(backup_driver = 'cinder.backup.drivers.google') => (backup_gcs_bucket != null)},control
+23,backup_gcs_bucket_location,backup_driver,"{(backup_driver = ""cinder.backup.drivers.google"") => (backup_gcs_bucket_location != null)}",control
+24,backup_gcs_credential_file,backup_driver,{(backup_driver = 'cinder.backup.drivers.google') => (backup_gcs_credential_file != null)},control
+25,backup_gcs_project_id,backup_driver,{(backup_driver = 'cinder.backup.drivers.google') => (backup_gcs_project_id != null)},control
+26,backup_gcs_proxy_url,backup_driver,{(backup_driver = 'cinder.backup.drivers.google') => (backup_gcs_proxy_url != null)},control
+27,backup_gcs_retry_error_codes,backup_driver,{(backup_driver = 'cinder.backup.drivers.google') => (backup_gcs_retry_error_codes != null)},control
+28,backup_gcs_storage_class,backup_driver,"{(backup_driver = ""cinder.backup.drivers.google"") => (backup_gcs_storage_class != null)}",control
+29,backup_gcs_user_agent,backup_driver,{(backup_driver = 'cinder.backup.drivers.google') => (backup_gcs_user_agent != null)},control
+30,backup_swift_ca_cert_file,backup_driver,"{(backup_driver = ""cinder.backup.drivers.swift"") => (backup_swift_ca_cert_file != null)}",control
+31,backup_swift_container,backup_driver,{(backup_driver = 'cinder.backup.drivers.swift') => (backup_swift_container != null)},control
+32,backup_swift_key,backup_driver,{(backup_driver = 'cinder.backup.drivers.swift') => (backup_swift_key != null)},control
+33,backup_swift_project,backup_driver,"{(backup_driver = ""cinder.backup.drivers.swift"") => (backup_swift_project != null)}",control
+34,backup_swift_project_domain,backup_driver,(backup_driver = 'cinder.backup.drivers.swift') => (backup_swift_project_domain != null),control
+35,backup_swift_tenant,backup_driver,"{(backup_driver = ""cinder.backup.drivers.swift"") => (backup_swift_tenant != null)}",control
+36,backup_swift_user,backup_driver,{(backup_driver = 'cinder.backup.drivers.swift') => (backup_swift_user != null)},control
+37,backup_swift_user_domain,backup_driver,{(backup_driver = 'cinder.backup.drivers.swift') => (backup_swift_user_domain != null)},control
+38,swift_catalog_info,backup_driver,"{(backup_driver = ""cinder.backup.drivers.swift"") => (swift_catalog_info != null)}",control
+39,backup_container,backup_driver,"{(backup_driver = ""cinder.backup.drivers.nfs.NFSBackupDriver"") => (backup_container != null)}",control
+40,backup_mount_options,backup_driver,"{(backup_driver = ""cinder.backup.drivers.nfs.NFSBackupDriver"") => (backup_mount_options != null)}",control
+41,backup_mount_point_base,backup_driver,"{(backup_driver = ""cinder.backup.drivers.nfs.NFSBackupDriver"") => (backup_mount_point_base != null)}",control
+42,backup_posix_path,backup_driver,{(backup_driver = 'cinder.backup.drivers.nfs.NFSBackupDriver') => (backup_posix_path != null)},control
+43,cinder_store_auth_address,cinder_store_user_name,cinder_store_auth_address = ANY => cinder_store_user_name = ANY,overwrite
+44,swift_store_multi_tenant,swift_store_use_trusts,swift_store_multi_tenant = true => B = ANY,control
+45,cinder_endpoint_template,cinder_catalog_info,A = null => B != null,control
+46,swift_store_large_object_size,swift_store_large_object_chunk_size,A >= B,value
+47,default_backend,enabled_backends,A in B => A = <String>,value
+48,swift_store_multi_tenant,swift_store_config_file,swift_store_multi_tenant = true => B = null,control
+49,filesystem_store_datadir,filesystem_store_datadirs,A != null => B = null,overwrite
+50,enabled,swift_store_config_file,"{ enabled_backends[backend] = 'swift' => swift_store_config_file != null, swift_store_multi_tenant = true => swift_store_config_file = null }",control
+51,enabled_backends,swift_store_config_file,"{ enabled_backends[backend] = 'swift' => swift_store_config_file != null, swift_store_multi_tenant = true => swift_store_config_file = null }",control
+52,enabled_backends,filesystem_store_datadir,{ enabled_backends != null => filesystem_store_datadir != null },control
+53,enabled,filesystem_store_datadir,{ enabled = true => filesystem_store_datadir != null },control
+54,enabled_backends,key,{CONF.enabled_backends != null => create.CONF.enabled_backends.keys in CONF.enabled_backends},overwrite
+55,enabled,enabled_backends,{ enabled_backends != null => enabled = ANY },overwrite
+56,enabled,key,{CONF.enabled_backends != null => create.CONF.enabled_backends.keys in CONF.enabled_backends},overwrite
+57,bind_host,enabled,{ profiler.enabled = true => bind_host != null },control
+58,swift_store_user,user,{ swift_store_user != null => user = swift_store_user },overwrite
+59,enabled,trace_sqlalchemy,{ profiler.enabled = true AND profiler.trace_sqlalchemy = true => osprofiler.sqlalchemy.add_tracing != null },control
+60,image_cache_dir,image_cache_sqlite_db,"{ (image_cache_dir != null AND image_cache_sqlite_db != null) => get_db_path.db_file = os.path.join(image_cache_dir, image_cache_sqlite_db) }",overwrite
+61,config-dir,config-file,{(config-dir != null) => (config-file = null)},overwrite
+62,swift_store_user,swift_store_auth_address,{(swift_store_user != null) => (swift_store_auth_address != null)},control
+63,swift_store_user,auth_address,{(swift_store_user != null) => (auth_address != null)},control
+64,swift_store_key,swift_store_auth_address,{(swift_store_key != null) => (swift_store_auth_address != null)},control
+65,swift_store_key,swift_store_user,{(swift_store_user != null) => (swift_store_key != null)},overwrite
+66,swift_store_key,user,{(swift_store_key != null) => (user != null)},control
+67,swift_store_key,auth_address,{(swift_store_key != null) => (auth_address != null)},control
+68,swift_store_create_container_on_put,swift_store_container,{(swift_store_create_container_on_put = true) => (swift_store_container != null)},control
+69,swift_store_region,swift_store_auth_version,{(swift_store_auth_version = 2) => (swift_store_region != null)},value
+70,swift_store_region,auth_version,{(auth_version = 2) => (swift_store_region != null)},value
+71,project_domain_id,auth_version,{(auth_version = 3) => (project_domain_id != null)},value
+72,project_domain_name,auth_version,{(auth_version = 3) => (project_domain_name != null)},value
+73,user_domain_id,auth_version,{(auth_version = 3) => (user_domain_id != null)},value
+74,user_domain_name,auth_version,{(auth_version = 3) => (user_domain_name != null)},value
+75,cinder_store_user_name,auth_address,{(cinder_store_user_name != null) => (auth_address != null)},overwrite
+76,cinder_store_user_name,cinder_store_password,{(cinder_store_user_name != null) => (cinder_store_password != null)},control
+77,cinder_store_password,auth_address,{(cinder_store_password != null) => (auth_address != null)},overwrite
+78,cinder_store_project_name,auth_address,{(cinder_store_project_name != null) => (auth_address != null)},control
+79,cinder_store_auth_address,cinder_store_password,{(cinder_store_auth_address != null) => (cinder_store_password != null)},control
+80,cinder_store_auth_address,cinder_store_project_name,{(cinder_store_auth_address != null) => (cinder_store_project_name != null)},control
+81,s3_store_bucket,s3_store_create_bucket_on_put,{(s3_store_create_bucket_on_put = true) => (s3_store_bucket != null)},control
+82,image_cache_dir,user,{(image_cache_dir != null) => (user != null)},overwrite
+83,image_cache_dir,enabled,{(enabled = true) => (image_cache_dir != null)},control
+84,property_protection_file,enabled,{(property_protection_file != null) => (enabled = true)},control
+85,enabled,hmac_keys,{(enabled = true) => (hmac_keys != null)},control
