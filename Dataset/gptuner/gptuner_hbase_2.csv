@@ -1,0 +1,7 @@
+id,Parameter1,Parameter2
+1,hbase.hstore.compaction.kv.max,hbase.hregion.memstore.flush.size
+2,hbase.regionserver.hlog.reader.impl,hbase.regionserver.hlog.writer.impl
+3,hbase.hregion.memstore.flush.size,hbase.hregion.memstore.block.multiplier
+4,hbase.dfs.client.read.shortcircuit.buffer.size,hbase.dfs.client.read.shortcircuit
+5,hbase.hstore.compaction.ratio,hbase.hstore.compaction.min
+6,hbase.regionserver.logroll.period,hbase.regionserver.global.memstore.size

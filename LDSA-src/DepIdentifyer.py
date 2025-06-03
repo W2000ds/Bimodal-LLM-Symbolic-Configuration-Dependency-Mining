@@ -12,26 +12,25 @@ class DepIdentifyer:
         self.csv_file = csv_file
         self.resultfile = resultfile
         self.prompt_file = prompt_file
-        self.model = model  # 添加模型参数
+        self.model = model  
 
 
     def extract_answer(self,text):
-        """从文本中提取 'ans' 的值（Yes 或 No）"""
-        pattern = r'"ans":\s*"(\bYes\b|\bNo\b)"'  # 匹配 "ans": "Yes" 或 "ans": "No"
+        pattern = r'"ans":\s*"(\bYes\b|\bNo\b)"'
         match = re.search(pattern, text)
-        return match.group(1) if match else None  # 返回匹配到的结果
+        return match.group(1) if match else None 
 
     def load_existing_results(self, resultfile):
-        """加载已存在的结果，返回一个字典，键是 QID，值是回答内容"""
+
         existing_results = {}
         if os.path.exists(resultfile) and os.stat(resultfile).st_size > 0:
             with open(resultfile, mode='r', encoding='utf-8', errors='replace') as file:  # Added `errors='replace'`
                 reader = csv.reader(file)
-                next(reader)  # 跳过表头
+                next(reader) 
                 for row in reader:
-                    if len(row) >= 2:  # 确保行数据足够
+                    if len(row) >= 2: 
                         qid, answer = row[0], row[1]
-                        if not answer.startswith("Error:"):  # 只记录非错误结果
+                        if not answer.startswith("Error:"): 
                             existing_results[qid] = answer
 
                 return existing_results
@@ -39,7 +38,6 @@ class DepIdentifyer:
             return existing_results
 
     def load_prompt_content(self):
-            """从指定文件中读取并返回提示内容"""
             if not os.path.isfile(self.prompt_file):
                 raise FileNotFoundError(f"Prompt file not found: {self.prompt_file}")
             with open(self.prompt_file, 'r', encoding='utf-8') as f:
@@ -49,28 +47,26 @@ class DepIdentifyer:
     def Find(self):
         prompt_content = self.load_prompt_content()
         
-        # 检查结果文件是否存在
+
         file_exists = os.path.exists(self.resultfile)
         
-        # 如果文件不存在，创建并写入表头
+
         if not file_exists:
             with open(self.resultfile, mode='w', newline='', encoding='utf-8') as out_file:
                 writer = csv.writer(out_file)
                 writer.writerow(["id", "Parameter1", "Parameter2", "ans", "FullResponse"])
         
-        # 加载已经处理过的结果
+
         existing_results = self.load_existing_results(self.resultfile)
         
-        # 读取输入数据
+
         with open(self.csv_file, mode='r', encoding='utf-8') as file:
             reader = csv.reader(file, delimiter=',')
             rows = list(reader)
-        
-        # 以追加模式打开结果文件
+
         with open(self.resultfile, mode='a', newline='', encoding='utf-8') as out_file:
             writer = csv.writer(out_file)
             
-            # 处理数据，从第二行开始
             for row in rows[1:]:
                 try:
                     if len(row) < 5:
@@ -87,7 +83,6 @@ class DepIdentifyer:
                         print(f"Skipping ID {id}: already processed.")
                         continue
                     
-                    # 格式化问题为单个干净的字符串
                     question = (
                         f"{prompt_content}\n\n"
                         f"Configuration A: {para1}\n"
@@ -98,7 +93,7 @@ class DepIdentifyer:
                         f"Complete method code with this line is:\n{method_code}"
                     )
                     
-                    # 调用API进行问答
+
                     if self.model == 'dpseek':
                         finder_full_response = dpseek_qwen_chat(question)
                     elif self.model == 'doubao':
@@ -110,8 +105,6 @@ class DepIdentifyer:
 
                     answer = self.extract_answer(finder_full_response)
 
-                    # finder_full_response = "null"
-                    # answer = "No"
 
                     print(f"ID {id} - Answer: {answer}")
                     writer.writerow([id, para1, para2, answer, finder_full_response])
@@ -123,17 +116,17 @@ class DepIdentifyer:
                         para1 if 'para1' in locals() else "", 
                         para2 if 'para2' in locals() else "",
                         "ERROR OCCURRED",
-                        str(e)  # 包含实际的错误消息
+                        str(e)
                     ])
                     out_file.flush()
                     print(f"Error processing row {row}: {str(e)}")
 
 
 if __name__ == "__main__":
-    CodeDepBase = '/home/lhy/LLM-dependency/CodeDepBase.csv'
-    prompt_file = './Agent1prompt.txt'
-    Finderresultfile = '/home/lhy/LLM-dependency/Finderresult.csv'
+    CodeDepBase = 'CodeDepBase.csv'
+    prompt_file = 'prompt1.txt'
+    Finderresultfile = 'Finderresult.csv'
 
     finder = DepIdentifyer(CodeDepBase, Finderresultfile, prompt_file)
     finder.Find()
-    print("Finder Done!")
+    print("Find Done!")

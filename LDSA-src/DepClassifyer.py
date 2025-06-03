@@ -14,7 +14,7 @@ class DepClassifyer:
         self.csv_file = csv_file
         self.resultfile = resultfile
         self.prompt_file = prompt_file
-        self.model = model  # 添加模型参数
+        self.model = model  
 
     def extract_bnf_formula(self, json_response):
         """
@@ -60,16 +60,15 @@ class DepClassifyer:
 
 
     def load_existing_results(self,resultfile):
-        """加载已存在的结果，返回一个字典，键是 QID，值是回答内容"""
         existing_results = {}
         if os.path.exists(resultfile) and os.stat(resultfile).st_size > 0:
             with open(resultfile, mode='r', encoding='utf-8') as file:
                 reader = csv.reader(file)
-                next(reader)  # 跳过表头
+                next(reader)  
                 for row in reader:
-                    if len(row) >= 2 and row[3] != '':  # 确保行数据足够且不为空
+                    if len(row) >= 2 and row[3] != '': 
                         qid, answer = row[0], row[3]
-                        if not answer.startswith("Error:"):  # 只记录非错误结果
+                        if not answer.startswith("Error:"): 
                             existing_results[qid] = answer
 
                 return existing_results
@@ -80,28 +79,28 @@ class DepClassifyer:
     def Find(self):
         prompt_content = self.load_prompt_content()
         
-        # 检查结果文件是否存在
+
         file_exists = os.path.exists(self.resultfile)
         
-        # 如果文件不存在，创建并写入表头
+
         if not file_exists:
             with open(self.resultfile, mode='w', newline='', encoding='utf-8') as out_file:
                 writer = csv.writer(out_file)
                 writer.writerow(["ID", "Parameter1", "Parameter2", "Answer", "FullResponse"])
         
-        # 加载已经处理过的结果
+
         existing_results = self.load_existing_results(self.resultfile)
         
-        # 读取输入数据
+
         with open(self.csv_file, mode='r', encoding='utf-8') as file:
             reader = csv.reader(file, delimiter=',')
             rows = list(reader)
         
-        # 以追加模式打开结果文件
+
         with open(self.resultfile, mode='a', newline='', encoding='utf-8') as out_file:
             writer = csv.writer(out_file)
             
-            # 处理数据，从第二行开始
+
             for row in rows[1:]:
                 try:
                     if len(row) < 5:
@@ -123,7 +122,7 @@ class DepClassifyer:
                         print(f"Skipping ID {id}: 'No' in DepFinder results.")
                         continue
                     
-                    # 格式化问题为单个干净的字符串
+
                     question = (
                         f"{prompt_content}\n\n"
                         f"Configuration A: {para1}\n"
@@ -134,7 +133,7 @@ class DepClassifyer:
                         f"Complete method code with this line is:\n{method_code}"
                     )
                     
-                    # 调用API进行问答
+
                     if self.model == 'dpseek':
                         finder_full_response = dpseek_qwen_chat(question)
                     elif self.model == 'doubao':
@@ -143,7 +142,7 @@ class DepClassifyer:
                         finder_full_response = qwen_chat(question)
                     else:
                         raise ValueError(f"Unsupported model: {self.model}")
-                    # finder_full_response = siliconflow_chat(question)
+
                     
                     bnf = self.extract_bnf_formula(finder_full_response)
                     print(f"ID {id} - Answer: {bnf}")
@@ -157,22 +156,15 @@ class DepClassifyer:
                         para2 if 'para2' in locals() else "",
                         "ERROR OCCURRED",
                         "ERROR OCCURRED",
-                        str(e)  # 包含实际的错误消息
+                        str(e) 
                     ])
                     print(f"Error processing row {row}: {str(e)}")
                     out_file.flush()
 
 
     def load_prompt_content(self):
-        """从指定文件中读取并返回提示内容"""
         if not os.path.isfile(self.prompt_file):
             raise FileNotFoundError(f"Prompt file not found: {self.prompt_file}")
         with open(self.prompt_file, 'r', encoding='utf-8') as f:
             return f.read()
-            
-# if __name__ == '__main__':
-#     questionsfile  = "./questions.csv"
-#     resultfile = "./llmans.csv"
-#     # dpseek(questionsfile, resultfile)
-#     siliconflow(questionsfile, resultfile)
-#     print("Done!")
+

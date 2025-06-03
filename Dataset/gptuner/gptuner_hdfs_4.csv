@@ -1,0 +1,16 @@
+id,Parameter1,Parameter2
+1,dfs.client.failover.proxy.provider,dfs.client.failover.sleep.base.millis
+2,dfs.client.retry.interval-ms.get-last-block-length,dfs.client.socket-timeout
+3,dfs.balancer.address,dfs.datanode.address
+4,dfs.content-summary.limit,dfs.namenode.metadata.cache.size
+5,dfs.namenode.rpc-address,dfs.namenode.servicerpc-address
+6,dfs.webhdfs.rest-csrf.enabled,dfs.webhdfs.rest-csrf.custom-header
+7,dfs.datanode.plugins,dfs.client.cache.drop.behind.reads
+8,dfs.client.short.circuit.replica.stale.threshold.ms,dfs.domain.socket.path
+9,dfs.namenode.retrycache.heap.percent,dfs.namenode.retrycache.expirytime.millis
+10,dfs.namenode.replication.min,dfs.namenode.safemode.replication.min
+11,dfs.client.domain.socket.data.traffic,dfs.client.use.legacy.blockreader.local
+12,dfs.client.retry.policy.spec,dfs.http.client.retry.policy.spec
+13,dfs.client.read.shortcircuit,dfs.client.read.short.circuit.replica.stale.threshold.ms
+14,dfs.replication,dfs.namenode.replication.min
+15,dfs.namenode.lifeline.handler.ratio,dfs.namenode.lifeline.handler.count

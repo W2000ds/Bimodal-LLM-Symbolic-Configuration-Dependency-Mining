@@ -1,0 +1,14 @@
+id,Parameter1,Parameter2
+1,hbase.master.info.port,hbase.master.infoserver.redirect
+2,hbase.table.lock.enable,hbase.cluster.distributed
+3,hbase.rootdir,hbase.cluster.distributed
+4,hbase.hstore.compaction.ratio.offpeak,hbase.offpeak.end.hour
+5,hbase.mob.compaction.chore.period,hbase.mob.file.max.size
+6,hbase.offpeak.start.hour,hbase.hstore.compaction.ratio.offpeak
+7,hbase.storescanner.parallel.seek.threads,hbase.storescanner.parallel.seek.enable
+8,hbase.hstore.compaction.ratio.offpeak,hbase.offpeak.start.hour
+9,hbase.hstore.compactionThreshold,hbase.hstore.compaction.max
+10,hbase.regionserver.regionSplitLimit,hbase.regionserver.global.memstore.size
+11,hbase.regionserver.kerberos.principal,hbase.security.authorization
+12,hbase.hregion.majorcompaction,hbase.hregion.majorcompaction.jitter
+13,hbase.client.retries.number,hbase.client.operation.timeout

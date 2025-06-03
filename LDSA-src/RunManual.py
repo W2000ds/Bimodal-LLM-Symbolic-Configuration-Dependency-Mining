@@ -13,7 +13,7 @@ class ManualClassifyer:
         self.csv_file = csv_file
         self.resultfile = resultfile
         self.prompt_file = prompt_file
-        self.model = model  # 添加模型参数
+        self.model = model 
 
     def extract_bnf_formula(self, json_response):
         """
@@ -70,16 +70,15 @@ class ManualClassifyer:
         return match.group(1) if match else None
 
     def load_existing_results(self,resultfile):
-        """加载已存在的结果，返回一个字典，键是 QID，值是回答内容"""
         existing_results = {}
         if os.path.exists(resultfile) and os.stat(resultfile).st_size > 0:
             with open(resultfile, mode='r', encoding='utf-8') as file:
                 reader = csv.reader(file)
                 next(reader)  # 跳过表头
                 for row in reader:
-                    if len(row) >= 2 and row[3] != '':  # 确保行数据足够且不为空
+                    if len(row) >= 2 and row[3] != '':
                         qid, answer = row[0], row[3]
-                        if not answer.startswith("Error:"):  # 只记录非错误结果
+                        if not answer.startswith("Error:"):
                             existing_results[qid] = answer
 
                 return existing_results
@@ -90,35 +89,27 @@ class ManualClassifyer:
     def Find(self):
         prompt_content = self.load_prompt_content()
         
-        # 检查结果文件是否存在
         file_exists = os.path.exists(self.resultfile)
         
-        # 如果文件不存在，创建并写入表头
         if not file_exists:
             with open(self.resultfile, mode='w', newline='', encoding='utf-8') as out_file:
                 writer = csv.writer(out_file)
                 writer.writerow(["ID", "Parameter1", "Parameter2", "BNFr", "Type", "FullResponse"])
         
-        # 加载已经处理过的结果
         existing_results = self.load_existing_results(self.resultfile)
         
-        # 读取输入数据
         with open(self.csv_file, mode='r', encoding='utf-8') as file:
             reader = csv.reader(file, delimiter=',')
             rows = list(reader)
         
-        # 以追加模式打开结果文件
         with open(self.resultfile, mode='a', newline='', encoding='utf-8') as out_file:
             writer = csv.writer(out_file)
-            # 处理数据，从第二行开始
             for row in rows[1:]:
                 try:
                     if len(row) < 4:
                         writer.writerow([f"Warning: Row with insufficient columns: {row}", "", "", "", "", ""])
                         continue
 
-                    
-                    
                     id = row[0]
                     para1 = row[1]
                     para2 = row[2]
@@ -129,7 +120,6 @@ class ManualClassifyer:
                         print(f"Skipping ID {id}: already processed.")
                         continue
                     
-                    # 格式化问题为单个干净的字符串
                     question = (
                         f"{prompt_content}\n\n"
                         f"Parameter 1: {para1}\n"
@@ -139,8 +129,6 @@ class ManualClassifyer:
                         f"{para2}:{description2}\n"
                     )
                     
-                    # 调用API进行问答
-                                        # 调用API进行问答
                     if self.model == 'dpseek':
                         finder_full_response = dpseek_qwen_chat(question)
                     elif self.model == 'doubao':
@@ -149,7 +137,6 @@ class ManualClassifyer:
                         finder_full_response = qwen_chat(question)
                     else:
                         raise ValueError(f"Unsupported model: {self.model}")
-                    # finder_full_response = siliconflow_chat(question)
                     
                     bnf = self.extract_bnf_formula(finder_full_response)
                     type = self.extract_type(finder_full_response)
@@ -164,25 +151,24 @@ class ManualClassifyer:
                         para2 if 'para2' in locals() else "",
                         "ERROR OCCURRED",
                         "ERROR OCCURRED",
-                        str(e)  # 包含实际的错误消息
+                        str(e)
                     ])
                     print(f"Error processing row {row}: {str(e)}")
                     out_file.flush()
 
 
     def load_prompt_content(self):
-        """从指定文件中读取并返回提示内容"""
         if not os.path.isfile(self.prompt_file):
             raise FileNotFoundError(f"Prompt file not found: {self.prompt_file}")
         with open(self.prompt_file, 'r', encoding='utf-8') as f:
             return f.read()
             
 if __name__ == '__main__':
-    for model in ["qwen","dpseek","doubao"]:
-        for software in ["cinder","glance"]:
+    for model in ["dpseek"]:
+        for software in ["cinder","glance","hdfs"]:  # Replace with your actual software name
             manualdepbase  = f"./ManualParser/dependency/{software}Dependency.csv"
             resultfile = f"./ldsa-result/manual/{model}-{software}.csv"
-            prompt_file = "./Agent3RAGprompt.txt"
+            prompt_file = "./prompt3.txt"
             manualclassifyer = ManualClassifyer(manualdepbase, resultfile, prompt_file,model)
             manualclassifyer.Find()
             print("Done!")

@@ -1,0 +1,8 @@
+id,Parameter1,Parameter2
+1,yarn.app.mapreduce.am.staging-dir,mapreduce.jobtracker.system.dir
+2,yarn.nodemanager.resourcemanager.connect.max-wait.ms,yarn.resourcemanager.connect.max-wait.ms
+3,yarn.app.mapreduce.am.admin.user.env,yarn.app.mapreduce.am.env
+4,yarn.nodemanager.node-labels.provider,yarn.nodemanager.node-labels.provider.fetch-timeout-ms
+5,yarn.nodemanager.default-container-executor.log-dirs.permissions,yarn.nodemanager.default-container-executor.log-dirs.owner
+6,yarn.nodemanager.log-aggregation.policy.parameters,yarn.nodemanager.log-dirs
+7,yarn.sharedcache.webapp.address,yarn.sharedcache.enabled

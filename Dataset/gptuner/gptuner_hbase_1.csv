@@ -1,0 +1,13 @@
+id,Parameter1,Parameter2
+1,hbase.defaults.for.version.skip,hbase.defaults.for.version
+2,hbase.master.loadbalancer.class,hbase.regionserver.region.count.limit
+3,hbase.cluster.distributed,hbase.zookeeper.quorum
+4,hbase.zookeeper.leaderport,hbase.zookeeper.peerport
+5,hbase.hstore.compaction.min.size,hbase.hstore.compaction.min
+6,hbase.client.pause,hbase.client.retries.number
+7,hbase.client.pause,hbase.client.pause.cqtbe
+8,hbase.security.authentication,hbase.auth.token.max.lifetime
+9,hbase.hregion.memstore.mslab.enabled,hbase.hregion.memstore.mslab.chunksize
+10,hbase.ipc.server.callqueue.read.ratio,hbase.ipc.server.handler.count
+11,hbase.regions.slop,hbase.regionserver.region.split.policy
+12,hbase.data.umask.enable,hbase.data.umask

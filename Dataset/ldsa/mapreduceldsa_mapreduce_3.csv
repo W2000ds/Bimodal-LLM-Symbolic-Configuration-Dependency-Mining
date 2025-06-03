@@ -1,94 +1,94 @@
 id,Parameter1,Parameter2,bnf,type
-130,mapreduce.task.profile.maps,mapreduce.task.profile.params,mapreduce.task.profile.maps = true => mapreduce.task.profile.params != null,behavior
-46,mapreduce.task.timeout,mapreduce.tasktracker.heartbeat.interval,mapreduce.task.timeout > 0 => mapreduce.tasktracker.heartbeat.interval < mapreduce.task.timeout / 2,behavior
-177,mapreduce.fileoutputcommitter.algorithm.version,mapreduce.fileoutputcommitter.cleanup-failures.ignored,mapreduce.fileoutputcommitter.algorithm.version = 2 => mapreduce.fileoutputcommitter.cleanup-failures.ignored = true,behavior
-49,mapreduce.task.userlog.limit.kb,yarn.app.mapreduce.task.container.log.backups,mapreduce.task.userlog.limit.kb > 0 => yarn.app.mapreduce.task.container.log.backups > 0,control
-170,mapreduce.cluster.acls.enabled,mapreduce.job.acl-modify-job,mapreduce.cluster.acls.enabled = true => mapreduce.job.acl-modify-job != null,control
-158,mapreduce.reduce.node-label-expression,mapreduce.reduce.memory.mb,mapreduce.reduce.node-label-expression in {{high-mem-nodes}} => mapreduce.reduce.memory.mb > 2048,control
-63,mapreduce.job.token.tracking.ids.enabled,mapreduce.job.token.tracking.ids,mapreduce.job.token.tracking.ids.enabled = true => mapreduce.job.token.tracking.ids != null,control
-61,mapreduce.map.log.level,mapreduce.task.io.sort.mb,"mapreduce.map.log.level in {{""DEBUG"", ""TRACE""}} => mapreduce.task.io.sort.mb > 100",control
-165,mapreduce.am.max-attempts,mapreduce.map.maxattempts,mapreduce.am.max-attempts > 1 => mapreduce.map.maxattempts = mapreduce.am.max-attempts,control
-49,mapreduce.map.memory.mb,yarn.nodemanager.resource.memory-mb,mapreduce.map.memory.mb > 0 => yarn.nodemanager.resource.memory-mb >= mapreduce.map.memory.mb * mapreduce.tasktracker.map.tasks.maximum,control
-101,mapreduce.jobhistory.recovery.enable,mapreduce.jobhistory.recovery.store.class,mapreduce.jobhistory.recovery.enable = true => mapreduce.jobhistory.recovery.store.class != null,control
-54,mapreduce.task.profile,mapreduce.task.profile.maps,mapreduce.task.profile = true => mapreduce.task.profile.maps in {0..2},control
-181,mapreduce.framework.name,mapreduce.jobtracker.staging.root.dir,"mapreduce.framework.name = ""local"" => mapreduce.jobtracker.staging.root.dir = ""${hadoop.tmp.dir}/mapred/staging""",control
-111,mapreduce.job.speculative.retry-after-no-speculate,mapreduce.reduce.speculative,mapreduce.reduce.speculative = true => mapreduce.job.speculative.retry-after-no-speculate = ANY,control
-24,mapreduce.job.max.map,mapreduce.job.maps,mapreduce.job.max.map > 0 => mapreduce.job.maps in [1 .. mapreduce.job.max.map],control
-84,mapreduce.shuffle.ssl.file.buffer.size,mapreduce.shuffle.ssl.enabled,mapreduce.shuffle.ssl.enabled = true => mapreduce.shuffle.ssl.file.buffer.size > 0,control
-10,mapreduce.jobtracker.system.dir,mapreduce.jobtracker.heartbeat.interval,mapreduce.jobtracker.system.dir != null => mapreduce.jobtracker.heartbeat.interval > 0,control
-118,mapreduce.map.output.compress,mapreduce.map.output.compression.buffersize,<Dependency> ::= <Variable> = true => <Variable> > <Number>,control
-166,mapreduce.reduce.skip.proc-count.auto-incr,mapreduce.reduce.maxattempts,mapreduce.reduce.maxattempts > 1 => mapreduce.reduce.skip.proc-count.auto-incr = true,control
-213,mapreduce.jobhistory.recovery.store.class,mapreduce.jobhistory.recovery.enable,mapreduce.jobhistory.recovery.store.class != null => mapreduce.jobhistory.recovery.enable = true,control
-23,mapreduce.job.max.map,mapreduce.job.max.reduce,mapreduce.job.max.map > 0 => mapreduce.job.max.reduce > 0,control
-41,mapreduce.output.fileoutputformat.compress,mapreduce.output.fileoutputformat.compress.codec,mapreduce.output.fileoutputformat.compress = true => mapreduce.output.fileoutputformat.compress.codec != null,control
-50,mapreduce.reduce.shuffle.read.timeout,mapreduce.task.timeout,mapreduce.task.timeout > 0 => mapreduce.reduce.shuffle.read.timeout < mapreduce.task.timeout,control
-182,mapreduce.framework.name,mapreduce.cluster.temp.dir,"mapreduce.framework.name = ""local"" => mapreduce.cluster.temp.dir = ""${hadoop.tmp.dir}/mapred/temp""",control
-148,mapreduce.shuffle.port,mapreduce.jobtracker.http.port,mapreduce.shuffle.port != mapreduce.jobtracker.http.port,control
-48,mapreduce.map.output.compress,mapreduce.map.output.compress.codec,mapreduce.map.output.compress = true => mapreduce.map.output.compress.codec != null,control
-152,mapreduce.job.node-label-expression,yarn.scheduler.capacity.<queue-path>.accessible-node-labels,mapreduce.job.node-label-expression != null => yarn.scheduler.capacity.<queue-path>.accessible-node-labels in {{ <String> }},control
+1,mapreduce.task.profile.maps,mapreduce.task.profile.params,mapreduce.task.profile.maps = true => mapreduce.task.profile.params != null,behavior
+2,mapreduce.task.timeout,mapreduce.tasktracker.heartbeat.interval,mapreduce.task.timeout > 0 => mapreduce.tasktracker.heartbeat.interval < mapreduce.task.timeout / 2,behavior
+3,mapreduce.fileoutputcommitter.algorithm.version,mapreduce.fileoutputcommitter.cleanup-failures.ignored,mapreduce.fileoutputcommitter.algorithm.version = 2 => mapreduce.fileoutputcommitter.cleanup-failures.ignored = true,behavior
+4,mapreduce.task.userlog.limit.kb,yarn.app.mapreduce.task.container.log.backups,mapreduce.task.userlog.limit.kb > 0 => yarn.app.mapreduce.task.container.log.backups > 0,control
+5,mapreduce.cluster.acls.enabled,mapreduce.job.acl-modify-job,mapreduce.cluster.acls.enabled = true => mapreduce.job.acl-modify-job != null,control
+6,mapreduce.reduce.node-label-expression,mapreduce.reduce.memory.mb,mapreduce.reduce.node-label-expression in {{high-mem-nodes}} => mapreduce.reduce.memory.mb > 2048,control
+7,mapreduce.job.token.tracking.ids.enabled,mapreduce.job.token.tracking.ids,mapreduce.job.token.tracking.ids.enabled = true => mapreduce.job.token.tracking.ids != null,control
+8,mapreduce.map.log.level,mapreduce.task.io.sort.mb,"mapreduce.map.log.level in {{""DEBUG"", ""TRACE""}} => mapreduce.task.io.sort.mb > 100",control
+9,mapreduce.am.max-attempts,mapreduce.map.maxattempts,mapreduce.am.max-attempts > 1 => mapreduce.map.maxattempts = mapreduce.am.max-attempts,control
+10,mapreduce.map.memory.mb,yarn.nodemanager.resource.memory-mb,mapreduce.map.memory.mb > 0 => yarn.nodemanager.resource.memory-mb >= mapreduce.map.memory.mb * mapreduce.tasktracker.map.tasks.maximum,control
+11,mapreduce.jobhistory.recovery.enable,mapreduce.jobhistory.recovery.store.class,mapreduce.jobhistory.recovery.enable = true => mapreduce.jobhistory.recovery.store.class != null,control
+12,mapreduce.task.profile,mapreduce.task.profile.maps,mapreduce.task.profile = true => mapreduce.task.profile.maps in {0..2},control
+13,mapreduce.framework.name,mapreduce.jobtracker.staging.root.dir,"mapreduce.framework.name = ""local"" => mapreduce.jobtracker.staging.root.dir = ""${hadoop.tmp.dir}/mapred/staging""",control
+14,mapreduce.job.speculative.retry-after-no-speculate,mapreduce.reduce.speculative,mapreduce.reduce.speculative = true => mapreduce.job.speculative.retry-after-no-speculate = ANY,control
+15,mapreduce.job.max.map,mapreduce.job.maps,mapreduce.job.max.map > 0 => mapreduce.job.maps in [1 .. mapreduce.job.max.map],control
+16,mapreduce.shuffle.ssl.file.buffer.size,mapreduce.shuffle.ssl.enabled,mapreduce.shuffle.ssl.enabled = true => mapreduce.shuffle.ssl.file.buffer.size > 0,control
+17,mapreduce.jobtracker.system.dir,mapreduce.jobtracker.heartbeat.interval,mapreduce.jobtracker.system.dir != null => mapreduce.jobtracker.heartbeat.interval > 0,control
+18,mapreduce.map.output.compress,mapreduce.map.output.compression.buffersize,<Dependency> ::= <Variable> = true => <Variable> > <Number>,control
+19,mapreduce.reduce.skip.proc-count.auto-incr,mapreduce.reduce.maxattempts,mapreduce.reduce.maxattempts > 1 => mapreduce.reduce.skip.proc-count.auto-incr = true,control
+20,mapreduce.jobhistory.recovery.store.class,mapreduce.jobhistory.recovery.enable,mapreduce.jobhistory.recovery.store.class != null => mapreduce.jobhistory.recovery.enable = true,control
+21,mapreduce.job.max.map,mapreduce.job.max.reduce,mapreduce.job.max.map > 0 => mapreduce.job.max.reduce > 0,control
+22,mapreduce.output.fileoutputformat.compress,mapreduce.output.fileoutputformat.compress.codec,mapreduce.output.fileoutputformat.compress = true => mapreduce.output.fileoutputformat.compress.codec != null,control
+23,mapreduce.reduce.shuffle.read.timeout,mapreduce.task.timeout,mapreduce.task.timeout > 0 => mapreduce.reduce.shuffle.read.timeout < mapreduce.task.timeout,control
+24,mapreduce.framework.name,mapreduce.cluster.temp.dir,"mapreduce.framework.name = ""local"" => mapreduce.cluster.temp.dir = ""${hadoop.tmp.dir}/mapred/temp""",control
+25,mapreduce.shuffle.port,mapreduce.jobtracker.http.port,mapreduce.shuffle.port != mapreduce.jobtracker.http.port,control
+26,mapreduce.map.output.compress,mapreduce.map.output.compress.codec,mapreduce.map.output.compress = true => mapreduce.map.output.compress.codec != null,control
+27,mapreduce.job.node-label-expression,yarn.scheduler.capacity.<queue-path>.accessible-node-labels,mapreduce.job.node-label-expression != null => yarn.scheduler.capacity.<queue-path>.accessible-node-labels in {{ <String> }},control
 28,mapreduce.job.split.metainfo.maxsize,mapreduce.input.fileinputformat.split.minsize,mapreduce.job.split.metainfo.maxsize > default => mapreduce.input.fileinputformat.split.minsize > default,control
-55,mapreduce.task.profile,mapreduce.task.profile.reduces,mapreduce.task.profile = true => mapreduce.task.profile.reduces in {0..2},control
-7,mapreduce.reduce.shuffle.fetch.retry.enabled,mapreduce.reduce.shuffle.fetch.retry.timeout-ms,mapreduce.reduce.shuffle.fetch.retry.enabled = true => mapreduce.reduce.shuffle.fetch.retry.timeout-ms != null,control
-218,mapreduce.job.cache.limit.max-resources,mapreduce.job.cache.limit,mapreduce.job.cache.limit.max-resources > 0 => mapreduce.job.cache.limit > 0,control
-14,mapreduce.job.maps,mapreduce.input.fileinputformat.split.maxsize,mapreduce.job.maps > 1 => mapreduce.input.fileinputformat.split.maxsize > [default.MIN_value .. default.MAX_value],control
-95,mapreduce.reduce.speculative,mapreduce.job.speculative.speculative-cap-total-tasks,mapreduce.reduce.speculative = true => mapreduce.job.speculative.speculative-cap-total-tasks > 0,control
-94,mapreduce.application.framework.path,mapreduce.application.classpath,mapreduce.application.framework.path != null => mapreduce.application.classpath in { <valueSet> },control
-13,mapreduce.job.maps,mapreduce.input.fileinputformat.split.minsize,mapreduce.job.maps > 1 => mapreduce.input.fileinputformat.split.minsize < [default.MIN_value .. default.MAX_value],control
-106,mapreduce.input.lineinputformat.linespermap,mapreduce.input.fileinputformat.split.minsize,mapreduce.input.lineinputformat.linespermap > 1 => mapreduce.input.fileinputformat.split.minsize < (mapreduce.input.lineinputformat.linespermap * avg_line_size),control
-73,mapreduce.shuffle.ssl.file.buffer.size,mapreduce.task.io.sort.mb,mapreduce.shuffle.ssl.file.buffer.size > default => mapreduce.task.io.sort.mb > default,control
-70,mapreduce.reduce.shuffle.memory.limit.percent,mapreduce.reduce.java.opts,mapreduce.reduce.shuffle.memory.limit.percent > 0 => mapreduce.reduce.java.opts > (mapreduce.reduce.shuffle.memory.limit.percent * X),control
-171,mapreduce.cluster.acls.enabled,mapreduce.job.acl-view-job,mapreduce.cluster.acls.enabled = true => mapreduce.job.acl-view-job != null,control
-94,mapreduce.reduce.speculative,mapreduce.job.speculative.speculative-cap-running-tasks,mapreduce.reduce.speculative = true => mapreduce.job.speculative.speculative-cap-running-tasks > 0,control
-38,mapreduce.reduce.shuffle.fetch.retry.interval-ms,mapreduce.reduce.shuffle.fetch.retry.max_attempts,<Dependency> ::= <Variable> > <valueExpression> => <ConstraintItem> <valueExpression> <Variable> = mapreduce.reduce.shuffle.fetch.retry.interval-ms <Relation> > <valueExpression> = 1000 => <ConstraintItem> <Variable> = mapreduce.reduce.shuffle.fetch.retry.max_attempts <Relation> < <valueExpression> = 5,control
-167,mapreduce.reduce.skip.proc-count.auto-incr,mapreduce.task.skip.start.attempts,mapreduce.task.skip.start.attempts > 0 => mapreduce.reduce.skip.proc-count.auto-incr = true,control
-129,mapreduce.task.profile.maps,mapreduce.task.profile.reduces,mapreduce.task.profile.maps = true => mapreduce.task.profile.reduces = true,control
-110,mapreduce.job.speculative.retry-after-no-speculate,mapreduce.map.speculative,mapreduce.map.speculative = true => mapreduce.job.speculative.retry-after-no-speculate = ANY,control
-88,mapreduce.job.speculative.speculative-cap-running-tasks,mapreduce.job.speculative.speculative-cap-total-tasks,mapreduce.job.speculative.speculative-cap-running-tasks < mapreduce.job.speculative.speculative-cap-total-tasks,control
-155,mapreduce.job.am.node-label-expression,yarn.scheduler.capacity.root.queues,"<Dependency> ::= <Variable> in {{queue1, queue2}} => <ConstraintItem> in {{label1, label2}}",control
-79,mapreduce.shuffle.transferTo.allowed,mapreduce.shuffle.port,mapreduce.shuffle.transferTo.allowed = true => mapreduce.shuffle.port != null,control
-174,mapreduce.job.token.tracking.ids,mapreduce.job.token.tracking.ids.enabled,mapreduce.job.token.tracking.ids.enabled = true => mapreduce.job.token.tracking.ids != null,control
-11,mapreduce.jobtracker.staging.root.dir,mapreduce.jobtracker.address,mapreduce.jobtracker.address != null => mapreduce.jobtracker.staging.root.dir = ANY,control
-222,mapreduce.jobhistory.cleaner.enable,mapreduce.jobhistory.cleaner.interval-ms,mapreduce.jobhistory.cleaner.enable = true => mapreduce.jobhistory.cleaner.interval-ms > 0,control
-105,mapreduce.input.lineinputformat.linespermap,mapreduce.job.maps,mapreduce.input.lineinputformat.linespermap > 1 => mapreduce.job.maps = (total_lines / mapreduce.input.lineinputformat.linespermap),control
-33,mapreduce.map.maxattempts,mapreduce.am.max-attempts,mapreduce.am.max-attempts = mapreduce.map.maxattempts,default
-229,mapreduce.jobhistory.recovery.enable,mapreduce.jobhistory.recovery.store.fs.uri,mapreduce.jobhistory.recovery.enable = true => mapreduce.jobhistory.recovery.store.fs.uri != null,default
-85,mapreduce.job.log4j-properties-file,mapreduce.map.log.level,mapreduce.job.log4j-properties-file != null => mapreduce.map.log.level = ANY,overwrite
-84,mapreduce.job.log4j-properties-file,mapreduce.reduce.log.level,mapreduce.job.log4j-properties-file != null => mapreduce.reduce.log.level = ANY,overwrite
-23,mapreduce.job.running.map.limit,mapreduce.job.max.map,mapreduce.job.max.map > mapreduce.job.running.map.limit => mapreduce.job.running.map.limit < mapreduce.job.max.map,value
-137,mapreduce.output.fileoutputformat.compress,mapreduce.map.output.compress,mapreduce.output.fileoutputformat.compress = true => mapreduce.map.output.compress = true,value
-37,mapreduce.reduce.maxattempts,mapreduce.am.max-attempts,mapreduce.am.max-attempts = mapreduce.reduce.maxattempts,value
-1,mapreduce.job.maps,mapreduce.job.reduce.slowstart.completedmaps,mapreduce.job.maps > 0 => mapreduce.job.reduce.slowstart.completedmaps = 0.05,value
-75,mapreduce.reduce.shuffle.input.buffer.percent,mapreduce.reduce.input.buffer.percent,mapreduce.reduce.input.buffer.percent = ANY => mapreduce.reduce.shuffle.input.buffer.percent = ANY,value
-196,mapreduce.job.end-notification.max.attempts,mapreduce.job.end-notification.retry.attempts,mapreduce.job.end-notification.retry.attempts < mapreduce.job.end-notification.max.attempts,value
-156,mapreduce.job.am.node-label-expression,yarn.nodemanager.resource.memory-mb,<Dependency> ::= <Variable> > <valueExpression> => <ConstraintItem> > <valueExpression>,value
-99,mapreduce.job.ubertask.maxmaps,mapreduce.job.ubertask.maxbytes,mapreduce.job.ubertask.maxmaps > 1 => mapreduce.job.ubertask.maxbytes > default,value
-44,mapreduce.reduce.shuffle.fetch.retry.interval-ms,mapreduce.reduce.shuffle.retry-delay.max.ms,mapreduce.reduce.shuffle.retry-delay.max.ms > mapreduce.reduce.shuffle.fetch.retry.interval-ms => mapreduce.reduce.shuffle.fetch.retry.interval-ms < mapreduce.reduce.shuffle.retry-delay.max.ms,value
-41,mapreduce.reduce.shuffle.fetch.retry.enabled,mapreduce.reduce.shuffle.retry-delay.max.ms,mapreduce.reduce.shuffle.fetch.retry.enabled = true => mapreduce.reduce.shuffle.retry-delay.max.ms > 0,value
-112,mapreduce.job.speculative.retry-after-no-speculate,mapreduce.job.speculative.speculative-cap-running-tasks,mapreduce.job.speculative.speculative-cap-running-tasks > 0 => mapreduce.job.speculative.retry-after-no-speculate = ANY,value
-89,mapreduce.map.speculative,mapreduce.reduce.speculative,mapreduce.reduce.speculative = mapreduce.map.speculative,value
-47,mapreduce.reduce.shuffle.parallelcopies,mapreduce.shuffle.max.threads,mapreduce.shuffle.max.threads > 0 => mapreduce.reduce.shuffle.parallelcopies < mapreduce.shuffle.max.threads,value
-120,mapreduce.job.speculative.slowtaskthreshold,mapreduce.job.speculative.speculative-cap-running-tasks,mapreduce.job.speculative.speculative-cap-running-tasks > 0 => mapreduce.job.speculative.slowtaskthreshold < mapreduce.job.speculative.speculative-cap-running-tasks,value
-27,mapreduce.job.running.reduce.limit,mapreduce.job.max.reduce,mapreduce.job.max.reduce = ANY => mapreduce.job.running.reduce.limit <= mapreduce.job.max.reduce,value
-154,mapreduce.task.profile.maps,mapreduce.task.profile.params,mapreduce.task.profile.params != null => mapreduce.task.profile.maps = ANY,value
-164,mapreduce.map.skip.proc-count.auto-incr,mapreduce.map.skip.maxrecords,mapreduce.map.skip.maxrecords > 0 => mapreduce.map.skip.proc-count.auto-incr = true,value
-195,mapreduce.job.end-notification.retry.interval,mapreduce.job.end-notification.max.retry.interval,mapreduce.job.end-notification.retry.interval < mapreduce.job.end-notification.max.retry.interval,value
-56,mapreduce.map.memory.mb,yarn.app.mapreduce.am.resource.mb,yarn.app.mapreduce.am.resource.mb = mapreduce.map.memory.mb + 1024,value
-72,mapreduce.reduce.shuffle.merge.percent,mapreduce.reduce.shuffle.input.buffer.percent,mapreduce.reduce.shuffle.input.buffer.percent > 0 => mapreduce.reduce.shuffle.merge.percent > 0,value
-14,mapreduce.job.maps,mapreduce.job.max.map,mapreduce.job.max.map > mapreduce.job.maps => mapreduce.job.maps < mapreduce.job.max.map,value
-82,mapreduce.job.end-notification.max.retry.interval,mapreduce.job.end-notification.retry.interval,mapreduce.job.end-notification.retry.interval < mapreduce.job.end-notification.max.retry.interval,value
-23,mapreduce.reduce.shuffle.input.buffer.percent,mapreduce.reduce.shuffle.memory.limit.percent,mapreduce.reduce.shuffle.input.buffer.percent = 0.70 => mapreduce.reduce.shuffle.memory.limit.percent = 0.66,value
-69,mapreduce.reduce.merge.inmem.threshold,mapreduce.reduce.shuffle.input.buffer.percent,mapreduce.reduce.shuffle.input.buffer.percent > 0 => mapreduce.reduce.merge.inmem.threshold = ANY,value
-83,mapreduce.reduce.shuffle.memory.limit.percent,mapreduce.reduce.input.buffer.percent,mapreduce.reduce.input.buffer.percent > 0 => mapreduce.reduce.shuffle.memory.limit.percent = [0..100],value
-35,mapreduce.map.maxattempts,mapreduce.job.maxtaskfailures.per.tracker,mapreduce.job.maxtaskfailures.per.tracker > mapreduce.map.maxattempts,value
-121,mapreduce.job.speculative.slowtaskthreshold,mapreduce.job.speculative.speculative-cap-total-tasks,mapreduce.job.speculative.speculative-cap-total-tasks > 0 => mapreduce.job.speculative.slowtaskthreshold < mapreduce.job.speculative.speculative-cap-total-tasks,value
-76,mapreduce.reduce.shuffle.input.buffer.percent,mapreduce.reduce.shuffle.memory.limit.percent,mapreduce.reduce.shuffle.memory.limit.percent = ANY => mapreduce.reduce.shuffle.input.buffer.percent = ANY,value
-30,mapreduce.job.speculative.retry-after-no-speculate,mapreduce.job.speculative.retry-after-speculate,mapreduce.job.speculative.retry-after-no-speculate < mapreduce.job.speculative.retry-after-speculate,value
-57,mapreduce.map.memory.mb,mapred.child.java.opts,"mapred.child.java.opts = ""-Xmx"" + (mapreduce.map.memory.mb * 0.8) + ""m""",value
-102,mapreduce.job.speculative.speculative-cap-total-tasks,mapreduce.job.reduces,mapreduce.job.reduces > mapreduce.job.speculative.speculative-cap-total-tasks,value
-173,mapreduce.job.acl-view-job,mapreduce.job.acl-modify-job,mapreduce.job.acl-modify-job = ANY => mapreduce.job.acl-view-job = ANY,value
-38,mapreduce.reduce.maxattempts,mapreduce.job.maxtaskfailures.per.tracker,mapreduce.job.maxtaskfailures.per.tracker = mapreduce.reduce.maxattempts,value
-107,mapreduce.job.speculative.minimum-allowed-tasks,mapreduce.job.speculative.speculative-cap-running-tasks,mapreduce.job.speculative.minimum-allowed-tasks < mapreduce.job.speculative.speculative-cap-running-tasks,value
-194,mapreduce.job.end-notification.retry.interval,mapreduce.job.end-notification.retry.attempts,mapreduce.job.end-notification.retry.attempts > 0 => mapreduce.job.end-notification.retry.interval > 0,value
-10,mapreduce.jobtracker.system.dir,mapreduce.cluster.local.dir,mapreduce.cluster.local.dir != null => mapreduce.jobtracker.system.dir != null,value
-114,mapreduce.job.speculative.retry-after-no-speculate,mapreduce.job.speculative.minimum-allowed-tasks,mapreduce.job.speculative.minimum-allowed-tasks > 0 => mapreduce.job.speculative.retry-after-no-speculate = ANY,value
-79,mapreduce.job.end-notification.max.attempts,mapreduce.job.end-notification.retry.attempts,mapreduce.job.end-notification.retry.attempts < mapreduce.job.end-notification.max.attempts,value
+29,mapreduce.task.profile,mapreduce.task.profile.reduces,mapreduce.task.profile = true => mapreduce.task.profile.reduces in {0..2},control
+30,mapreduce.reduce.shuffle.fetch.retry.enabled,mapreduce.reduce.shuffle.fetch.retry.timeout-ms,mapreduce.reduce.shuffle.fetch.retry.enabled = true => mapreduce.reduce.shuffle.fetch.retry.timeout-ms != null,control
+31,mapreduce.job.cache.limit.max-resources,mapreduce.job.cache.limit,mapreduce.job.cache.limit.max-resources > 0 => mapreduce.job.cache.limit > 0,control
+32,mapreduce.job.maps,mapreduce.input.fileinputformat.split.maxsize,mapreduce.job.maps > 1 => mapreduce.input.fileinputformat.split.maxsize > [default.MIN_value .. default.MAX_value],control
+33,mapreduce.reduce.speculative,mapreduce.job.speculative.speculative-cap-total-tasks,mapreduce.reduce.speculative = true => mapreduce.job.speculative.speculative-cap-total-tasks > 0,control
+34,mapreduce.application.framework.path,mapreduce.application.classpath,mapreduce.application.framework.path != null => mapreduce.application.classpath in { <valueSet> },control
+35,mapreduce.job.maps,mapreduce.input.fileinputformat.split.minsize,mapreduce.job.maps > 1 => mapreduce.input.fileinputformat.split.minsize < [default.MIN_value .. default.MAX_value],control
+36,mapreduce.input.lineinputformat.linespermap,mapreduce.input.fileinputformat.split.minsize,mapreduce.input.lineinputformat.linespermap > 1 => mapreduce.input.fileinputformat.split.minsize < (mapreduce.input.lineinputformat.linespermap * avg_line_size),control
+37,mapreduce.shuffle.ssl.file.buffer.size,mapreduce.task.io.sort.mb,mapreduce.shuffle.ssl.file.buffer.size > default => mapreduce.task.io.sort.mb > default,control
+38,mapreduce.reduce.shuffle.memory.limit.percent,mapreduce.reduce.java.opts,mapreduce.reduce.shuffle.memory.limit.percent > 0 => mapreduce.reduce.java.opts > (mapreduce.reduce.shuffle.memory.limit.percent * X),control
+39,mapreduce.cluster.acls.enabled,mapreduce.job.acl-view-job,mapreduce.cluster.acls.enabled = true => mapreduce.job.acl-view-job != null,control
+40,mapreduce.reduce.speculative,mapreduce.job.speculative.speculative-cap-running-tasks,mapreduce.reduce.speculative = true => mapreduce.job.speculative.speculative-cap-running-tasks > 0,control
+41,mapreduce.reduce.shuffle.fetch.retry.interval-ms,mapreduce.reduce.shuffle.fetch.retry.max_attempts,<Dependency> ::= <Variable> > <valueExpression> => <ConstraintItem> <valueExpression> <Variable> = mapreduce.reduce.shuffle.fetch.retry.interval-ms <Relation> > <valueExpression> = 1000 => <ConstraintItem> <Variable> = mapreduce.reduce.shuffle.fetch.retry.max_attempts <Relation> < <valueExpression> = 5,control
+42,mapreduce.reduce.skip.proc-count.auto-incr,mapreduce.task.skip.start.attempts,mapreduce.task.skip.start.attempts > 0 => mapreduce.reduce.skip.proc-count.auto-incr = true,control
+43,mapreduce.task.profile.maps,mapreduce.task.profile.reduces,mapreduce.task.profile.maps = true => mapreduce.task.profile.reduces = true,control
+44,mapreduce.job.speculative.retry-after-no-speculate,mapreduce.map.speculative,mapreduce.map.speculative = true => mapreduce.job.speculative.retry-after-no-speculate = ANY,control
+45,mapreduce.job.speculative.speculative-cap-running-tasks,mapreduce.job.speculative.speculative-cap-total-tasks,mapreduce.job.speculative.speculative-cap-running-tasks < mapreduce.job.speculative.speculative-cap-total-tasks,control
+46,mapreduce.job.am.node-label-expression,yarn.scheduler.capacity.root.queues,"<Dependency> ::= <Variable> in {{queue1, queue2}} => <ConstraintItem> in {{label1, label2}}",control
+47,mapreduce.shuffle.transferTo.allowed,mapreduce.shuffle.port,mapreduce.shuffle.transferTo.allowed = true => mapreduce.shuffle.port != null,control
+48,mapreduce.job.token.tracking.ids,mapreduce.job.token.tracking.ids.enabled,mapreduce.job.token.tracking.ids.enabled = true => mapreduce.job.token.tracking.ids != null,control
+49,mapreduce.jobtracker.staging.root.dir,mapreduce.jobtracker.address,mapreduce.jobtracker.address != null => mapreduce.jobtracker.staging.root.dir = ANY,control
+50,mapreduce.jobhistory.cleaner.enable,mapreduce.jobhistory.cleaner.interval-ms,mapreduce.jobhistory.cleaner.enable = true => mapreduce.jobhistory.cleaner.interval-ms > 0,control
+51,mapreduce.input.lineinputformat.linespermap,mapreduce.job.maps,mapreduce.input.lineinputformat.linespermap > 1 => mapreduce.job.maps = (total_lines / mapreduce.input.lineinputformat.linespermap),control
+52,mapreduce.map.maxattempts,mapreduce.am.max-attempts,mapreduce.am.max-attempts = mapreduce.map.maxattempts,default
+53,mapreduce.jobhistory.recovery.enable,mapreduce.jobhistory.recovery.store.fs.uri,mapreduce.jobhistory.recovery.enable = true => mapreduce.jobhistory.recovery.store.fs.uri != null,default
+54,mapreduce.job.log4j-properties-file,mapreduce.map.log.level,mapreduce.job.log4j-properties-file != null => mapreduce.map.log.level = ANY,overwrite
+55,mapreduce.job.log4j-properties-file,mapreduce.reduce.log.level,mapreduce.job.log4j-properties-file != null => mapreduce.reduce.log.level = ANY,overwrite
+56,mapreduce.job.running.map.limit,mapreduce.job.max.map,mapreduce.job.max.map > mapreduce.job.running.map.limit => mapreduce.job.running.map.limit < mapreduce.job.max.map,value
+57,mapreduce.output.fileoutputformat.compress,mapreduce.map.output.compress,mapreduce.output.fileoutputformat.compress = true => mapreduce.map.output.compress = true,value
+58,mapreduce.reduce.maxattempts,mapreduce.am.max-attempts,mapreduce.am.max-attempts = mapreduce.reduce.maxattempts,value
+59,mapreduce.job.maps,mapreduce.job.reduce.slowstart.completedmaps,mapreduce.job.maps > 0 => mapreduce.job.reduce.slowstart.completedmaps = 0.05,value
+60,mapreduce.reduce.shuffle.input.buffer.percent,mapreduce.reduce.input.buffer.percent,mapreduce.reduce.input.buffer.percent = ANY => mapreduce.reduce.shuffle.input.buffer.percent = ANY,value
+61,mapreduce.job.end-notification.max.attempts,mapreduce.job.end-notification.retry.attempts,mapreduce.job.end-notification.retry.attempts < mapreduce.job.end-notification.max.attempts,value
+62,mapreduce.job.am.node-label-expression,yarn.nodemanager.resource.memory-mb,<Dependency> ::= <Variable> > <valueExpression> => <ConstraintItem> > <valueExpression>,value
+63,mapreduce.job.ubertask.maxmaps,mapreduce.job.ubertask.maxbytes,mapreduce.job.ubertask.maxmaps > 1 => mapreduce.job.ubertask.maxbytes > default,value
+64,mapreduce.reduce.shuffle.fetch.retry.interval-ms,mapreduce.reduce.shuffle.retry-delay.max.ms,mapreduce.reduce.shuffle.retry-delay.max.ms > mapreduce.reduce.shuffle.fetch.retry.interval-ms => mapreduce.reduce.shuffle.fetch.retry.interval-ms < mapreduce.reduce.shuffle.retry-delay.max.ms,value
+65,mapreduce.reduce.shuffle.fetch.retry.enabled,mapreduce.reduce.shuffle.retry-delay.max.ms,mapreduce.reduce.shuffle.fetch.retry.enabled = true => mapreduce.reduce.shuffle.retry-delay.max.ms > 0,value
+66,mapreduce.job.speculative.retry-after-no-speculate,mapreduce.job.speculative.speculative-cap-running-tasks,mapreduce.job.speculative.speculative-cap-running-tasks > 0 => mapreduce.job.speculative.retry-after-no-speculate = ANY,value
+67,mapreduce.map.speculative,mapreduce.reduce.speculative,mapreduce.reduce.speculative = mapreduce.map.speculative,value
+68,mapreduce.reduce.shuffle.parallelcopies,mapreduce.shuffle.max.threads,mapreduce.shuffle.max.threads > 0 => mapreduce.reduce.shuffle.parallelcopies < mapreduce.shuffle.max.threads,value
+69,mapreduce.job.speculative.slowtaskthreshold,mapreduce.job.speculative.speculative-cap-running-tasks,mapreduce.job.speculative.speculative-cap-running-tasks > 0 => mapreduce.job.speculative.slowtaskthreshold < mapreduce.job.speculative.speculative-cap-running-tasks,value
+70,mapreduce.job.running.reduce.limit,mapreduce.job.max.reduce,mapreduce.job.max.reduce = ANY => mapreduce.job.running.reduce.limit <= mapreduce.job.max.reduce,value
+71,mapreduce.task.profile.maps,mapreduce.task.profile.params,mapreduce.task.profile.params != null => mapreduce.task.profile.maps = ANY,value
+72,mapreduce.map.skip.proc-count.auto-incr,mapreduce.map.skip.maxrecords,mapreduce.map.skip.maxrecords > 0 => mapreduce.map.skip.proc-count.auto-incr = true,value
+73,mapreduce.job.end-notification.retry.interval,mapreduce.job.end-notification.max.retry.interval,mapreduce.job.end-notification.retry.interval < mapreduce.job.end-notification.max.retry.interval,value
+74,mapreduce.map.memory.mb,yarn.app.mapreduce.am.resource.mb,yarn.app.mapreduce.am.resource.mb = mapreduce.map.memory.mb + 1024,value
+75,mapreduce.reduce.shuffle.merge.percent,mapreduce.reduce.shuffle.input.buffer.percent,mapreduce.reduce.shuffle.input.buffer.percent > 0 => mapreduce.reduce.shuffle.merge.percent > 0,value
+76,mapreduce.job.maps,mapreduce.job.max.map,mapreduce.job.max.map > mapreduce.job.maps => mapreduce.job.maps < mapreduce.job.max.map,value
+77,mapreduce.job.end-notification.max.retry.interval,mapreduce.job.end-notification.retry.interval,mapreduce.job.end-notification.retry.interval < mapreduce.job.end-notification.max.retry.interval,value
+78,mapreduce.reduce.shuffle.input.buffer.percent,mapreduce.reduce.shuffle.memory.limit.percent,mapreduce.reduce.shuffle.input.buffer.percent = 0.70 => mapreduce.reduce.shuffle.memory.limit.percent = 0.66,value
+79,mapreduce.reduce.merge.inmem.threshold,mapreduce.reduce.shuffle.input.buffer.percent,mapreduce.reduce.shuffle.input.buffer.percent > 0 => mapreduce.reduce.merge.inmem.threshold = ANY,value
+80,mapreduce.reduce.shuffle.memory.limit.percent,mapreduce.reduce.input.buffer.percent,mapreduce.reduce.input.buffer.percent > 0 => mapreduce.reduce.shuffle.memory.limit.percent = [0..100],value
+81,mapreduce.map.maxattempts,mapreduce.job.maxtaskfailures.per.tracker,mapreduce.job.maxtaskfailures.per.tracker > mapreduce.map.maxattempts,value
+82,mapreduce.job.speculative.slowtaskthreshold,mapreduce.job.speculative.speculative-cap-total-tasks,mapreduce.job.speculative.speculative-cap-total-tasks > 0 => mapreduce.job.speculative.slowtaskthreshold < mapreduce.job.speculative.speculative-cap-total-tasks,value
+83,mapreduce.reduce.shuffle.input.buffer.percent,mapreduce.reduce.shuffle.memory.limit.percent,mapreduce.reduce.shuffle.memory.limit.percent = ANY => mapreduce.reduce.shuffle.input.buffer.percent = ANY,value
+84,mapreduce.job.speculative.retry-after-no-speculate,mapreduce.job.speculative.retry-after-speculate,mapreduce.job.speculative.retry-after-no-speculate < mapreduce.job.speculative.retry-after-speculate,value
+85,mapreduce.map.memory.mb,mapred.child.java.opts,"mapred.child.java.opts = ""-Xmx"" + (mapreduce.map.memory.mb * 0.8) + ""m""",value
+86,mapreduce.job.speculative.speculative-cap-total-tasks,mapreduce.job.reduces,mapreduce.job.reduces > mapreduce.job.speculative.speculative-cap-total-tasks,value
+87,mapreduce.job.acl-view-job,mapreduce.job.acl-modify-job,mapreduce.job.acl-modify-job = ANY => mapreduce.job.acl-view-job = ANY,value
+88,mapreduce.reduce.maxattempts,mapreduce.job.maxtaskfailures.per.tracker,mapreduce.job.maxtaskfailures.per.tracker = mapreduce.reduce.maxattempts,value
+89,mapreduce.job.speculative.minimum-allowed-tasks,mapreduce.job.speculative.speculative-cap-running-tasks,mapreduce.job.speculative.minimum-allowed-tasks < mapreduce.job.speculative.speculative-cap-running-tasks,value
+90,mapreduce.job.end-notification.retry.interval,mapreduce.job.end-notification.retry.attempts,mapreduce.job.end-notification.retry.attempts > 0 => mapreduce.job.end-notification.retry.interval > 0,value
+91,mapreduce.jobtracker.system.dir,mapreduce.cluster.local.dir,mapreduce.cluster.local.dir != null => mapreduce.jobtracker.system.dir != null,value
+92,mapreduce.job.speculative.retry-after-no-speculate,mapreduce.job.speculative.minimum-allowed-tasks,mapreduce.job.speculative.minimum-allowed-tasks > 0 => mapreduce.job.speculative.retry-after-no-speculate = ANY,value
+93,mapreduce.job.end-notification.max.attempts,mapreduce.job.end-notification.retry.attempts,mapreduce.job.end-notification.retry.attempts < mapreduce.job.end-notification.max.attempts,value

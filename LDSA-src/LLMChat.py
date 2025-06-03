@@ -2,7 +2,7 @@ from openai import OpenAI
 import requests
 
 def dpseek_chat(question):
-    """单次调用deepseek API获取答案"""
+
     client = OpenAI(api_key="sk-23c9c90c502840c0b43c9d92bd403504", base_url="https://api.deepseek.com")
     
     system_message = {"role": "system", "content": "You are an experienced software engineering expert"}
@@ -72,37 +72,6 @@ def dpseek_qwen_chat(question):
 
     responsetext = response.choices[0].message.content
     return responsetext
-
-def siliconflow_chat(question):
-
-    """单次调用siliconflow API获取答案"""
-    url = "https://api.siliconflow.cn/v1/chat/completions"
-    
-    payload = {
-        "model": "deepseek-ai/DeepSeek-V3",
-        "messages": [{"role": "user", "content": question}],
-        "stream": False,
-        "max_tokens": 4096,
-        "temperature": 0.7,
-        "top_p": 0.7,
-        "top_k": 50,
-        "frequency_penalty": 0.5,
-        "n": 1,
-        "response_format": {"type": "text"}
-    }
-    headers = {
-        "Authorization": "Bearer sk-isynoyqwkemchrmzxhiolofftxdjtebgpybfhwykydcrialh",
-        "Content-Type": "application/json"
-    }
-
-    response = requests.post(url, json=payload, headers=headers)
-    # full_response = response.text
-    # print(full_response)
-    if response.status_code == 200:
-        responsetxt = response.json()["choices"][0]["message"]["content"]
-        return responsetxt
-    else:
-        return f"Error: {response.status_code}", ""
     
 
 if __name__ == "__main__":

@@ -1,0 +1,14 @@
+id,Parameter1,Parameter2
+1,mapreduce.job.speculative.slowtaskthreshold,mapreduce.job.speculative.slownodethreshold
+2,mapreduce.map.skip.proc-count.auto-incr,mapreduce.map.skip.maxrecords
+3,mapreduce.shuffle.ssl.file.buffer.size,mapreduce.task.io.sort.mb
+4,mapreduce.map.cpu.vcores,mapreduce.map.memory.mb
+5,mapreduce.job.ubertask.enable,mapreduce.job.ubertask.maxbytes
+6,mapreduce.job.node-label-expression,mapreduce.job.queuename
+7,mapreduce.jobhistory.address,mapreduce.jobtracker.address
+8,mapreduce.job.ubertask.maxbytes,mapreduce.job.ubertask.maxmaps
+9,mapreduce.task.profile.params,mapreduce.task.profile.reduce.params
+10,mapreduce.task.profile,mapreduce.task.profile.map.params
+11,mapreduce.map.output.compress,mapreduce.map.output.compress.codec
+12,mapreduce.task.profile.map.params,mapreduce.task.profile.params
+13,mapreduce.jobhistory.recovery.enable,mapreduce.jobhistory.recovery.store.class

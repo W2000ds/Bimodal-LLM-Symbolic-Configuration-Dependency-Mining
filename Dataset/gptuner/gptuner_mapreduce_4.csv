@@ -1,0 +1,16 @@
+id,Parameter1,Parameter2
+1,mapreduce.task.skip.start.attempts,mapreduce.task.skip.max.attempts
+2,mapreduce.task.profile.maps,mapreduce.task.profile.reduces
+3,mapreduce.job.ubertask.enable,mapreduce.job.ubertask.maxreduces
+4,mapreduce.jobhistory.admin.address,mapreduce.jobtracker.address
+5,mapreduce.client.progressmonitor.pollinterval,mapreduce.tasktracker.expiry.interval
+6,mapreduce.task.profile.params,mapreduce.task.profile.map.params
+7,mapreduce.reduce.speculative,mapreduce.job.speculative.speculative-cap-running-tasks
+8,mapreduce.task.profile,mapreduce.task.profile.reduces
+9,mapreduce.input.lineinputformat.linespermap,mapreduce.job.maps
+10,mapreduce.map.output.compress,mapreduce.map.output.compress.codec
+11,mapreduce.jobhistory.cleaner.enable,mapreduce.jobhistory.max-age-ms
+12,mapreduce.job.ubertask.enable,mapreduce.map.cpu.vcores
+13,mapreduce.ifile.readahead.bytes,mapreduce.ifile.readahead
+14,mapreduce.task.profile,mapreduce.task.profile.reduces
+15,mapreduce.shuffle.port,mapreduce.tasktracker.http.port

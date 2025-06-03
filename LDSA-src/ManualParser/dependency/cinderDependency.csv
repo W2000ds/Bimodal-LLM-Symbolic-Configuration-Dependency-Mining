@@ -1,0 +1,362 @@
+ID,Option A,Option B,Option A Description,Option B Description
+1,osapi_volume_ext_list,osapi_volume_extension,(List of String) Specify list of extensions to load when using osapi_volume_extension option with cinder.api.contrib.select_extensions,(String) osapi volume extension to load
+2,init_host_max_objects_retrieval,host,(Integer) Max number of volumes and snapshots to be retrieved per batch during volume manager host initialization. Query results will be obtained in batches from the database and not in one shot to avoid extreme memory usage. Set 0 to turn off this functionality.,"(String) Name of this node.  This can be an opaque identifier. It is not necessarily a host name, FQDN, or IP address."
+3,scheduler_default_filters,host,(List of String) Which filter class names to use for filtering hosts when not specified in the request.,"(String) Name of this node.  This can be an opaque identifier. It is not necessarily a host name, FQDN, or IP address."
+4,scheduler_default_weighers,host,(List of String) Which weigher class names to use for weighing hosts.,"(String) Name of this node.  This can be an opaque identifier. It is not necessarily a host name, FQDN, or IP address."
+5,scheduler_host_manager,host,(String) The scheduler host manager class to use,"(String) Name of this node.  This can be an opaque identifier. It is not necessarily a host name, FQDN, or IP address."
+6,scheduler_weight_handler,host,(String) Which handler to use for selecting the host/pool after weighing,"(String) Name of this node.  This can be an opaque identifier. It is not necessarily a host name, FQDN, or IP address."
+7,glance_api_insecure,insecure,(Boolean) Allow to perform insecure SSL (https) requests to glance (https will be used but cert validation will not be performed).,(Boolean) Verify HTTPS connections.
+8,glance_api_servers,host,(List of String) A list of the URLs of glance API servers available to cinder ([http[s]://][hostname|ip]:port). If protocol is not specified it defaults to http.,"(String) Name of this node.  This can be an opaque identifier. It is not necessarily a host name, FQDN, or IP address."
+9,glance_catalog_info,glance_api_servers,(String) Info to match when looking for glance in the service catalog. Format is: separated values of the form: <service_type>:<service_name>:<endpoint_type> - Only used if glance_api_servers are not provided.,(List of String) A list of the URLs of glance API servers available to cinder ([http[s]://][hostname|ip]:port). If protocol is not specified it defaults to http.
+10,glance_request_timeout,timeout,"(Integer) http/https timeout value for glance operations. If no value (None) is supplied here, the glanceclient default value is used.",(Integer) Timeout value for http requests
+11,image_upload_use_cinder_backend,enabled,"(Boolean) If set to True, upload-to-image in raw format will create a cloned volume and register its location to the image service, instead of uploading the volume content. The cinder backend and locations support must be enabled in the image service.","(Boolean) 
+Enable the profiling for all services on this node.
+
+Default value is False (fully disable the profiling feature).
+
+Possible values:
+
+* True: Enables the feature
+* False: Disables the feature. The profiling cannot be started via this project
+  operations. If the profiling is triggered by another project, this project
+  part will be empty."
+12,verify_glance_signatures,enabled,"(String(choices=[‘disabled’, ‘enabled’])) 
+Enable image signature verification.
+
+Cinder uses the image signature metadata from Glance and
+verifies the signature of a signed image while downloading
+that image. There are two options here.
+
+1.enabled: verify when image has signature metadata.
+2.disabled: verification is turned off.
+
+If the image signature cannot be verified or if the image
+signature metadata is incomplete when required, then Cinder
+will not create the volume and update it into an error
+state. This provides end users with stronger assurances
+of the integrity of the image data they are using to
+create volumes.","(Boolean) 
+Enable the profiling for all services on this node.
+
+Default value is False (fully disable the profiling feature).
+
+Possible values:
+
+* True: Enables the feature
+* False: Disables the feature. The profiling cannot be started via this project
+  operations. If the profiling is triggered by another project, this project
+  part will be empty."
+13,vmdk_allowed_types,host,"(List of String) A list of strings describing the VMDK createType subformats that are allowed.  We recommend that you only include single-file-with-sparse-header variants to avoid potential host file exposure when processing named extents when an image is converted to raw format as it is written to a volume.  If this list is empty, no VMDK images are allowed.","(String) Name of this node.  This can be an opaque identifier. It is not necessarily a host name, FQDN, or IP address."
+14,nas_secure_file_operations,insecure,"(String) Allow network-attached storage systems to operate in a secure environment where root level access is not permitted. If set to False, access is as the root user and insecure. If set to True, access is not as root. If set to auto, a check is done to determine if this is a new installation: True is used if so, otherwise False. Default is auto.",(Boolean) Verify HTTPS connections.
+15,backend_availability_zone,storage_availability_zone,"(String) Availability zone for this volume backend. If not set, the storage_availability_zone option value is used as the default for all backends.",(String) Availability zone of this node. Can be overridden per volume backend with the option “backend_availability_zone”.
+16,filter_function,host,(String) String representation for an equation that will be used to filter hosts. Only used when the driver filter is set to be used by the Cinder scheduler.,"(String) Name of this node.  This can be an opaque identifier. It is not necessarily a host name, FQDN, or IP address."
+17,goodness_function,host,(String) String representation for an equation that will be used to determine the goodness of a host. Only used when using the goodness weigher is set to be used by the Cinder scheduler.,"(String) Name of this node.  This can be an opaque identifier. It is not necessarily a host name, FQDN, or IP address."
+18,iscsi_write_cache,target_helper,"(String(choices=[‘on’, ‘off’])) For tgtadm: Sets the behavior of the iSCSI target to either perform write-back or write-through. This parameter is valid if target_helper is set to tgtadm.","(String(choices=[‘tgtadm’, ‘lioadm’, ‘scstadmin’, ‘iscsictl’, ‘nvmet’, ‘spdk-nvmeof’, ‘fake’])) Target user-land tool to use."
+19,max_over_subscription_ratio,enabled,"(String(regex=’^(auto|\d*\.\d+|\d+)$’)) Representation of the over subscription ratio when thin provisioning is enabled. Default ratio is 20.0, meaning provisioned capacity can be 20 times of the total physical capacity. If the ratio is 10.5, it means provisioned capacity can be 10.5 times of the total physical capacity. A ratio of 1.0 means provisioned capacity cannot exceed the total physical capacity. If ratio is ‘auto’, Cinder will automatically calculate the ratio based on the provisioned capacity and the used space. If not set to auto, the ratio has to be a minimum of 1.0.","(Boolean) 
+Enable the profiling for all services on this node.
+
+Default value is False (fully disable the profiling feature).
+
+Possible values:
+
+* True: Enables the feature
+* False: Disables the feature. The profiling cannot be started via this project
+  operations. If the profiling is triggered by another project, this project
+  part will be empty."
+20,storage_protocol,host,"(String(choices=[‘iSCSI’, ‘FC’])) Protocol for transferring data between host and storage back-end.","(String) Name of this node.  This can be an opaque identifier. It is not necessarily a host name, FQDN, or IP address."
+21,allow_availability_zone_fallback,default_availability_zone,"(Boolean) If the requested Cinder availability zone is unavailable, fall back to the value of default_availability_zone, then storage_availability_zone, instead of failing.","(String) Default availability zone for new volumes. If not set, the storage_availability_zone option value is used as the default for new volumes."
+22,allow_availability_zone_fallback,storage_availability_zone,"(Boolean) If the requested Cinder availability zone is unavailable, fall back to the value of default_availability_zone, then storage_availability_zone, instead of failing.",(String) Availability zone of this node. Can be overridden per volume backend with the option “backend_availability_zone”.
+23,default_availability_zone,storage_availability_zone,"(String) Default availability zone for new volumes. If not set, the storage_availability_zone option value is used as the default for new volumes.",(String) Availability zone of this node. Can be overridden per volume backend with the option “backend_availability_zone”.
+24,my_ip,host,(HostAddress) IP address of this host,"(String) Name of this node.  This can be an opaque identifier. It is not necessarily a host name, FQDN, or IP address."
+25,storage_availability_zone,backend_availability_zone,(String) Availability zone of this node. Can be overridden per volume backend with the option “backend_availability_zone”.,"(String) Availability zone for this volume backend. If not set, the storage_availability_zone option value is used as the default for all backends."
+26,hmac_keys,enabled,"(String) 
+Secret key(s) to use for encrypting context data for performance profiling.
+
+This string value should have the following format: <key1>[,<key2>,…<keyn>],
+where each key is some random string. A user who triggers the profiling via
+the REST API has to set one of these keys in the headers of the REST API call
+to include profiling results of this node for this particular project.
+
+Both “enabled” flag and “hmac_keys” config options should be set to enable
+profiling. Also, to generate correct profiling information across all services
+at least one key needs to be consistent between OpenStack projects. This
+ensures it can be used from client side to generate the trace, containing
+information from all possible resources.","(Boolean) 
+Enable the profiling for all services on this node.
+
+Default value is False (fully disable the profiling feature).
+
+Possible values:
+
+* True: Enables the feature
+* False: Disables the feature. The profiling cannot be started via this project
+  operations. If the profiling is triggered by another project, this project
+  part will be empty."
+27,socket_timeout,timeout,"(Float) 
+Redissentinel provides a timeout option on the connections.
+This parameter defines that timeout (for example: socket_timeout=0.1).",(Integer) Timeout value for http requests
+28,ssh_conn_timeout,timeout,(Integer) SSH connection timeout in seconds,(Integer) Timeout value for http requests
+29,backup_gcs_block_size,backup_driver,"The Google Cloud Storage (GCS) backup driver backs up volumes of any type to Google Cloud Storage.
+
+To enable the GCS backup driver, include the following option in the cinder.conf file:
+
+backup_driver = cinder.backup.drivers.google(Integer) The size in bytes that changes are tracked for incremental backups. backup_gcs_object_size has to be multiple of backup_gcs_block_size.",(String) Driver to use for backups.
+30,backup_gcs_block_size,backup_gcs_object_size,"The Google Cloud Storage (GCS) backup driver backs up volumes of any type to Google Cloud Storage.
+
+To enable the GCS backup driver, include the following option in the cinder.conf file:
+
+backup_driver = cinder.backup.drivers.google(Integer) The size in bytes that changes are tracked for incremental backups. backup_gcs_object_size has to be multiple of backup_gcs_block_size.","The Google Cloud Storage (GCS) backup driver backs up volumes of any type to Google Cloud Storage.
+
+To enable the GCS backup driver, include the following option in the cinder.conf file:
+
+backup_driver = cinder.backup.drivers.google(Integer) The size in bytes of GCS backup objects."
+31,backup_gcs_bucket,backup_driver,"The Google Cloud Storage (GCS) backup driver backs up volumes of any type to Google Cloud Storage.
+
+To enable the GCS backup driver, include the following option in the cinder.conf file:
+
+backup_driver = cinder.backup.drivers.google(String) The GCS bucket to use.",(String) Driver to use for backups.
+32,backup_gcs_bucket_location,backup_driver,"The Google Cloud Storage (GCS) backup driver backs up volumes of any type to Google Cloud Storage.
+
+To enable the GCS backup driver, include the following option in the cinder.conf file:
+
+backup_driver = cinder.backup.drivers.google(String) Location of GCS bucket.",(String) Driver to use for backups.
+33,backup_gcs_credential_file,backup_driver,"The Google Cloud Storage (GCS) backup driver backs up volumes of any type to Google Cloud Storage.
+
+To enable the GCS backup driver, include the following option in the cinder.conf file:
+
+backup_driver = cinder.backup.drivers.google(String) Absolute path of GCS service account credential file.",(String) Driver to use for backups.
+34,backup_gcs_enable_progress_timer,backup_driver,"The Google Cloud Storage (GCS) backup driver backs up volumes of any type to Google Cloud Storage.
+
+To enable the GCS backup driver, include the following option in the cinder.conf file:
+
+backup_driver = cinder.backup.drivers.google(Boolean) Enable or Disable the timer to send the periodic progress notifications to Ceilometer when backing up the volume to the GCS backend storage. The default value is True to enable the timer.",(String) Driver to use for backups.
+35,backup_gcs_num_retries,backup_driver,"The Google Cloud Storage (GCS) backup driver backs up volumes of any type to Google Cloud Storage.
+
+To enable the GCS backup driver, include the following option in the cinder.conf file:
+
+backup_driver = cinder.backup.drivers.google(Integer) Number of times to retry.",(String) Driver to use for backups.
+36,backup_gcs_object_size,backup_driver,"The Google Cloud Storage (GCS) backup driver backs up volumes of any type to Google Cloud Storage.
+
+To enable the GCS backup driver, include the following option in the cinder.conf file:
+
+backup_driver = cinder.backup.drivers.google(Integer) The size in bytes of GCS backup objects.",(String) Driver to use for backups.
+37,backup_gcs_project_id,backup_driver,"The Google Cloud Storage (GCS) backup driver backs up volumes of any type to Google Cloud Storage.
+
+To enable the GCS backup driver, include the following option in the cinder.conf file:
+
+backup_driver = cinder.backup.drivers.google(String) Owner project id for GCS bucket.",(String) Driver to use for backups.
+38,backup_gcs_proxy_url,backup_driver,"The Google Cloud Storage (GCS) backup driver backs up volumes of any type to Google Cloud Storage.
+
+To enable the GCS backup driver, include the following option in the cinder.conf file:
+
+backup_driver = cinder.backup.drivers.google(URI) URL for http proxy access.",(String) Driver to use for backups.
+39,backup_gcs_reader_chunk_size,backup_driver,"The Google Cloud Storage (GCS) backup driver backs up volumes of any type to Google Cloud Storage.
+
+To enable the GCS backup driver, include the following option in the cinder.conf file:
+
+backup_driver = cinder.backup.drivers.google(Integer) GCS object will be downloaded in chunks of bytes.",(String) Driver to use for backups.
+40,backup_gcs_retry_error_codes,backup_driver,"The Google Cloud Storage (GCS) backup driver backs up volumes of any type to Google Cloud Storage.
+
+To enable the GCS backup driver, include the following option in the cinder.conf file:
+
+backup_driver = cinder.backup.drivers.google(List) List of GCS error codes.",(String) Driver to use for backups.
+41,backup_gcs_storage_class,backup_driver,"The Google Cloud Storage (GCS) backup driver backs up volumes of any type to Google Cloud Storage.
+
+To enable the GCS backup driver, include the following option in the cinder.conf file:
+
+backup_driver = cinder.backup.drivers.google(String) Storage class of GCS bucket.",(String) Driver to use for backups.
+42,backup_gcs_user_agent,backup_driver,"The Google Cloud Storage (GCS) backup driver backs up volumes of any type to Google Cloud Storage.
+
+To enable the GCS backup driver, include the following option in the cinder.conf file:
+
+backup_driver = cinder.backup.drivers.google(String) Http user-agent string for gcs api.",(String) Driver to use for backups.
+43,backup_gcs_writer_chunk_size,backup_driver,"The Google Cloud Storage (GCS) backup driver backs up volumes of any type to Google Cloud Storage.
+
+To enable the GCS backup driver, include the following option in the cinder.conf file:
+
+backup_driver = cinder.backup.drivers.google(Integer) GCS object will be uploaded in chunks of bytes. Pass in a value of -1 if the file is to be uploaded as a single chunk.",(String) Driver to use for backups.
+44,backup_swift_auth,backup_driver,"The backup driver for the swift back end performs a volume backup to an object storage system.
+
+To enable the swift backup driver, include the following option in the cinder.conf file:
+
+backup_driver = cinder.backup.drivers.swift(String) Swift authentication mechanism",(String) Driver to use for backups.
+45,backup_swift_auth_version,backup_driver,"The backup driver for the swift back end performs a volume backup to an object storage system.
+
+To enable the swift backup driver, include the following option in the cinder.conf file:
+
+backup_driver = cinder.backup.drivers.swift(String) Swift authentication version. Specify ��1�� for auth 1.0, or ��2�� for auth 2.0 or ��3�� for auth 3.0",(String) Driver to use for backups.
+46,backup_swift_block_size,backup_driver,"The backup driver for the swift back end performs a volume backup to an object storage system.
+
+To enable the swift backup driver, include the following option in the cinder.conf file:
+
+backup_driver = cinder.backup.drivers.swift(Integer) The size in bytes that changes are tracked for incremental backups. backup_swift_object_size has to be multiple of backup_swift_block_size.",(String) Driver to use for backups.
+47,backup_swift_block_size,backup_swift_object_size,"The backup driver for the swift back end performs a volume backup to an object storage system.
+
+To enable the swift backup driver, include the following option in the cinder.conf file:
+
+backup_driver = cinder.backup.drivers.swift(Integer) The size in bytes that changes are tracked for incremental backups. backup_swift_object_size has to be multiple of backup_swift_block_size.","The backup driver for the swift back end performs a volume backup to an object storage system.
+
+To enable the swift backup driver, include the following option in the cinder.conf file:
+
+backup_driver = cinder.backup.drivers.swift(Integer) The size in bytes of Swift backup objects"
+48,backup_swift_ca_cert_file,backup_driver,"The backup driver for the swift back end performs a volume backup to an object storage system.
+
+To enable the swift backup driver, include the following option in the cinder.conf file:
+
+backup_driver = cinder.backup.drivers.swift(String) Location of the CA certificate file to use for swift client requests.",(String) Driver to use for backups.
+49,backup_swift_container,backup_driver,"The backup driver for the swift back end performs a volume backup to an object storage system.
+
+To enable the swift backup driver, include the following option in the cinder.conf file:
+
+backup_driver = cinder.backup.drivers.swift(String) The default Swift container to use",(String) Driver to use for backups.
+50,backup_swift_enable_progress_timer,backup_driver,"The backup driver for the swift back end performs a volume backup to an object storage system.
+
+To enable the swift backup driver, include the following option in the cinder.conf file:
+
+backup_driver = cinder.backup.drivers.swift(Boolean) Enable or Disable the timer to send the periodic progress notifications to Ceilometer when backing up the volume to the Swift backend storage. The default value is True to enable the timer.",(String) Driver to use for backups.
+51,backup_swift_key,backup_driver,"The backup driver for the swift back end performs a volume backup to an object storage system.
+
+To enable the swift backup driver, include the following option in the cinder.conf file:
+
+backup_driver = cinder.backup.drivers.swift(String) Swift key for authentication",(String) Driver to use for backups.
+52,backup_swift_object_size,backup_driver,"The backup driver for the swift back end performs a volume backup to an object storage system.
+
+To enable the swift backup driver, include the following option in the cinder.conf file:
+
+backup_driver = cinder.backup.drivers.swift(Integer) The size in bytes of Swift backup objects",(String) Driver to use for backups.
+53,backup_swift_project,backup_driver,"The backup driver for the swift back end performs a volume backup to an object storage system.
+
+To enable the swift backup driver, include the following option in the cinder.conf file:
+
+backup_driver = cinder.backup.drivers.swift(String) Swift project/account name. Required when connecting to an auth 3.0 system",(String) Driver to use for backups.
+54,backup_swift_project_domain,backup_driver,"The backup driver for the swift back end performs a volume backup to an object storage system.
+
+To enable the swift backup driver, include the following option in the cinder.conf file:
+
+backup_driver = cinder.backup.drivers.swift(String) Swift project domain name. Required when connecting to an auth 3.0 system",(String) Driver to use for backups.
+55,backup_swift_retry_attempts,backup_driver,"The backup driver for the swift back end performs a volume backup to an object storage system.
+
+To enable the swift backup driver, include the following option in the cinder.conf file:
+
+backup_driver = cinder.backup.drivers.swift(Integer) The number of retries to make for Swift operations",(String) Driver to use for backups.
+56,backup_swift_retry_backoff,backup_driver,"The backup driver for the swift back end performs a volume backup to an object storage system.
+
+To enable the swift backup driver, include the following option in the cinder.conf file:
+
+backup_driver = cinder.backup.drivers.swift(Integer) The backoff time in seconds between Swift retries",(String) Driver to use for backups.
+57,backup_swift_tenant,backup_driver,"The backup driver for the swift back end performs a volume backup to an object storage system.
+
+To enable the swift backup driver, include the following option in the cinder.conf file:
+
+backup_driver = cinder.backup.drivers.swift(String) Swift tenant/account name. Required when connecting to an auth 2.0 system",(String) Driver to use for backups.
+58,backup_swift_url,backup_driver,"The backup driver for the swift back end performs a volume backup to an object storage system.
+
+To enable the swift backup driver, include the following option in the cinder.conf file:
+
+backup_driver = cinder.backup.drivers.swift(URI) The URL of the Swift endpoint",(String) Driver to use for backups.
+59,backup_swift_user,backup_driver,"The backup driver for the swift back end performs a volume backup to an object storage system.
+
+To enable the swift backup driver, include the following option in the cinder.conf file:
+
+backup_driver = cinder.backup.drivers.swift(String) Swift user name",(String) Driver to use for backups.
+60,backup_swift_user_domain,backup_driver,"The backup driver for the swift back end performs a volume backup to an object storage system.
+
+To enable the swift backup driver, include the following option in the cinder.conf file:
+
+backup_driver = cinder.backup.drivers.swift(String) Swift user domain name. Required when connecting to an auth 3.0 system",(String) Driver to use for backups.
+61,keystone_catalog_info,backup_driver,"The backup driver for the swift back end performs a volume backup to an object storage system.
+
+To enable the swift backup driver, include the following option in the cinder.conf file:
+
+backup_driver = cinder.backup.drivers.swift(String) Info to match when looking for keystone in the service catalog. Format is: separated values of the form: <service_type>:<service_name>:<endpoint_type> - Only used if backup_swift_auth_url is unset",(String) Driver to use for backups.
+62,keystone_catalog_info,backup_swift_auth,"The backup driver for the swift back end performs a volume backup to an object storage system.
+
+To enable the swift backup driver, include the following option in the cinder.conf file:
+
+backup_driver = cinder.backup.drivers.swift(String) Info to match when looking for keystone in the service catalog. Format is: separated values of the form: <service_type>:<service_name>:<endpoint_type> - Only used if backup_swift_auth_url is unset","The backup driver for the swift back end performs a volume backup to an object storage system.
+
+To enable the swift backup driver, include the following option in the cinder.conf file:
+
+backup_driver = cinder.backup.drivers.swift(String) Swift authentication mechanism"
+63,swift_catalog_info,backup_driver,"The backup driver for the swift back end performs a volume backup to an object storage system.
+
+To enable the swift backup driver, include the following option in the cinder.conf file:
+
+backup_driver = cinder.backup.drivers.swift(String) Info to match when looking for swift in the service catalog. Format is: separated values of the form: <service_type>:<service_name>:<endpoint_type> - Only used if backup_swift_url is unset",(String) Driver to use for backups.
+64,swift_catalog_info,backup_swift_url,"The backup driver for the swift back end performs a volume backup to an object storage system.
+
+To enable the swift backup driver, include the following option in the cinder.conf file:
+
+backup_driver = cinder.backup.drivers.swift(String) Info to match when looking for swift in the service catalog. Format is: separated values of the form: <service_type>:<service_name>:<endpoint_type> - Only used if backup_swift_url is unset","The backup driver for the swift back end performs a volume backup to an object storage system.
+
+To enable the swift backup driver, include the following option in the cinder.conf file:
+
+backup_driver = cinder.backup.drivers.swift(URI) The URL of the Swift endpoint"
+65,backup_container,backup_driver,"The backup driver for the NFS back end backs up volumes of any type to an NFS exported backup repository.
+
+To enable the NFS backup driver, include the following option in the [DEFAULT] section of the cinder.conf file:
+
+backup_driver = cinder.backup.drivers.nfs.NFSBackupDriver(String) Custom directory to use for backups.",(String) Driver to use for backups.
+66,backup_enable_progress_timer,backup_driver,"The backup driver for the NFS back end backs up volumes of any type to an NFS exported backup repository.
+
+To enable the NFS backup driver, include the following option in the [DEFAULT] section of the cinder.conf file:
+
+backup_driver = cinder.backup.drivers.nfs.NFSBackupDriver(Boolean) Enable or Disable the timer to send the periodic progress notifications to Ceilometer when backing up the volume to the backend storage. The default value is True to enable the timer.",(String) Driver to use for backups.
+67,backup_file_size,backup_driver,"The backup driver for the NFS back end backs up volumes of any type to an NFS exported backup repository.
+
+To enable the NFS backup driver, include the following option in the [DEFAULT] section of the cinder.conf file:
+
+backup_driver = cinder.backup.drivers.nfs.NFSBackupDriver(Integer) The maximum size in bytes of the files used to hold backups. If the volume being backed up exceeds this size, then it will be backed up into multiple files.backup_file_size must be a multiple of backup_sha_block_size_bytes.",(String) Driver to use for backups.
+68,backup_file_size,backup_sha_block_size_bytes,"The backup driver for the NFS back end backs up volumes of any type to an NFS exported backup repository.
+
+To enable the NFS backup driver, include the following option in the [DEFAULT] section of the cinder.conf file:
+
+backup_driver = cinder.backup.drivers.nfs.NFSBackupDriver(Integer) The maximum size in bytes of the files used to hold backups. If the volume being backed up exceeds this size, then it will be backed up into multiple files.backup_file_size must be a multiple of backup_sha_block_size_bytes.","The backup driver for the NFS back end backs up volumes of any type to an NFS exported backup repository.
+
+To enable the NFS backup driver, include the following option in the [DEFAULT] section of the cinder.conf file:
+
+backup_driver = cinder.backup.drivers.nfs.NFSBackupDriver(Integer) The size in bytes that changes are tracked for incremental backups. backup_file_size has to be multiple of backup_sha_block_size_bytes."
+69,backup_mount_attempts,backup_driver,"The backup driver for the NFS back end backs up volumes of any type to an NFS exported backup repository.
+
+To enable the NFS backup driver, include the following option in the [DEFAULT] section of the cinder.conf file:
+
+backup_driver = cinder.backup.drivers.nfs.NFSBackupDriver(Integer(min=1)) The number of attempts to mount NFS shares before raising an error.",(String) Driver to use for backups.
+70,backup_mount_options,backup_driver,"The backup driver for the NFS back end backs up volumes of any type to an NFS exported backup repository.
+
+To enable the NFS backup driver, include the following option in the [DEFAULT] section of the cinder.conf file:
+
+backup_driver = cinder.backup.drivers.nfs.NFSBackupDriver(String) Mount options passed to the NFS client. See NFS man page for details.",(String) Driver to use for backups.
+71,backup_mount_point_base,backup_driver,"The backup driver for the NFS back end backs up volumes of any type to an NFS exported backup repository.
+
+To enable the NFS backup driver, include the following option in the [DEFAULT] section of the cinder.conf file:
+
+backup_driver = cinder.backup.drivers.nfs.NFSBackupDriver(String) Base dir containing mount point for NFS share.",(String) Driver to use for backups.
+72,backup_posix_path,backup_driver,"The backup driver for the NFS back end backs up volumes of any type to an NFS exported backup repository.
+
+To enable the NFS backup driver, include the following option in the [DEFAULT] section of the cinder.conf file:
+
+backup_driver = cinder.backup.drivers.nfs.NFSBackupDriver(String) Path specifying where to store backups.",(String) Driver to use for backups.
+73,backup_sha_block_size_bytes,backup_driver,"The backup driver for the NFS back end backs up volumes of any type to an NFS exported backup repository.
+
+To enable the NFS backup driver, include the following option in the [DEFAULT] section of the cinder.conf file:
+
+backup_driver = cinder.backup.drivers.nfs.NFSBackupDriver(Integer) The size in bytes that changes are tracked for incremental backups. backup_file_size has to be multiple of backup_sha_block_size_bytes.",(String) Driver to use for backups.
+74,backup_sha_block_size_bytes,backup_file_size,"The backup driver for the NFS back end backs up volumes of any type to an NFS exported backup repository.
+
+To enable the NFS backup driver, include the following option in the [DEFAULT] section of the cinder.conf file:
+
+backup_driver = cinder.backup.drivers.nfs.NFSBackupDriver(Integer) The size in bytes that changes are tracked for incremental backups. backup_file_size has to be multiple of backup_sha_block_size_bytes.","The backup driver for the NFS back end backs up volumes of any type to an NFS exported backup repository.
+
+To enable the NFS backup driver, include the following option in the [DEFAULT] section of the cinder.conf file:
+
+backup_driver = cinder.backup.drivers.nfs.NFSBackupDriver(Integer) The maximum size in bytes of the files used to hold backups. If the volume being backed up exceeds this size, then it will be backed up into multiple files.backup_file_size must be a multiple of backup_sha_block_size_bytes."
+75,backup_share,backup_driver,"The backup driver for the NFS back end backs up volumes of any type to an NFS exported backup repository.
+
+To enable the NFS backup driver, include the following option in the [DEFAULT] section of the cinder.conf file:
+
+backup_driver = cinder.backup.drivers.nfs.NFSBackupDriver(String) NFS share in hostname:path, ipv4addr:path, or ��[ipv6addr]:path�� format.",(String) Driver to use for backups.
+76,backup_share,host,"The backup driver for the NFS back end backs up volumes of any type to an NFS exported backup repository.
+
+To enable the NFS backup driver, include the following option in the [DEFAULT] section of the cinder.conf file:
+
+backup_driver = cinder.backup.drivers.nfs.NFSBackupDriver(String) NFS share in hostname:path, ipv4addr:path, or ��[ipv6addr]:path�� format.","(String) Name of this node.  This can be an opaque identifier. It is not necessarily a host name, FQDN, or IP address."

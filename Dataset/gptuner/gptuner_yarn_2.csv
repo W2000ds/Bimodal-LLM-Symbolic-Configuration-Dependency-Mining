@@ -1,0 +1,16 @@
+id,Parameter1,Parameter2
+1,yarn.nodemanager.linux-container-executor.nonsecure-mode.limit-users,yarn.nodemanager.linux-container-executor.nonsecure-mode.local-user
+2,yarn.nodemanager.resource.pcores-vcores-multiplier,yarn.nodemanager.resource.cpu-vcores
+3,yarn.nodemanager.vmem-pmem-ratio,yarn.nodemanager.resource.memory-mb
+4,yarn.nodemanager.resource-monitor.interval-ms,yarn.nodemanager.resource.memory-mb
+5,yarn.resourcemanager.address,yarn.resourcemanager.bind-host
+6,yarn.resourcemanager.max-completed-applications,yarn.resourcemanager.state-store.max-completed-applications
+7,yarn.log-aggregation-enable,yarn.nodemanager.log-dirs
+8,yarn.log-aggregation.retain-seconds,yarn.log-aggregation.retain-check-interval-seconds
+9,yarn.nodemanager.node-labels.provider,yarn.nodemanager.node-labels.provider.fetch-interval-ms
+10,yarn.resourcemanager.proxy-user-privileges.enabled,hadoop.proxyuser.<user>.groups
+11,yarn.timeline-service.state-store-class,yarn.timeline-service.leveldb-state-store.path
+12,yarn.log-aggregation-enable,yarn.log-aggregation.retain-seconds
+13,yarn.resourcemanager.store.class,yarn.resourcemanager.fs.state-store.uri
+14,yarn.resourcemanager.recovery.enabled,yarn.resourcemanager.store.class
+15,yarn.http.policy,yarn.resourcemanager.webapp.https.address

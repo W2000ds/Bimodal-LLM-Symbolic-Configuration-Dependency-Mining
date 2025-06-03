@@ -1,323 +1,323 @@
 id,Parameter1,Parameter2,bnf,type
-56,backup_manager,backup_object_number_per_notification,backup_manager != null => backup_object_number_per_notification > 0,behavior
-10,backend_native_threads_pool_size,backend_stats_polling_interval,backend_native_threads_pool_size > 20 => backend_stats_polling_interval >= 3,behavior
-115,backup_gcs_bucket,backup_gcs_storage_class,backup_gcs_bucket != null => backup_gcs_storage_class != null,behavior
-24,glance_core_properties,glance_api_version,"glance_core_properties != null => glance_api_version in {{1, 2}}",behavior
-354,keystone_catalog_info,glance_catalog_info,keystone_catalog_info != null => glance_catalog_info != null,behavior
-124,nas_share_path,nas_secure_file_permissions,nas_share_path != null => nas_secure_file_permissions != null,behavior
-276,backup_gcs_project_id,backup_gcs_enable_progress_timer,backup_gcs_project_id != null => backup_gcs_enable_progress_timer = ANY,behavior
-80,glance_api_servers,glance_num_retries,glance_api_servers != null => glance_num_retries > 0,behavior
-91,glance_num_retries,backup_gcs_num_retries,<glance_num_retries> = <Number> => <backup_gcs_num_retries> = <Number>,behavior
-355,keystone_catalog_info,swift_catalog_info,keystone_catalog_info != null => swift_catalog_info != null,behavior
-105,use_default_quota_class,until_refresh,use_default_quota_class = true => until_refresh != null,behavior
-78,target_protocol,target_port,target_protocol = 'nvmet_rdma' => target_port = 4420,behavior
-278,backup_gcs_project_id,backup_gcs_object_size,backup_gcs_project_id != null => backup_gcs_object_size = ANY,behavior
-128,backup_swift_project,backup_swift_retry_attempts,backup_swift_project != null => backup_swift_retry_attempts != null,behavior
-365,backup_mount_attempts,backup_mount_point_base,backup_mount_attempts > 0 => backup_mount_point_base != null,behavior
-245,quota_gigabytes,quota_driver,quota_gigabytes != null => quota_driver != null,behavior
-5,tcp_keepalive_interval,tcp_keepalive_count,tcp_keepalive_interval > 0 => tcp_keepalive_count > 0,behavior
-109,nvmet_ns_id,nvmet_port_id,nvmet_ns_id != null => nvmet_port_id != null,behavior
-32,volume_driver,volume_clear_size,volume_driver != null => volume_clear_size = ANY,behavior
-123,nas_share_path,nas_secure_file_operations,nas_share_path != null => nas_secure_file_operations != null,behavior
-121,backup_swift_project,backup_swift_container,backup_swift_project != null => backup_swift_container != null,behavior
-133,chap_username,chap_password,chap_username != null => chap_password != null,behavior
-68,auth_type,auth_section,"auth_type = ""keystone"" => auth_section in {{ ""keystone_authtoken"", ""keystone_auth"" }}",behavior
-304,backup_swift_auth_version,backup_swift_object_size,backup_swift_auth_version != null => backup_swift_object_size > 0,behavior
-38,max_over_subscription_ratio,thin_provisioning,max_over_subscription_ratio > 1 => thin_provisioning = true,behavior
-89,default_group_type,storage_availability_zone,default_group_type != null => storage_availability_zone = ANY,behavior
-20,collect-timing,log_interval,collect-timing < 60 => log_interval > collect-timing,behavior
-19,backup_compression_algorithm,backup_driver,"backup_compression_algorithm != ""none"" => backup_driver != null",behavior
-5,compute_api_class,transfer_api_class,compute_api_class != null => transfer_api_class != null,behavior
-44,volume_copy_bps_limit,volume_clear_size,volume_copy_bps_limit > 0 => volume_clear_size < volume_copy_bps_limit / 1024,behavior
-179,volume_backend_name,enabled_backends,volume_backend_name != null => enabled_backends in {{ volume_backend_name }},behavior
-23,backup_service_inithost_offload,backup_timer_interval,backup_service_inithost_offload = false => backup_timer_interval > 0,behavior
-120,nas_secure_file_operations,nas_mount_options,"nas_secure_file_operations = true => nas_mount_options in {{ 'secure', 'strict' }}",behavior
-51,service_down_time,report_interval,service_down_time > 60 => report_interval < service_down_time / 3,behavior
-12,backup_manager,backup_use_openssl,backup_manager = enabled => backup_use_openssl = true,behavior
-59,quota_driver,quota_items,quota_driver != null => quota_items != null,behavior
-123,backup_swift_project,backup_swift_key,backup_swift_project != null => backup_swift_key != null,behavior
-100,quota_gigabytes,quota_backups,quota_gigabytes != null => quota_backups != null,behavior
-69,enable_unsupported_driver,driver_use_ssl,enable_unsupported_driver = true => driver_use_ssl = ANY,behavior
-36,driver_ssl_cert_verify,driver_ssl_cert,driver_ssl_cert_verify = true => driver_ssl_cert != null,behavior
-4,tcp_keepalive_interval,tcp_keepalive_idle,tcp_keepalive_interval > 0 => tcp_keepalive_idle > 0,behavior
-23,glance_catalog_info,glance_api_insecure,glance_catalog_info != null => glance_api_insecure = ANY,behavior
-4,compute_api_class,consistencygroup_api_class,compute_api_class != null => consistencygroup_api_class != null,behavior
-131,backup_swift_project,backup_swift_enable_progress_timer,backup_swift_project != null => backup_swift_enable_progress_timer != null,behavior
-29,use_multipath_for_image_xfer,num_volume_device_scan_tries,use_multipath_for_image_xfer = true => num_volume_device_scan_tries > 1,behavior
-35,zoning_mode,volume_driver,zoning_mode != null => volume_driver != null,behavior
-94,es_scroll_size,es_scroll_time,es_scroll_size > 0 => es_scroll_time != null,behavior
-19,collect-timing,metrics_report_interval,collect-timing > 0 => metrics_report_interval > collect-timing,behavior
-58,per_volume_size_limit,volume_driver,per_volume_size_limit != null => volume_driver != null,behavior
-126,backend_availability_zone,allow_availability_zone_fallback,backend_availability_zone != null => allow_availability_zone_fallback != null,behavior
-136,backup_swift_url,backup_swift_user,backup_swift_url != null => backup_swift_user != null,behavior
-299,backup_enable_progress_timer,backup_swift_enable_progress_timer,backup_enable_progress_timer = true => backup_swift_enable_progress_timer = true,behavior
-37,zoning_mode,use_chap_auth,zoning_mode != null => use_chap_auth != null,behavior
-38,zoning_mode,target_helper,zoning_mode != null => target_helper != null,behavior
-180,volume_backend_name,volume_driver,volume_backend_name != null => volume_driver != null,behavior
-124,backup_swift_project,backup_swift_url,backup_swift_project != null => backup_swift_url != null,behavior
-134,backup_swift_retry_attempts,backup_swift_retry_backoff,backup_swift_retry_attempts != null => backup_swift_retry_backoff != null,behavior
-76,target_protocol,target_port,target_protocol = 'iscsi' => target_port = 3260,behavior
-71,filter_function,goodness_function,filter_function != null => goodness_function != null,behavior
-357,swift_catalog_info,keystone_catalog_info,swift_catalog_info != null => keystone_catalog_info != null,behavior
-2,osapi_volume_ext_list,osapi_volume_extension,osapi_volume_ext_list != null => osapi_volume_extension in osapi_volume_ext_list,behavior
-122,backup_swift_project,backup_swift_user,backup_swift_project != null => backup_swift_user != null,behavior
-16,scheduler_driver,scheduler_max_attempts,scheduler_driver = ANY => scheduler_max_attempts = scheduler_max_attempts,behavior
-33,volume_driver,volumes_dir,volume_driver != null => volumes_dir = ANY,behavior
-54,nas_private_key,nas_login,nas_private_key != null => nas_login != null,behavior
-127,backend_availability_zone,default_availability_zone,backend_availability_zone != null => default_availability_zone != null,behavior
-32,backend_availability_zone,default_availability_zone,backend_availability_zone != null => default_availability_zone = backend_availability_zone,behavior
-49,default_volume_type,enabled_backends,"default_volume_type != null => enabled_backends in {{ backend1, backend2, ... }}",behavior
-82,volume_copy_bps_limit,volume_dd_blocksize,volume_copy_bps_limit != 0 => volume_dd_blocksize != null,behavior
-46,volume_copy_bps_limit,worker_create_volume,volume_copy_bps_limit > 500000 => worker_create_volume > 1,behavior
-62,reservation_expire,until_refresh,reservation_expire > 0 => until_refresh < reservation_expire,behavior
-119,backup_swift_project,backup_swift_auth_version,backup_swift_project != null => backup_swift_auth_version != null,behavior
-101,quota_gigabytes,backup_gigabytes,quota_gigabytes != null => backup_gigabytes != null,behavior
-24,extra_capabilities,driver_use_ssl,"<Dependency> ::= <Condition> => <ConstraintItem>
+1,backup_manager,backup_object_number_per_notification,backup_manager != null => backup_object_number_per_notification > 0,behavior
+2,backend_native_threads_pool_size,backend_stats_polling_interval,backend_native_threads_pool_size > 20 => backend_stats_polling_interval >= 3,behavior
+3,backup_gcs_bucket,backup_gcs_storage_class,backup_gcs_bucket != null => backup_gcs_storage_class != null,behavior
+4,glance_core_properties,glance_api_version,"glance_core_properties != null => glance_api_version in {{1, 2}}",behavior
+5,keystone_catalog_info,glance_catalog_info,keystone_catalog_info != null => glance_catalog_info != null,behavior
+6,nas_share_path,nas_secure_file_permissions,nas_share_path != null => nas_secure_file_permissions != null,behavior
+7,backup_gcs_project_id,backup_gcs_enable_progress_timer,backup_gcs_project_id != null => backup_gcs_enable_progress_timer = ANY,behavior
+8,glance_api_servers,glance_num_retries,glance_api_servers != null => glance_num_retries > 0,behavior
+9,glance_num_retries,backup_gcs_num_retries,<glance_num_retries> = <Number> => <backup_gcs_num_retries> = <Number>,behavior
+10,keystone_catalog_info,swift_catalog_info,keystone_catalog_info != null => swift_catalog_info != null,behavior
+11,use_default_quota_class,until_refresh,use_default_quota_class = true => until_refresh != null,behavior
+12,target_protocol,target_port,target_protocol = 'nvmet_rdma' => target_port = 4420,behavior
+13,backup_gcs_project_id,backup_gcs_object_size,backup_gcs_project_id != null => backup_gcs_object_size = ANY,behavior
+14,backup_swift_project,backup_swift_retry_attempts,backup_swift_project != null => backup_swift_retry_attempts != null,behavior
+15,backup_mount_attempts,backup_mount_point_base,backup_mount_attempts > 0 => backup_mount_point_base != null,behavior
+16,quota_gigabytes,quota_driver,quota_gigabytes != null => quota_driver != null,behavior
+17,tcp_keepalive_interval,tcp_keepalive_count,tcp_keepalive_interval > 0 => tcp_keepalive_count > 0,behavior
+18,nvmet_ns_id,nvmet_port_id,nvmet_ns_id != null => nvmet_port_id != null,behavior
+19,volume_driver,volume_clear_size,volume_driver != null => volume_clear_size = ANY,behavior
+20,nas_share_path,nas_secure_file_operations,nas_share_path != null => nas_secure_file_operations != null,behavior
+21,backup_swift_project,backup_swift_container,backup_swift_project != null => backup_swift_container != null,behavior
+22,chap_username,chap_password,chap_username != null => chap_password != null,behavior
+23,auth_type,auth_section,"auth_type = ""keystone"" => auth_section in {{ ""keystone_authtoken"", ""keystone_auth"" }}",behavior
+24,backup_swift_auth_version,backup_swift_object_size,backup_swift_auth_version != null => backup_swift_object_size > 0,behavior
+25,max_over_subscription_ratio,thin_provisioning,max_over_subscription_ratio > 1 => thin_provisioning = true,behavior
+26,default_group_type,storage_availability_zone,default_group_type != null => storage_availability_zone = ANY,behavior
+27,collect-timing,log_interval,collect-timing < 60 => log_interval > collect-timing,behavior
+28,backup_compression_algorithm,backup_driver,"backup_compression_algorithm != ""none"" => backup_driver != null",behavior
+29,compute_api_class,transfer_api_class,compute_api_class != null => transfer_api_class != null,behavior
+30,volume_copy_bps_limit,volume_clear_size,volume_copy_bps_limit > 0 => volume_clear_size < volume_copy_bps_limit / 1024,behavior
+31,volume_backend_name,enabled_backends,volume_backend_name != null => enabled_backends in {{ volume_backend_name }},behavior
+32,backup_service_inithost_offload,backup_timer_interval,backup_service_inithost_offload = false => backup_timer_interval > 0,behavior
+33,nas_secure_file_operations,nas_mount_options,"nas_secure_file_operations = true => nas_mount_options in {{ 'secure', 'strict' }}",behavior
+34,service_down_time,report_interval,service_down_time > 60 => report_interval < service_down_time / 3,behavior
+35,backup_manager,backup_use_openssl,backup_manager = enabled => backup_use_openssl = true,behavior
+36,quota_driver,quota_items,quota_driver != null => quota_items != null,behavior
+37,backup_swift_project,backup_swift_key,backup_swift_project != null => backup_swift_key != null,behavior
+38,quota_gigabytes,quota_backups,quota_gigabytes != null => quota_backups != null,behavior
+39,enable_unsupported_driver,driver_use_ssl,enable_unsupported_driver = true => driver_use_ssl = ANY,behavior
+40,driver_ssl_cert_verify,driver_ssl_cert,driver_ssl_cert_verify = true => driver_ssl_cert != null,behavior
+41,tcp_keepalive_interval,tcp_keepalive_idle,tcp_keepalive_interval > 0 => tcp_keepalive_idle > 0,behavior
+42,glance_catalog_info,glance_api_insecure,glance_catalog_info != null => glance_api_insecure = ANY,behavior
+43,compute_api_class,consistencygroup_api_class,compute_api_class != null => consistencygroup_api_class != null,behavior
+44,backup_swift_project,backup_swift_enable_progress_timer,backup_swift_project != null => backup_swift_enable_progress_timer != null,behavior
+45,use_multipath_for_image_xfer,num_volume_device_scan_tries,use_multipath_for_image_xfer = true => num_volume_device_scan_tries > 1,behavior
+46,zoning_mode,volume_driver,zoning_mode != null => volume_driver != null,behavior
+47,es_scroll_size,es_scroll_time,es_scroll_size > 0 => es_scroll_time != null,behavior
+48,collect-timing,metrics_report_interval,collect-timing > 0 => metrics_report_interval > collect-timing,behavior
+49,per_volume_size_limit,volume_driver,per_volume_size_limit != null => volume_driver != null,behavior
+50,backend_availability_zone,allow_availability_zone_fallback,backend_availability_zone != null => allow_availability_zone_fallback != null,behavior
+51,backup_swift_url,backup_swift_user,backup_swift_url != null => backup_swift_user != null,behavior
+52,backup_enable_progress_timer,backup_swift_enable_progress_timer,backup_enable_progress_timer = true => backup_swift_enable_progress_timer = true,behavior
+53,zoning_mode,use_chap_auth,zoning_mode != null => use_chap_auth != null,behavior
+54,zoning_mode,target_helper,zoning_mode != null => target_helper != null,behavior
+55,volume_backend_name,volume_driver,volume_backend_name != null => volume_driver != null,behavior
+56,backup_swift_project,backup_swift_url,backup_swift_project != null => backup_swift_url != null,behavior
+57,backup_swift_retry_attempts,backup_swift_retry_backoff,backup_swift_retry_attempts != null => backup_swift_retry_backoff != null,behavior
+58,target_protocol,target_port,target_protocol = 'iscsi' => target_port = 3260,behavior
+59,filter_function,goodness_function,filter_function != null => goodness_function != null,behavior
+60,swift_catalog_info,keystone_catalog_info,swift_catalog_info != null => keystone_catalog_info != null,behavior
+61,osapi_volume_ext_list,osapi_volume_extension,osapi_volume_ext_list != null => osapi_volume_extension in osapi_volume_ext_list,behavior
+62,backup_swift_project,backup_swift_user,backup_swift_project != null => backup_swift_user != null,behavior
+63,scheduler_driver,scheduler_max_attempts,scheduler_driver = ANY => scheduler_max_attempts = scheduler_max_attempts,behavior
+64,volume_driver,volumes_dir,volume_driver != null => volumes_dir = ANY,behavior
+65,nas_private_key,nas_login,nas_private_key != null => nas_login != null,behavior
+66,backend_availability_zone,default_availability_zone,backend_availability_zone != null => default_availability_zone != null,behavior
+67,backend_availability_zone,default_availability_zone,backend_availability_zone != null => default_availability_zone = backend_availability_zone,behavior
+68,default_volume_type,enabled_backends,"default_volume_type != null => enabled_backends in {{ backend1, backend2, ... }}",behavior
+69,volume_copy_bps_limit,volume_dd_blocksize,volume_copy_bps_limit != 0 => volume_dd_blocksize != null,behavior
+70,volume_copy_bps_limit,worker_create_volume,volume_copy_bps_limit > 500000 => worker_create_volume > 1,behavior
+71,reservation_expire,until_refresh,reservation_expire > 0 => until_refresh < reservation_expire,behavior
+72,backup_swift_project,backup_swift_auth_version,backup_swift_project != null => backup_swift_auth_version != null,behavior
+73,quota_gigabytes,backup_gigabytes,quota_gigabytes != null => backup_gigabytes != null,behavior
+74,extra_capabilities,driver_use_ssl,"<Dependency> ::= <Condition> => <ConstraintItem>
 <Condition> ::= extra_capabilities != null
 <ConstraintItem> ::= driver_use_ssl = ANY",behavior
-22,backup_service_inithost_offload,backup_use_same_host,backup_service_inithost_offload = true => backup_use_same_host = true,behavior
-2,compute_api_class,volume_api_class,compute_api_class != null => volume_api_class != null,behavior
-51,use_multipath_for_image_xfer,enforce_multipath_for_image_xfer,use_multipath_for_image_xfer = true => enforce_multipath_for_image_xfer != null,control
-361,backup_container,backup_native_threads_pool_size,backup_container != null => backup_native_threads_pool_size != null,control
-170,target_helper,target_port,target_helper != null => target_port != null,control
-49,image_volume_cache_enabled,image_volume_cache_max_size_gb,image_volume_cache_enabled = true => image_volume_cache_max_size_gb != null,control
-144,enable_unsupported_driver,driver_ssl_cert_verify,enable_unsupported_driver = true => driver_ssl_cert_verify != null,control
-147,enable_unsupported_driver,driver_client_cert_key,enable_unsupported_driver = true => driver_client_cert_key != null,control
-329,backup_swift_auth,backup_swift_url,backup_swift_auth != null => backup_swift_url != null,control
-156,replication_device,target_helper,replication_device != null => target_helper != null,control
-104,glance_ca_certificates_file,verify_glance_signatures,glance_ca_certificates_file != null => verify_glance_signatures = true,control
-139,driver_use_ssl,driver_ssl_cert_verify,driver_use_ssl=true => driver_ssl_cert_verify!=null,control
-72,insecure,suppress_requests_ssl_warnings,insecure = true => suppress_requests_ssl_warnings = true,control
-219,enabled,api_rate_limit,enabled=true => api_rate_limit!=null,control
-41,scheduler_default_filters,scheduler_host_manager,scheduler_host_manager != null => scheduler_default_filters != null,control
-204,scheduler_manager,scheduler_host_manager,scheduler_manager != null => scheduler_host_manager != null,control
-64,driver_client_cert_key,driver_use_ssl,driver_client_cert_key != null => driver_use_ssl = true,control
-54,storage_availability_zone,enabled_backends,enabled_backends not in {{}} => storage_availability_zone in {{enabled_backends.availability_zone}},control
-226,enabled,volume_manager,enabled=true => volume_manager!=null,control
-167,target_helper,use_chap_auth,target_helper != null => use_chap_auth != null,control
-31,insecure,nas_secure_file_permissions,insecure = True => nas_secure_file_permissions = False,control
-261,iser_helper,num_iser_scan_tries,iser_helper!=null => num_iser_scan_tries>0,control
-137,backup_driver,backup_swift_user,"backup_driver = ""cinder.backup.drivers.swift"" => backup_swift_user != null",control
-233,enabled,quota_driver,enabled=true => quota_driver!=null,control
-316,backup_swift_project_domain,backup_swift_auth_version,"backup_swift_project_domain != null => backup_swift_auth_version = ""v3""",control
-90,monkey_patch,monkey_patch_modules,monkey_patch = true => monkey_patch_modules != null,control
-269,backup_gcs_num_retries,backup_gcs_retry_error_codes,backup_gcs_num_retries > 0 => backup_gcs_retry_error_codes != null,control
-18,auth_strategy,keyfile,"auth_strategy = ""keystone"" => keyfile != null",control
-348,backup_swift_user,backup_swift_project,backup_swift_user != null => backup_swift_project != null,control
-87,glance_certfile,glance_keyfile,glance_certfile != null => glance_keyfile != null,control
-119,nas_secure_file_operations,nas_secure_file_permissions,nas_secure_file_operations = true => nas_secure_file_permissions != null,control
-113,nas_login,nas_private_key,nas_login != null => nas_private_key != null,control
-33,backend_availability_zone,enabled_backends,"enabled_backends in {{backend1, backend2}} => backend_availability_zone != null",control
-92,scheduler_host_manager,scheduler_max_attempts,scheduler_host_manager != null => scheduler_max_attempts > 0,control
-325,backup_swift_tenant,backup_swift_project,backup_swift_tenant != null => backup_swift_project != null,control
-61,driver_client_cert,driver_client_cert_key,driver_client_cert != null => driver_client_cert_key != null,control
-52,backup_manager,backup_api_class,backup_manager != null => backup_api_class != null,control
-335,backup_swift_project,backup_swift_url,backup_swift_project != null => backup_swift_url != null,control
-96,image_volume_cache_enabled,image_volume_cache_max_count,image_volume_cache_enabled = true => image_volume_cache_max_count != null,control
-222,enabled,volume_api_class,enabled=true => volume_api_class!=null,control
-333,backup_swift_key,backup_swift_url,backup_swift_key != null => backup_swift_url != null,control
-77,glance_api_insecure,driver_ssl_cert_verify,glance_api_insecure = true => driver_ssl_cert_verify = false,control
-324,backup_swift_tenant,backup_swift_auth_version,backup_swift_tenant != null => backup_swift_auth_version != null,control
-166,target_helper,target_protocol,target_helper != null => target_protocol != null,control
-358,backup_container,backup_driver,backup_container != null => backup_driver != null,control
-174,target_protocol,target_ip_address,target_protocol != null => target_ip_address != null,control
-161,storage_protocol,use_chap_auth,"storage_protocol = ""iSCSI"" => use_chap_auth = true",control
-132,chap_username,use_chap_auth,use_chap_auth = true => chap_username != null,control
-30,use_multipath_for_image_xfer,iscsi_num_targets,use_multipath_for_image_xfer = true => iscsi_num_targets > 1,control
-346,backup_swift_user,backup_swift_container,backup_swift_user != null => backup_swift_container != null,control
-45,image_volume_cache_enabled,image_volume_cache_max_count,image_volume_cache_enabled = True => image_volume_cache_max_count != null,control
-351,backup_swift_user,backup_swift_project_domain,backup_swift_user != null => backup_swift_project_domain != null,control
-214,volume_manager,volume_api_class,volume_manager != null => volume_api_class != null,control
-294,backup_swift_url,backup_swift_container,backup_swift_url != null => backup_swift_container != null,control
-72,iscsi_write_cache,target_helper,"iscsi_write_cache = ""on"" => target_helper = ""tgtadm""",control
-116,nas_login,nas_secure_file_permissions,nas_login != null => nas_secure_file_permissions = true,control
-27,auth_type,auth_strategy,auth_type = 'noauth' => auth_strategy = 'noauth',control
-26,auth_type,auth_strategy,auth_type = 'keystone' => auth_strategy = 'keystone',control
-70,filter_function,scheduler_default_filters,"filter_function != null => scheduler_default_filters = ""filter_function""",control
-326,backup_swift_tenant,backup_swift_project_domain,backup_swift_tenant != null => backup_swift_project_domain != null,control
-169,target_helper,target_ip_address,target_helper != null => target_ip_address != null,control
-25,auth_strategy,auth_section,auth_strategy = 'keystone' => auth_section != null,control
-7,tcp_keepalive,tcp_keepalive_count,tcp_keepalive=true => tcp_keepalive_count!=null,control
-65,backup_use_same_host,backup_manager,backup_use_same_host=true => backup_manager!=null,control
-9,backup_manager,backup_workers,backup_manager = enabled => backup_workers > 0,control
-178,use_chap_auth,chap_password,use_chap_auth = true => chap_password != null,control
-347,backup_swift_user,backup_swift_url,backup_swift_user != null => backup_swift_url != null,control
-46,image_volume_cache_enabled,image_upload_use_internal_tenant,image_volume_cache_enabled = True => image_upload_use_internal_tenant = True,control
-146,enable_unsupported_driver,driver_client_cert,enable_unsupported_driver = true => driver_client_cert != null,control
-213,transfer_api_class,backup_api_class,"transfer_api_class = ""ANY"" => backup_api_class != ""null""",control
-193,enabled_backends,volume_driver,enabled_backends != null => volume_driver != null,control
-308,backup_swift_project,backup_swift_user,backup_swift_project != null => backup_swift_user != null,control
-44,scheduler_driver,scheduler_default_weighers,scheduler_driver != null => scheduler_default_weighers != null,control
-59,chap_username,chap_password,chap_username != null => chap_password != null,control
-143,enable_unsupported_driver,driver_use_ssl,enable_unsupported_driver = true => driver_use_ssl != null,control
-20,backup_driver,backup_compression_algorithm,"backup_driver != null => backup_compression_algorithm in {'none', 'off', 'no', 'zlib', 'gzip', 'bz2', 'bzip2', 'zstd'}",control
-51,backup_manager,backup_driver,backup_manager != null => backup_driver != null,control
-13,auth_strategy,auth_type,"auth_strategy = ""keystone"" => auth_type != null",control
-328,backup_swift_tenant,backup_swift_user_domain,backup_swift_tenant != null => backup_swift_user_domain != null,control
-95,image_upload_use_cinder_backend,enabled_backends,image_upload_use_cinder_backend = true => enabled_backends != null,control
-332,backup_swift_user,backup_swift_url,backup_swift_user != null => backup_swift_url != null,control
-306,backup_swift_project,backup_swift_auth_version,backup_swift_project != null => backup_swift_auth_version != null,control
-89,glance_certfile,glance_ca_certificates_file,glance_certfile != null => glance_ca_certificates_file != null,control
-43,image_upload_use_internal_tenant,image_volume_cache_enabled,image_upload_use_internal_tenant = True => image_volume_cache_enabled != null,control
-145,enable_unsupported_driver,driver_ssl_cert_path,enable_unsupported_driver = true => driver_ssl_cert_path != null,control
-196,enabled_backends,storage_protocol,enabled_backends != null => storage_protocol != null,control
-320,backup_swift_retry_attempts,backup_swift_container,backup_swift_retry_attempts > 0 => backup_swift_container != null,control
-47,image_volume_cache_enabled,image_volume_cache_max_count,image_volume_cache_enabled = true => image_volume_cache_max_count != null,control
-224,enabled,transfer_api_class,enabled=true => transfer_api_class!=null,control
-105,glance_certfile,verify_glance_signatures,glance_certfile != null => verify_glance_signatures = true,control
-263,scst_target_driver,target_helper,scst_target_driver != null => target_helper = iscsi,control
-221,enabled,group_api_class,enabled=true => group_api_class!=null,control
-108,nas_host,nas_login,nas_host != null => nas_login != null,control
-68,driver_use_ssl,driver_ssl_cert_verify,driver_use_ssl = true => driver_ssl_cert_verify != null,control
-4,tcp_keepalive,tcp_keepalive_count,tcp_keepalive = true => tcp_keepalive_count != null,control
-60,quota_driver,enabled_backends,quota_driver != null => enabled_backends != null,control
-360,backup_container,backup_api_class,backup_container != null => backup_api_class != null,control
-5,tcp_keepalive,tcp_keepalive_interval,tcp_keepalive = true => tcp_keepalive_interval != null,control
-110,nas_host,nas_share_path,nas_host != null => nas_share_path != null,control
-45,scheduler_driver,scheduler_host_manager,scheduler_driver != null => scheduler_host_manager != null,control
-28,auth_type,auth_strategy,auth_type = 'noauth_include_project_id' => auth_strategy = 'noauth_include_project_id',control
-274,backup_gcs_project_id,backup_gcs_bucket,backup_gcs_project_id != null => backup_gcs_bucket != null,control
-81,use_chap_auth,chap_password,use_chap_auth = true => chap_password != null,control
-228,enabled,scheduler_manager,enabled=true => scheduler_manager!=null,control
-231,enabled,backup_driver,enabled=true => backup_driver!=null,control
-229,enabled,enabled_backends,enabled=true => enabled_backends!=null,control
-91,scheduler_driver,scheduler_driver_init_wait_time,scheduler_driver != null => scheduler_driver_init_wait_time > 0,control
-47,scheduler_driver,scheduler_weight_handler,scheduler_driver != null => scheduler_weight_handler != null,control
-24,isbehindaproxyornot,enable_proxy_headers_parsing,isbehindaproxyornot = true => enable_proxy_headers_parsing = true,control
-189,default_volume_type,volume_backend_name,default_volume_type != null => volume_backend_name != null,control
-246,quota_groups,quota_driver,quota_driver != null => quota_groups = ANY,control
-359,backup_container,backup_manager,backup_container != null => backup_manager != null,control
-232,enabled,scheduler_driver,enabled=true => scheduler_driver!=null,control
-48,allow_availability_zone_fallback,scheduler_default_filters,"allow_availability_zone_fallback = true => scheduler_default_filters in {{ AvailabilityZoneFilter, OTHER_FILTERS }}",control
-171,target_helper,target_prefix,target_helper != null => target_prefix != null,control
-82,glance_api_servers,verify_glance_signatures,glance_api_servers != null => verify_glance_signatures = true,control
-78,glance_api_insecure,driver_use_ssl,glance_api_insecure = false => driver_use_ssl = false,control
-8,auth_strategy,enable_proxy_headers_parsing,auth_strategy = 'keystone' => enable_proxy_headers_parsing = true,control
-176,target_protocol,target_prefix,target_protocol != null => target_prefix != null,control
-310,backup_swift_project,backup_swift_url,backup_swift_project != null => backup_swift_url != null,control
-309,backup_swift_project,backup_swift_key,backup_swift_project != null => backup_swift_key != null,control
-19,auth_strategy,region_name,"auth_strategy = ""keystone"" => region_name != null",control
-200,enabled_backends,replication_device,enabled_backends != null => replication_device != null,control
-195,enabled_backends,volume_backend_name,enabled_backends != null => volume_backend_name != null,control
-101,use_multipath_for_image_xfer,enforce_multipath_for_image_xfer,use_multipath_for_image_xfer = true => enforce_multipath_for_image_xfer = true,control
-25,volume_driver,volume_api_class,volume_driver != null => volume_api_class != null,control
-62,driver_client_cert,driver_use_ssl,driver_client_cert != null => driver_use_ssl = true,control
-74,auth_type,token_auth_url,"auth_type = ""password"" => token_auth_url != null",control
-155,replication_device,use_chap_auth,replication_device != null => use_chap_auth = true,control
-57,per_volume_size_limit,max_total_volume_gb,per_volume_size_limit > 0 => max_total_volume_gb > per_volume_size_limit,control
-187,default_volume_type,volume_api_class,default_volume_type != null => volume_api_class != null,control
-295,backup_swift_user,backup_swift_container,backup_swift_user != null => backup_swift_container != null,control
-135,backup_swift_url,backup_driver,"backup_driver = ""cinder.backup.drivers.swift"" => backup_swift_url != null",control
-118,backup_swift_enable_progress_timer,backup_swift_container,backup_swift_enable_progress_timer = true => backup_swift_container != null,control
-342,backup_swift_object_size,backup_swift_url,backup_swift_object_size > 0 => backup_swift_url != null,control
-9,tcp_keepalive,tcp_keepalive_count,tcp_keepalive=true => tcp_keepalive_count!=null,control
-307,backup_swift_project,backup_swift_container,backup_swift_project != null => backup_swift_container != null,control
-313,backup_swift_project,backup_swift_user_domain,backup_swift_project != null => backup_swift_user_domain != null,control
-102,glance_api_insecure,verify_glance_signatures,glance_api_insecure = true => verify_glance_signatures = false,control
-198,enabled_backends,scheduler_driver,enabled_backends != null => scheduler_driver != null,control
-149,iscsi_target_flags,use_chap_auth,"iscsi_target_flags = ""auth"" => use_chap_auth = true",control
-188,default_volume_type,volume_driver,default_volume_type != null => volume_driver != null,control
-362,backup_container,backup_timer_interval,backup_container != null => backup_timer_interval != null,control
-142,enable_unsupported_driver,volume_driver,enable_unsupported_driver = true => volume_driver != null,control
-340,backup_swift_retry_backoff,backup_swift_url,backup_swift_retry_backoff != null => backup_swift_url != null,control
-163,storage_protocol,target_helper,"storage_protocol = ""iSCSI"" => target_helper != null",control
-60,chap_username,use_chap_auth,chap_username != null => use_chap_auth = true,control
-74,storage_protocol,target_helper,storage_protocol = 'iSCSI' => target_helper != null,control
-42,volume_backend_name,enabled_backends,"volume_backend_name != null => enabled_backends in {{ volume_backend_name, ... }}",control
-168,target_helper,iscsi_write_cache,target_helper != null => iscsi_write_cache != null,control
-73,auth_strategy,token_auth_url,"auth_strategy = ""keystone"" => token_auth_url != null",control
-14,auth_strategy,token_auth_url,"auth_strategy = ""keystone"" => token_auth_url != null",control
-3,osapi_volume_extension,osapi_volume_ext_list,osapi_volume_extension != null => osapi_volume_ext_list is valid and non-null,control
-138,backup_swift_url,backup_container,backup_swift_url = null => backup_container != null,control
-45,volume_copy_bps_limit,max_over_subscription_ratio,volume_copy_bps_limit > 1000000 => max_over_subscription_ratio < 10.0,control
-296,backup_swift_key,backup_swift_container,backup_swift_key != null => backup_swift_container != null,control
-63,driver_client_cert_key,driver_client_cert,driver_client_cert_key != null => driver_client_cert != null,control
-75,storage_protocol,target_helper,storage_protocol = 'FC' => target_helper != null,control
-172,target_protocol,storage_protocol,target_protocol != null => storage_protocol != null,control
-344,backup_swift_user,backup_swift_auth_version,backup_swift_user != null => backup_swift_auth_version != null,control
-215,volume_manager,volume_driver,volume_manager != null => volume_driver != null,control
-154,replication_device,storage_protocol,replication_device != null => storage_protocol = 'iSCSI',control
-8,backend_stats_polling_interval,stats_update_interval,backend_stats_polling_interval > 0 => stats_update_interval > 0,control
-37,max_over_subscription_ratio,reserved_percentage,max_over_subscription_ratio > 1 => reserved_percentage < 100,control
-26,volume_driver,volume_manager,volume_driver != null => volume_manager != null,control
-112,nas_login,nas_password,nas_login != null => nas_password != null,control
-330,backup_swift_auth_version,backup_swift_url,backup_swift_auth_version != null => backup_swift_url != null,control
-239,quota_backups,backup_api_class,quota_backups != null => backup_api_class != null,control
-337,backup_swift_user_domain,backup_swift_url,backup_swift_user_domain != null => backup_swift_url != null,control
-29,volume_driver,storage_protocol,volume_driver != null => storage_protocol != null,control
-264,scst_target_driver,target_protocol,scst_target_driver != null => target_protocol = iscsi,control
-29,driver_ssl_cert_verify,certfile,driver_ssl_cert_verify = true => certfile != null,control
-321,backup_swift_retry_attempts,backup_swift_url,backup_swift_retry_attempts > 0 => backup_swift_url != null,control
-230,enabled,volume_driver,enabled=true => volume_driver!=null,control
-165,storage_protocol,target_ip_address,"storage_protocol = ""iSCSI"" => target_ip_address != null",control
-238,quota_backups,quota_driver,quota_backups != null => quota_driver != null,control
-35,glance_api_insecure,glance_api_servers,glance_api_insecure = true => glance_api_servers != null,control
-30,volume_driver,volume_service_inithost_offload,volume_driver != null => volume_service_inithost_offload != null,control
-203,scheduler_manager,scheduler_driver,scheduler_manager != null => scheduler_driver != null,control
-300,backup_swift_auth,backup_swift_key,backup_swift_auth != null => backup_swift_key != null,control
-1,compute_api_class,api_rate_limit,compute_api_class != null => api_rate_limit != null,control
-327,backup_swift_tenant,backup_swift_user,backup_swift_tenant != null => backup_swift_user != null,control
-65,driver_ssl_cert_path,driver_ssl_cert_verify,driver_ssl_cert_path != null => driver_ssl_cert_verify = true,control
-201,enabled_backends,volume_service_inithost_offload,enabled_backends != null => volume_service_inithost_offload != null,control
-14,backup_native_threads_pool_size,max_parallel_workers,backup_native_threads_pool_size > 0 => max_parallel_workers >= backup_native_threads_pool_size,control
-130,use_chap_auth,chap_password,use_chap_auth = true => chap_password != null,control
-353,backup_swift_user_domain,backup_swift_auth_version,backup_swift_user_domain != null => backup_swift_auth_version = 3,control
-80,use_chap_auth,chap_username,use_chap_auth = true => chap_username != null,control
-75,enforce_multipath_for_image_xfer,use_multipath_for_image_xfer,enforce_multipath_for_image_xfer = true => use_multipath_for_image_xfer = true,control
-301,backup_swift_auth_version,backup_swift_key,backup_swift_auth_version != null => backup_swift_key != null,control
-341,backup_swift_enable_progress_timer,backup_swift_url,backup_swift_enable_progress_timer = true => backup_swift_url != null,control
-8,tcp_keepalive,tcp_keepalive_interval,tcp_keepalive=true => tcp_keepalive_interval!=null,control
-366,nas_mount_options,backup_mount_options,nas_mount_options=ANY => backup_mount_options=nas_mount_options,default
-185,allow_availability_zone_fallback,default_availability_zone,allow_availability_zone_fallback=true => default_availability_zone=ANY,default
-314,backup_swift_project_domain,backup_swift_project,backup_swift_project_domain = ANY => backup_swift_project = backup_swift_project_domain,default
-250,use_default_quota_class,quota_backups,use_default_quota_class = ANY => quota_backups = use_default_quota_class,default
-249,use_default_quota_class,quota_backup_gigabytes,use_default_quota_class = ANY => quota_backup_gigabytes = use_default_quota_class,default
-367,backup_mount_point_base,backup_posix_path,backup_mount_point_base = ANY => backup_posix_path = backup_mount_point_base,default
-106,use_default_quota_class,quota_backups,use_default_quota_class = ANY => quota_backups = ANY,default
-211,storage_availability_zone,backend_availability_zone,storage_availability_zone = ANY => backend_availability_zone = storage_availability_zone,default
-85,allow_availability_zone_fallback,storage_availability_zone,allow_availability_zone_fallback = true => storage_availability_zone = default_availability_zone,default
-58,backend_availability_zone,storage_availability_zone,backend_availability_zone = null => storage_availability_zone = ANY,default
-315,backup_swift_project_domain,backup_swift_user_domain,backup_swift_project_domain = ANY => backup_swift_user_domain = backup_swift_project_domain,default
-251,use_default_quota_class,quota_gigabytes,use_default_quota_class = ANY => quota_gigabytes = use_default_quota_class,default
-252,use_default_quota_class,quota_groups,use_default_quota_class = ANY => quota_groups = use_default_quota_class,default
-36,glance_ca_certificates_file,glance_certfile,glance_ca_certificates_file = ANY => glance_certfile = glance_ca_certificates_file,default
-69,insecure,glance_api_insecure,insecure = ANY => glance_api_insecure = insecure,default
-352,backup_swift_user_domain,backup_swift_project_domain,backup_swift_user_domain = ANY => backup_swift_project_domain = backup_swift_user_domain,default
-37,glance_ca_certificates_file,glance_keyfile,glance_ca_certificates_file = ANY => glance_keyfile = glance_ca_certificates_file,default
-39,capacity_weight_multiplier,allocated_capacity_weight_multiplier,capacity_weight_multiplier=ANY => allocated_capacity_weight_multiplier=capacity_weight_multiplier,default
-93,default_availability_zone,storage_availability_zone,default_availability_zone = null => storage_availability_zone = ANY,default
-262,target_prefix,iser_target_prefix,target_prefix=ANY => iser_target_prefix=target_prefix,default
-6,osapi_volume_extension,osapi_volume_ext_list,osapi_volume_extension=ANY => osapi_volume_ext_list=osapi_volume_extension,default
-162,storage_protocol,target_protocol,"storage_protocol = ""iSCSI"" => target_protocol = ""iscsi""",default
-14,scheduler_driver,scheduler_driver_init_wait_time,scheduler_driver = ANY => scheduler_driver_init_wait_time = scheduler_driver_init_wait_time,default
-111,nas_host,nas_mount_options,nas_host = ANY => nas_mount_options = ANY,default
-108,use_default_quota_class,quota_gigabytes,use_default_quota_class = ANY => quota_gigabytes = ANY,default
-57,backend_availability_zone,default_availability_zone,backend_availability_zone = null => default_availability_zone = ANY,default
-107,use_default_quota_class,quota_driver,use_default_quota_class = ANY => quota_driver = ANY,default
-183,volume_clear,volume_clear_ionice,volume_clear=ANY => volume_clear_ionice=volume_clear,default
-118,nas_private_key,nas_password,nas_private_key != null => nas_password = null,overwrite
-297,backup_swift_container,backup_container,backup_swift_container != null => backup_container = ANY,overwrite
-137,insecure,driver_ssl_cert_verify,insecure=true => driver_ssl_cert_verify=false,overwrite
-71,insecure,driver_use_ssl,insecure != null => driver_use_ssl = false,overwrite
-30,driver_ssl_cert_path,certfile,driver_ssl_cert_path != null => certfile = ANY,overwrite
-95,quota_backup_gigabytes,backup_gigabytes,backup_gigabytes = ANY => quota_backup_gigabytes = backup_gigabytes,value
-234,per_volume_size_limit,quota_gigabytes,per_volume_size_limit > quota_gigabytes => quota_gigabytes < per_volume_size_limit,value
-49,scheduler_default_weighers,scheduler_weight_handler,"scheduler_default_weighers in {{ ""CapacityWeigher"", ""VolumeNumberWeigher"" }} => scheduler_weight_handler = ""volume_number_multiplier""",value
-61,backup_driver_stats_polling_interval,backup_timer_interval,backup_driver_stats_polling_interval < backup_timer_interval,value
-243,quota_gigabytes,quota_backup_gigabytes,quota_gigabytes > 0 => quota_backup_gigabytes > 0,value
-160,max_over_subscription_ratio,reserved_percentage,<max_over_subscription_ratio> > 1 => <reserved_percentage> < <Singlevalue>,value
-207,scheduler_manager,scheduler_max_attempts,scheduler_manager != null => scheduler_max_attempts > 0,value
-113,backup_gcs_object_size,backup_gcs_block_size,backup_gcs_object_size = (backup_gcs_block_size * n) => backup_gcs_object_size > 0,value
-60,backup_driver_init_check_interval,backup_timer_interval,backup_driver_init_check_interval < backup_timer_interval,value
-21,backup_driver_init_check_interval,backup_driver_stats_polling_interval,backup_driver_init_check_interval < backup_driver_stats_polling_interval => backup_driver_stats_polling_interval > backup_driver_init_check_interval,value
-244,quota_gigabytes,quota_backups,quota_gigabytes > 0 => quota_backups > 0,value
-151,max_over_subscription_ratio,reserved_percentage,max_over_subscription_ratio > 1 => reserved_percentage < 100,value
-111,backup_gcs_bucket,backup_gcs_object_size,backup_gcs_object_size = [backup_gcs_block_size * n .. backup_gcs_block_size * m],value
-139,backup_sha_block_size_bytes,backup_file_size,backup_sha_block_size_bytes != null => backup_file_size = (backup_sha_block_size_bytes * n) [where n is an integer],value
-114,backup_gcs_block_size,backup_gcs_object_size,backup_gcs_object_size = (backup_gcs_block_size * n) where n is an integer,value
-283,backup_gcs_writer_chunk_size,backup_gcs_reader_chunk_size,backup_gcs_writer_chunk_size > 0 => backup_gcs_reader_chunk_size = backup_gcs_writer_chunk_size,value
-208,scheduler_manager,scheduler_driver_init_wait_time,scheduler_manager != null => scheduler_driver_init_wait_time > 0,value
-272,backup_gcs_object_size,backup_gcs_writer_chunk_size,backup_gcs_object_size > backup_gcs_writer_chunk_size => backup_gcs_writer_chunk_size < backup_gcs_object_size,value
-268,backup_gcs_block_size,backup_gcs_writer_chunk_size,backup_gcs_block_size > backup_gcs_writer_chunk_size => backup_gcs_writer_chunk_size < backup_gcs_block_size,value
-248,quota_groups,quota_volumes,quota_volumes > 0 => quota_groups > 0,value
-241,quota_gigabytes,quota_volumes,quota_gigabytes > 0 => quota_volumes > 0,value
+75,backup_service_inithost_offload,backup_use_same_host,backup_service_inithost_offload = true => backup_use_same_host = true,behavior
+76,compute_api_class,volume_api_class,compute_api_class != null => volume_api_class != null,behavior
+77,use_multipath_for_image_xfer,enforce_multipath_for_image_xfer,use_multipath_for_image_xfer = true => enforce_multipath_for_image_xfer != null,control
+78,backup_container,backup_native_threads_pool_size,backup_container != null => backup_native_threads_pool_size != null,control
+79,target_helper,target_port,target_helper != null => target_port != null,control
+80,image_volume_cache_enabled,image_volume_cache_max_size_gb,image_volume_cache_enabled = true => image_volume_cache_max_size_gb != null,control
+81,enable_unsupported_driver,driver_ssl_cert_verify,enable_unsupported_driver = true => driver_ssl_cert_verify != null,control
+82,enable_unsupported_driver,driver_client_cert_key,enable_unsupported_driver = true => driver_client_cert_key != null,control
+83,backup_swift_auth,backup_swift_url,backup_swift_auth != null => backup_swift_url != null,control
+84,replication_device,target_helper,replication_device != null => target_helper != null,control
+85,glance_ca_certificates_file,verify_glance_signatures,glance_ca_certificates_file != null => verify_glance_signatures = true,control
+86,driver_use_ssl,driver_ssl_cert_verify,driver_use_ssl=true => driver_ssl_cert_verify!=null,control
+87,insecure,suppress_requests_ssl_warnings,insecure = true => suppress_requests_ssl_warnings = true,control
+88,enabled,api_rate_limit,enabled=true => api_rate_limit!=null,control
+89,scheduler_default_filters,scheduler_host_manager,scheduler_host_manager != null => scheduler_default_filters != null,control
+90,scheduler_manager,scheduler_host_manager,scheduler_manager != null => scheduler_host_manager != null,control
+91,driver_client_cert_key,driver_use_ssl,driver_client_cert_key != null => driver_use_ssl = true,control
+92,storage_availability_zone,enabled_backends,enabled_backends not in {{}} => storage_availability_zone in {{enabled_backends.availability_zone}},control
+93,enabled,volume_manager,enabled=true => volume_manager!=null,control
+94,target_helper,use_chap_auth,target_helper != null => use_chap_auth != null,control
+95,insecure,nas_secure_file_permissions,insecure = True => nas_secure_file_permissions = False,control
+96,iser_helper,num_iser_scan_tries,iser_helper!=null => num_iser_scan_tries>0,control
+97,backup_driver,backup_swift_user,"backup_driver = ""cinder.backup.drivers.swift"" => backup_swift_user != null",control
+98,enabled,quota_driver,enabled=true => quota_driver!=null,control
+99,backup_swift_project_domain,backup_swift_auth_version,"backup_swift_project_domain != null => backup_swift_auth_version = ""v3""",control
+100,monkey_patch,monkey_patch_modules,monkey_patch = true => monkey_patch_modules != null,control
+101,backup_gcs_num_retries,backup_gcs_retry_error_codes,backup_gcs_num_retries > 0 => backup_gcs_retry_error_codes != null,control
+102,auth_strategy,keyfile,"auth_strategy = ""keystone"" => keyfile != null",control
+103,backup_swift_user,backup_swift_project,backup_swift_user != null => backup_swift_project != null,control
+104,glance_certfile,glance_keyfile,glance_certfile != null => glance_keyfile != null,control
+105,nas_secure_file_operations,nas_secure_file_permissions,nas_secure_file_operations = true => nas_secure_file_permissions != null,control
+106,nas_login,nas_private_key,nas_login != null => nas_private_key != null,control
+107,backend_availability_zone,enabled_backends,"enabled_backends in {{backend1, backend2}} => backend_availability_zone != null",control
+108,scheduler_host_manager,scheduler_max_attempts,scheduler_host_manager != null => scheduler_max_attempts > 0,control
+109,backup_swift_tenant,backup_swift_project,backup_swift_tenant != null => backup_swift_project != null,control
+110,driver_client_cert,driver_client_cert_key,driver_client_cert != null => driver_client_cert_key != null,control
+111,backup_manager,backup_api_class,backup_manager != null => backup_api_class != null,control
+112,backup_swift_project,backup_swift_url,backup_swift_project != null => backup_swift_url != null,control
+113,image_volume_cache_enabled,image_volume_cache_max_count,image_volume_cache_enabled = true => image_volume_cache_max_count != null,control
+114,enabled,volume_api_class,enabled=true => volume_api_class!=null,control
+115,backup_swift_key,backup_swift_url,backup_swift_key != null => backup_swift_url != null,control
+116,glance_api_insecure,driver_ssl_cert_verify,glance_api_insecure = true => driver_ssl_cert_verify = false,control
+117,backup_swift_tenant,backup_swift_auth_version,backup_swift_tenant != null => backup_swift_auth_version != null,control
+118,target_helper,target_protocol,target_helper != null => target_protocol != null,control
+119,backup_container,backup_driver,backup_container != null => backup_driver != null,control
+120,target_protocol,target_ip_address,target_protocol != null => target_ip_address != null,control
+121,storage_protocol,use_chap_auth,"storage_protocol = ""iSCSI"" => use_chap_auth = true",control
+122,chap_username,use_chap_auth,use_chap_auth = true => chap_username != null,control
+123,use_multipath_for_image_xfer,iscsi_num_targets,use_multipath_for_image_xfer = true => iscsi_num_targets > 1,control
+124,backup_swift_user,backup_swift_container,backup_swift_user != null => backup_swift_container != null,control
+125,image_volume_cache_enabled,image_volume_cache_max_count,image_volume_cache_enabled = True => image_volume_cache_max_count != null,control
+126,backup_swift_user,backup_swift_project_domain,backup_swift_user != null => backup_swift_project_domain != null,control
+127,volume_manager,volume_api_class,volume_manager != null => volume_api_class != null,control
+128,backup_swift_url,backup_swift_container,backup_swift_url != null => backup_swift_container != null,control
+129,iscsi_write_cache,target_helper,"iscsi_write_cache = ""on"" => target_helper = ""tgtadm""",control
+130,nas_login,nas_secure_file_permissions,nas_login != null => nas_secure_file_permissions = true,control
+131,auth_type,auth_strategy,auth_type = 'noauth' => auth_strategy = 'noauth',control
+132,auth_type,auth_strategy,auth_type = 'keystone' => auth_strategy = 'keystone',control
+133,filter_function,scheduler_default_filters,"filter_function != null => scheduler_default_filters = ""filter_function""",control
+134,backup_swift_tenant,backup_swift_project_domain,backup_swift_tenant != null => backup_swift_project_domain != null,control
+135,target_helper,target_ip_address,target_helper != null => target_ip_address != null,control
+136,auth_strategy,auth_section,auth_strategy = 'keystone' => auth_section != null,control
+137,tcp_keepalive,tcp_keepalive_count,tcp_keepalive=true => tcp_keepalive_count!=null,control
+138,backup_use_same_host,backup_manager,backup_use_same_host=true => backup_manager!=null,control
+139,backup_manager,backup_workers,backup_manager = enabled => backup_workers > 0,control
+140,use_chap_auth,chap_password,use_chap_auth = true => chap_password != null,control
+141,backup_swift_user,backup_swift_url,backup_swift_user != null => backup_swift_url != null,control
+142,image_volume_cache_enabled,image_upload_use_internal_tenant,image_volume_cache_enabled = True => image_upload_use_internal_tenant = True,control
+143,enable_unsupported_driver,driver_client_cert,enable_unsupported_driver = true => driver_client_cert != null,control
+144,transfer_api_class,backup_api_class,"transfer_api_class = ""ANY"" => backup_api_class != ""null""",control
+145,enabled_backends,volume_driver,enabled_backends != null => volume_driver != null,control
+146,backup_swift_project,backup_swift_user,backup_swift_project != null => backup_swift_user != null,control
+147,scheduler_driver,scheduler_default_weighers,scheduler_driver != null => scheduler_default_weighers != null,control
+148,chap_username,chap_password,chap_username != null => chap_password != null,control
+149,enable_unsupported_driver,driver_use_ssl,enable_unsupported_driver = true => driver_use_ssl != null,control
+150,backup_driver,backup_compression_algorithm,"backup_driver != null => backup_compression_algorithm in {'none', 'off', 'no', 'zlib', 'gzip', 'bz2', 'bzip2', 'zstd'}",control
+151,backup_manager,backup_driver,backup_manager != null => backup_driver != null,control
+152,auth_strategy,auth_type,"auth_strategy = ""keystone"" => auth_type != null",control
+153,backup_swift_tenant,backup_swift_user_domain,backup_swift_tenant != null => backup_swift_user_domain != null,control
+154,image_upload_use_cinder_backend,enabled_backends,image_upload_use_cinder_backend = true => enabled_backends != null,control
+155,backup_swift_user,backup_swift_url,backup_swift_user != null => backup_swift_url != null,control
+156,backup_swift_project,backup_swift_auth_version,backup_swift_project != null => backup_swift_auth_version != null,control
+157,glance_certfile,glance_ca_certificates_file,glance_certfile != null => glance_ca_certificates_file != null,control
+158,image_upload_use_internal_tenant,image_volume_cache_enabled,image_upload_use_internal_tenant = True => image_volume_cache_enabled != null,control
+159,enable_unsupported_driver,driver_ssl_cert_path,enable_unsupported_driver = true => driver_ssl_cert_path != null,control
+160,enabled_backends,storage_protocol,enabled_backends != null => storage_protocol != null,control
+161,backup_swift_retry_attempts,backup_swift_container,backup_swift_retry_attempts > 0 => backup_swift_container != null,control
+162,image_volume_cache_enabled,image_volume_cache_max_count,image_volume_cache_enabled = true => image_volume_cache_max_count != null,control
+163,enabled,transfer_api_class,enabled=true => transfer_api_class!=null,control
+164,glance_certfile,verify_glance_signatures,glance_certfile != null => verify_glance_signatures = true,control
+165,scst_target_driver,target_helper,scst_target_driver != null => target_helper = iscsi,control
+166,enabled,group_api_class,enabled=true => group_api_class!=null,control
+167,nas_host,nas_login,nas_host != null => nas_login != null,control
+168,driver_use_ssl,driver_ssl_cert_verify,driver_use_ssl = true => driver_ssl_cert_verify != null,control
+169,tcp_keepalive,tcp_keepalive_count,tcp_keepalive = true => tcp_keepalive_count != null,control
+170,quota_driver,enabled_backends,quota_driver != null => enabled_backends != null,control
+171,backup_container,backup_api_class,backup_container != null => backup_api_class != null,control
+172,tcp_keepalive,tcp_keepalive_interval,tcp_keepalive = true => tcp_keepalive_interval != null,control
+173,nas_host,nas_share_path,nas_host != null => nas_share_path != null,control
+174,scheduler_driver,scheduler_host_manager,scheduler_driver != null => scheduler_host_manager != null,control
+175,auth_type,auth_strategy,auth_type = 'noauth_include_project_id' => auth_strategy = 'noauth_include_project_id',control
+176,backup_gcs_project_id,backup_gcs_bucket,backup_gcs_project_id != null => backup_gcs_bucket != null,control
+177,use_chap_auth,chap_password,use_chap_auth = true => chap_password != null,control
+178,enabled,scheduler_manager,enabled=true => scheduler_manager!=null,control
+179,enabled,backup_driver,enabled=true => backup_driver!=null,control
+180,enabled,enabled_backends,enabled=true => enabled_backends!=null,control
+181,scheduler_driver,scheduler_driver_init_wait_time,scheduler_driver != null => scheduler_driver_init_wait_time > 0,control
+182,scheduler_driver,scheduler_weight_handler,scheduler_driver != null => scheduler_weight_handler != null,control
+183,isbehindaproxyornot,enable_proxy_headers_parsing,isbehindaproxyornot = true => enable_proxy_headers_parsing = true,control
+184,default_volume_type,volume_backend_name,default_volume_type != null => volume_backend_name != null,control
+185,quota_groups,quota_driver,quota_driver != null => quota_groups = ANY,control
+186,backup_container,backup_manager,backup_container != null => backup_manager != null,control
+187,enabled,scheduler_driver,enabled=true => scheduler_driver!=null,control
+188,allow_availability_zone_fallback,scheduler_default_filters,"allow_availability_zone_fallback = true => scheduler_default_filters in {{ AvailabilityZoneFilter, OTHER_FILTERS }}",control
+189,target_helper,target_prefix,target_helper != null => target_prefix != null,control
+190,glance_api_servers,verify_glance_signatures,glance_api_servers != null => verify_glance_signatures = true,control
+191,glance_api_insecure,driver_use_ssl,glance_api_insecure = false => driver_use_ssl = false,control
+192,auth_strategy,enable_proxy_headers_parsing,auth_strategy = 'keystone' => enable_proxy_headers_parsing = true,control
+193,target_protocol,target_prefix,target_protocol != null => target_prefix != null,control
+194,backup_swift_project,backup_swift_url,backup_swift_project != null => backup_swift_url != null,control
+195,backup_swift_project,backup_swift_key,backup_swift_project != null => backup_swift_key != null,control
+196,auth_strategy,region_name,"auth_strategy = ""keystone"" => region_name != null",control
+197,enabled_backends,replication_device,enabled_backends != null => replication_device != null,control
+198,enabled_backends,volume_backend_name,enabled_backends != null => volume_backend_name != null,control
+199,use_multipath_for_image_xfer,enforce_multipath_for_image_xfer,use_multipath_for_image_xfer = true => enforce_multipath_for_image_xfer = true,control
+200,volume_driver,volume_api_class,volume_driver != null => volume_api_class != null,control
+201,driver_client_cert,driver_use_ssl,driver_client_cert != null => driver_use_ssl = true,control
+202,auth_type,token_auth_url,"auth_type = ""password"" => token_auth_url != null",control
+203,replication_device,use_chap_auth,replication_device != null => use_chap_auth = true,control
+204,per_volume_size_limit,max_total_volume_gb,per_volume_size_limit > 0 => max_total_volume_gb > per_volume_size_limit,control
+205,default_volume_type,volume_api_class,default_volume_type != null => volume_api_class != null,control
+206,backup_swift_user,backup_swift_container,backup_swift_user != null => backup_swift_container != null,control
+207,backup_swift_url,backup_driver,"backup_driver = ""cinder.backup.drivers.swift"" => backup_swift_url != null",control
+208,backup_swift_enable_progress_timer,backup_swift_container,backup_swift_enable_progress_timer = true => backup_swift_container != null,control
+209,backup_swift_object_size,backup_swift_url,backup_swift_object_size > 0 => backup_swift_url != null,control
+210,tcp_keepalive,tcp_keepalive_count,tcp_keepalive=true => tcp_keepalive_count!=null,control
+211,backup_swift_project,backup_swift_container,backup_swift_project != null => backup_swift_container != null,control
+212,backup_swift_project,backup_swift_user_domain,backup_swift_project != null => backup_swift_user_domain != null,control
+213,glance_api_insecure,verify_glance_signatures,glance_api_insecure = true => verify_glance_signatures = false,control
+214,enabled_backends,scheduler_driver,enabled_backends != null => scheduler_driver != null,control
+215,iscsi_target_flags,use_chap_auth,"iscsi_target_flags = ""auth"" => use_chap_auth = true",control
+216,default_volume_type,volume_driver,default_volume_type != null => volume_driver != null,control
+217,backup_container,backup_timer_interval,backup_container != null => backup_timer_interval != null,control
+218,enable_unsupported_driver,volume_driver,enable_unsupported_driver = true => volume_driver != null,control
+219,backup_swift_retry_backoff,backup_swift_url,backup_swift_retry_backoff != null => backup_swift_url != null,control
+220,storage_protocol,target_helper,"storage_protocol = ""iSCSI"" => target_helper != null",control
+221,chap_username,use_chap_auth,chap_username != null => use_chap_auth = true,control
+222,storage_protocol,target_helper,storage_protocol = 'iSCSI' => target_helper != null,control
+223,volume_backend_name,enabled_backends,"volume_backend_name != null => enabled_backends in {{ volume_backend_name, ... }}",control
+224,target_helper,iscsi_write_cache,target_helper != null => iscsi_write_cache != null,control
+225,auth_strategy,token_auth_url,"auth_strategy = ""keystone"" => token_auth_url != null",control
+226,auth_strategy,token_auth_url,"auth_strategy = ""keystone"" => token_auth_url != null",control
+227,osapi_volume_extension,osapi_volume_ext_list,osapi_volume_extension != null => osapi_volume_ext_list is valid and non-null,control
+228,backup_swift_url,backup_container,backup_swift_url = null => backup_container != null,control
+229,volume_copy_bps_limit,max_over_subscription_ratio,volume_copy_bps_limit > 1000000 => max_over_subscription_ratio < 10.0,control
+230,backup_swift_key,backup_swift_container,backup_swift_key != null => backup_swift_container != null,control
+231,driver_client_cert_key,driver_client_cert,driver_client_cert_key != null => driver_client_cert != null,control
+232,storage_protocol,target_helper,storage_protocol = 'FC' => target_helper != null,control
+233,target_protocol,storage_protocol,target_protocol != null => storage_protocol != null,control
+234,backup_swift_user,backup_swift_auth_version,backup_swift_user != null => backup_swift_auth_version != null,control
+235,volume_manager,volume_driver,volume_manager != null => volume_driver != null,control
+236,replication_device,storage_protocol,replication_device != null => storage_protocol = 'iSCSI',control
+237,backend_stats_polling_interval,stats_update_interval,backend_stats_polling_interval > 0 => stats_update_interval > 0,control
+238,max_over_subscription_ratio,reserved_percentage,max_over_subscription_ratio > 1 => reserved_percentage < 100,control
+239,volume_driver,volume_manager,volume_driver != null => volume_manager != null,control
+240,nas_login,nas_password,nas_login != null => nas_password != null,control
+241,backup_swift_auth_version,backup_swift_url,backup_swift_auth_version != null => backup_swift_url != null,control
+242,quota_backups,backup_api_class,quota_backups != null => backup_api_class != null,control
+243,backup_swift_user_domain,backup_swift_url,backup_swift_user_domain != null => backup_swift_url != null,control
+244,volume_driver,storage_protocol,volume_driver != null => storage_protocol != null,control
+245,scst_target_driver,target_protocol,scst_target_driver != null => target_protocol = iscsi,control
+246,driver_ssl_cert_verify,certfile,driver_ssl_cert_verify = true => certfile != null,control
+247,backup_swift_retry_attempts,backup_swift_url,backup_swift_retry_attempts > 0 => backup_swift_url != null,control
+248,enabled,volume_driver,enabled=true => volume_driver!=null,control
+249,storage_protocol,target_ip_address,"storage_protocol = ""iSCSI"" => target_ip_address != null",control
+250,quota_backups,quota_driver,quota_backups != null => quota_driver != null,control
+251,glance_api_insecure,glance_api_servers,glance_api_insecure = true => glance_api_servers != null,control
+252,volume_driver,volume_service_inithost_offload,volume_driver != null => volume_service_inithost_offload != null,control
+253,scheduler_manager,scheduler_driver,scheduler_manager != null => scheduler_driver != null,control
+254,backup_swift_auth,backup_swift_key,backup_swift_auth != null => backup_swift_key != null,control
+255,compute_api_class,api_rate_limit,compute_api_class != null => api_rate_limit != null,control
+256,backup_swift_tenant,backup_swift_user,backup_swift_tenant != null => backup_swift_user != null,control
+257,driver_ssl_cert_path,driver_ssl_cert_verify,driver_ssl_cert_path != null => driver_ssl_cert_verify = true,control
+258,enabled_backends,volume_service_inithost_offload,enabled_backends != null => volume_service_inithost_offload != null,control
+259,backup_native_threads_pool_size,max_parallel_workers,backup_native_threads_pool_size > 0 => max_parallel_workers >= backup_native_threads_pool_size,control
+260,use_chap_auth,chap_password,use_chap_auth = true => chap_password != null,control
+261,backup_swift_user_domain,backup_swift_auth_version,backup_swift_user_domain != null => backup_swift_auth_version = 3,control
+262,use_chap_auth,chap_username,use_chap_auth = true => chap_username != null,control
+263,enforce_multipath_for_image_xfer,use_multipath_for_image_xfer,enforce_multipath_for_image_xfer = true => use_multipath_for_image_xfer = true,control
+264,backup_swift_auth_version,backup_swift_key,backup_swift_auth_version != null => backup_swift_key != null,control
+265,backup_swift_enable_progress_timer,backup_swift_url,backup_swift_enable_progress_timer = true => backup_swift_url != null,control
+266,tcp_keepalive,tcp_keepalive_interval,tcp_keepalive=true => tcp_keepalive_interval!=null,control
+267,nas_mount_options,backup_mount_options,nas_mount_options=ANY => backup_mount_options=nas_mount_options,default
+268,allow_availability_zone_fallback,default_availability_zone,allow_availability_zone_fallback=true => default_availability_zone=ANY,default
+269,backup_swift_project_domain,backup_swift_project,backup_swift_project_domain = ANY => backup_swift_project = backup_swift_project_domain,default
+270,use_default_quota_class,quota_backups,use_default_quota_class = ANY => quota_backups = use_default_quota_class,default
+271,use_default_quota_class,quota_backup_gigabytes,use_default_quota_class = ANY => quota_backup_gigabytes = use_default_quota_class,default
+272,backup_mount_point_base,backup_posix_path,backup_mount_point_base = ANY => backup_posix_path = backup_mount_point_base,default
+273,use_default_quota_class,quota_backups,use_default_quota_class = ANY => quota_backups = ANY,default
+274,storage_availability_zone,backend_availability_zone,storage_availability_zone = ANY => backend_availability_zone = storage_availability_zone,default
+275,allow_availability_zone_fallback,storage_availability_zone,allow_availability_zone_fallback = true => storage_availability_zone = default_availability_zone,default
+276,backend_availability_zone,storage_availability_zone,backend_availability_zone = null => storage_availability_zone = ANY,default
+277,backup_swift_project_domain,backup_swift_user_domain,backup_swift_project_domain = ANY => backup_swift_user_domain = backup_swift_project_domain,default
+278,use_default_quota_class,quota_gigabytes,use_default_quota_class = ANY => quota_gigabytes = use_default_quota_class,default
+279,use_default_quota_class,quota_groups,use_default_quota_class = ANY => quota_groups = use_default_quota_class,default
+280,glance_ca_certificates_file,glance_certfile,glance_ca_certificates_file = ANY => glance_certfile = glance_ca_certificates_file,default
+281,insecure,glance_api_insecure,insecure = ANY => glance_api_insecure = insecure,default
+282,backup_swift_user_domain,backup_swift_project_domain,backup_swift_user_domain = ANY => backup_swift_project_domain = backup_swift_user_domain,default
+283,glance_ca_certificates_file,glance_keyfile,glance_ca_certificates_file = ANY => glance_keyfile = glance_ca_certificates_file,default
+284,capacity_weight_multiplier,allocated_capacity_weight_multiplier,capacity_weight_multiplier=ANY => allocated_capacity_weight_multiplier=capacity_weight_multiplier,default
+285,default_availability_zone,storage_availability_zone,default_availability_zone = null => storage_availability_zone = ANY,default
+286,target_prefix,iser_target_prefix,target_prefix=ANY => iser_target_prefix=target_prefix,default
+287,osapi_volume_extension,osapi_volume_ext_list,osapi_volume_extension=ANY => osapi_volume_ext_list=osapi_volume_extension,default
+288,storage_protocol,target_protocol,"storage_protocol = ""iSCSI"" => target_protocol = ""iscsi""",default
+289,scheduler_driver,scheduler_driver_init_wait_time,scheduler_driver = ANY => scheduler_driver_init_wait_time = scheduler_driver_init_wait_time,default
+290,nas_host,nas_mount_options,nas_host = ANY => nas_mount_options = ANY,default
+291,use_default_quota_class,quota_gigabytes,use_default_quota_class = ANY => quota_gigabytes = ANY,default
+292,backend_availability_zone,default_availability_zone,backend_availability_zone = null => default_availability_zone = ANY,default
+293,use_default_quota_class,quota_driver,use_default_quota_class = ANY => quota_driver = ANY,default
+294,volume_clear,volume_clear_ionice,volume_clear=ANY => volume_clear_ionice=volume_clear,default
+295,nas_private_key,nas_password,nas_private_key != null => nas_password = null,overwrite
+296,backup_swift_container,backup_container,backup_swift_container != null => backup_container = ANY,overwrite
+297,insecure,driver_ssl_cert_verify,insecure=true => driver_ssl_cert_verify=false,overwrite
+298,insecure,driver_use_ssl,insecure != null => driver_use_ssl = false,overwrite
+299,driver_ssl_cert_path,certfile,driver_ssl_cert_path != null => certfile = ANY,overwrite
+300,quota_backup_gigabytes,backup_gigabytes,backup_gigabytes = ANY => quota_backup_gigabytes = backup_gigabytes,value
+301,per_volume_size_limit,quota_gigabytes,per_volume_size_limit > quota_gigabytes => quota_gigabytes < per_volume_size_limit,value
+302,scheduler_default_weighers,scheduler_weight_handler,"scheduler_default_weighers in {{ ""CapacityWeigher"", ""VolumeNumberWeigher"" }} => scheduler_weight_handler = ""volume_number_multiplier""",value
+303,backup_driver_stats_polling_interval,backup_timer_interval,backup_driver_stats_polling_interval < backup_timer_interval,value
+304,quota_gigabytes,quota_backup_gigabytes,quota_gigabytes > 0 => quota_backup_gigabytes > 0,value
+305,max_over_subscription_ratio,reserved_percentage,<max_over_subscription_ratio> > 1 => <reserved_percentage> < <Singlevalue>,value
+306,scheduler_manager,scheduler_max_attempts,scheduler_manager != null => scheduler_max_attempts > 0,value
+307,backup_gcs_object_size,backup_gcs_block_size,backup_gcs_object_size = (backup_gcs_block_size * n) => backup_gcs_object_size > 0,value
+308,backup_driver_init_check_interval,backup_timer_interval,backup_driver_init_check_interval < backup_timer_interval,value
+309,backup_driver_init_check_interval,backup_driver_stats_polling_interval,backup_driver_init_check_interval < backup_driver_stats_polling_interval => backup_driver_stats_polling_interval > backup_driver_init_check_interval,value
+310,quota_gigabytes,quota_backups,quota_gigabytes > 0 => quota_backups > 0,value
+311,max_over_subscription_ratio,reserved_percentage,max_over_subscription_ratio > 1 => reserved_percentage < 100,value
+312,backup_gcs_bucket,backup_gcs_object_size,backup_gcs_object_size = [backup_gcs_block_size * n .. backup_gcs_block_size * m],value
+313,backup_sha_block_size_bytes,backup_file_size,backup_sha_block_size_bytes != null => backup_file_size = (backup_sha_block_size_bytes * n) [where n is an integer],value
+314,backup_gcs_block_size,backup_gcs_object_size,backup_gcs_object_size = (backup_gcs_block_size * n) where n is an integer,value
+315,backup_gcs_writer_chunk_size,backup_gcs_reader_chunk_size,backup_gcs_writer_chunk_size > 0 => backup_gcs_reader_chunk_size = backup_gcs_writer_chunk_size,value
+316,scheduler_manager,scheduler_driver_init_wait_time,scheduler_manager != null => scheduler_driver_init_wait_time > 0,value
+317,backup_gcs_object_size,backup_gcs_writer_chunk_size,backup_gcs_object_size > backup_gcs_writer_chunk_size => backup_gcs_writer_chunk_size < backup_gcs_object_size,value
+318,backup_gcs_block_size,backup_gcs_writer_chunk_size,backup_gcs_block_size > backup_gcs_writer_chunk_size => backup_gcs_writer_chunk_size < backup_gcs_block_size,value
+319,quota_groups,quota_volumes,quota_volumes > 0 => quota_groups > 0,value
+320,quota_gigabytes,quota_volumes,quota_gigabytes > 0 => quota_volumes > 0,value

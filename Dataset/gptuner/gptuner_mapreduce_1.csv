@@ -1,0 +1,16 @@
+id,Parameter1,Parameter2
+1,mapreduce.job.end-notification.retry.interval,mapreduce.job.end-notification.max.retry.interval
+2,mapreduce.job.end-notification.max.attempts,mapreduce.job.end-notification.retry.attempts
+3,mapreduce.map.maxattempts,mapreduce.job.maxtaskfailures.per.tracker
+4,mapreduce.job.ubertask.maxmaps,mapreduce.job.ubertask.enable
+5,mapreduce.task.profile,mapreduce.task.profile.reduce.params
+6,mapreduce.job.reduces,mapreduce.job.max.reduce
+7,mapreduce.job.log4j-properties-file,mapreduce.map.log.level
+8,mapreduce.map.output.compress,mapreduce.map.output.compress.codec
+9,mapreduce.reduce.shuffle.fetch.retry.enabled,mapreduce.reduce.shuffle.fetch.retry.timeout-ms
+10,mapreduce.map.memory.mb,mapreduce.tasktracker.map.tasks.maximum
+11,mapreduce.map.output.compress.codec,mapreduce.output.fileoutputformat.compress.codec
+12,mapreduce.map.output.compress,mapreduce.output.fileoutputformat.compress.codec
+13,mapreduce.output.fileoutputformat.compress,mapreduce.output.fileoutputformat.compress.type
+14,mapreduce.job.reduces,mapreduce.job.reduce.slowstart.completedmaps
+15,mapreduce.input.lineinputformat.linespermap,mapreduce.input.fileinputformat.split.maxsize

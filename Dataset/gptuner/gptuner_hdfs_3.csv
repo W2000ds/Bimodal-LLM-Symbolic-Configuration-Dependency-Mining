@@ -1,0 +1,5 @@
+id,Parameter1,Parameter2
+1,dfs.client.read.shortcircuit,dfs.domain.socket.path
+2,dfs.namenode.decommission.blocks.per.interval,dfs.namenode.decommission.interval
+3,dfs.block.access.key.update.interval,dfs.block.access.token.lifetime
+4,dfs.cachereport.intervalMsec,dfs.blockreport.incremental.intervalMsec

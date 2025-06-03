@@ -1,8 +1,8 @@
 id,param1,param2,bnf,type
 1,osapi_volume_extension,osapi_volume_ext_list,osapi_volume_extension = 'api.contrib.select_extensions' => B in {{'api.extensions.standard_extensions'}},value
 2,glance_api_servers,glance_catalog_info,A = null => B != null,control
-3,use_chap_auth,chap,"A = true => B in {true, false}",control
-4,san_ip,storwize_san_secondary_ip,A != null => B in ANY,overwrite
+3,use_chap_auth,chap,use_chap_auth = true => chap in {true, false}",control
+4,san_ip,storwize_san_secondary_ip,san_ip != null => storwize_san_secondary_ip in ANY,overwrite
 5,trace_flags,netapp_api_trace_pattern,trace_flags = 'api' => B = 'work',control
 6,driver_use_ssl,synology_ssl_verify,"$driver_use_ssl = true => $do_certificate_validation in {true, false}",control
 7,target_helper,iscsi_write_cache,target_helper = 'tgtadm' => A in { 'tgtadm' },value

@@ -1,154 +1,154 @@
 id,Parameter1,Parameter2,bnf,type
-1574,hbase.regionserver.msginterval,hbase.regionserver.lease.period,hbase.regionserver.msginterval > 1000 => hbase.regionserver.lease.period > 60000,behavior
-1763,hbase.bucketcache.bucket.sizes,hbase.bucketcache.ioengine,"hbase.bucketcache.bucket.sizes != null => hbase.bucketcache.ioengine in {{""offheap"", ""file""}}",behavior
-1830,hbase.thrift.maxWorkerThreads,hbase.thrift.queueSize,hbase.thrift.maxWorkerThreads > {{current_value}} => hbase.thrift.queueSize > {{current_queue_size}},behavior
-1577,hbase.regionserver.logroll.period,hbase.regionserver.logroll.multiplier,hbase.regionserver.logroll.period < 3600 => hbase.regionserver.logroll.multiplier < 0.95,behavior
-2448,hbase.coprocessor.enabled,hbase.coprocessor.user.enabled,hbase.coprocessor.enabled = true => hbase.coprocessor.user.enabled != null,control
-1757,hbase.bucketcache.ioengine,hbase.bucketcache.percentage.in.combinedcache,hbase.bucketcache.ioengine != null => hbase.bucketcache.percentage.in.combinedcache in [0..100],control
-1614,hbase.zookeeper.peerport,hbase.zookeeper.leaderport,hbase.zookeeper.peerport != null => hbase.zookeeper.leaderport != hbase.zookeeper.peerport,control
-2450,hbase.coprocessor.user.enabled,hbase.cluster.distributed,hbase.cluster.distributed = true => hbase.coprocessor.user.enabled = ANY,control
-1583,hbase.regionserver.hlog.reader.impl,hbase.regionserver.hlog.syncer.count,hbase.regionserver.hlog.reader.impl != default => hbase.regionserver.hlog.syncer.count > 1,control
-1567,hbase.ipc.server.callqueue.handler.factor,hbase.regionserver.handler.count,hbase.ipc.server.callqueue.handler.factor > 1 => hbase.regionserver.handler.count > hbase.regionserver.handler.count * hbase.ipc.server.callqueue.handler.factor,control
-1873,hbase.status.publisher.class,hbase.status.multithreaded.publisher.threads,"hbase.status.publisher.class in {{org.apache.hadoop.hbase.MultiThreadedStatusPublisher, com.custom.MultiThreadedPublisher}} => hbase.status.multithreaded.publisher.threads > 1",control
-1634,hbase.client.pause,hbase.rpc.timeout,hbase.client.pause > 100 => hbase.rpc.timeout > hbase.client.pause * hbase.client.retries.number,control
-2307,hbase.rootdir,hbase.zookeeper.quorum,hbase.cluster.distributed = true => hbase.zookeeper.quorum != null,control
-697,hbase.offpeak.start.hour,hbase.hstore.time.to.purge.deletes,hbase.offpeak.start.hour != null => hbase.hstore.time.to.purge.deletes != null,control
-731,hbase.security.authentication,hbase.auth.token.max.lifetime,hbase.security.authentication != null => hbase.auth.token.max.lifetime != null,control
-2357,hbase.zookeeper.leaderport,hbase.zookeeper.quorum,hbase.zookeeper.quorum != null => hbase.zookeeper.leaderport = ANY,control
-1615,hbase.zookeeper.peerport,hbase.zookeeper.clientport,hbase.zookeeper.peerport != null => hbase.zookeeper.clientport != hbase.zookeeper.peerport,control
-1569,hbase.ipc.server.callqueue.read.ratio,hbase.ipc.server.max.callqueue.length,hbase.ipc.server.callqueue.read.ratio > 0 => hbase.ipc.server.max.callqueue.length > 0,control
-1586,hbase.regionserver.hlog.writer.impl,hbase.regionserver.hlog.syncer.count,hbase.regionserver.hlog.writer.impl in {{custom_writer_impl}} => hbase.regionserver.hlog.syncer.count > 1,control
-704,hbase.regionserver.hostname,hbase.regionserver.hostname.disable.master.reversedns,hbase.regionserver.hostname != null => hbase.regionserver.hostname.disable.master.reversedns = false,control
-1860,hbase.dfs.client.read.shortcircuit.buffer.size,dfs.domain.socket.path,hbase.dfs.client.read.shortcircuit.buffer.size > 0 => dfs.domain.socket.path != null,control
-1662,hbase.client.localityCheck.threadPoolSize,hbase.regionserver.handler.count,hbase.client.localityCheck.threadPoolSize in {{a..b}} => hbase.regionserver.handler.count in {{c..d}},control
-2424,hbase.storescanner.parallel.seek.threads,hbase.storescanner.parallel.seek.enable,hbase.storescanner.parallel.seek.enable = true => hbase.storescanner.parallel.seek.threads > 0,control
-1653,hbase.client.scanner.caching,hbase.regionserver.handler.count,hbase.client.scanner.caching > 100 => hbase.regionserver.handler.count > 30,control
-1808,hbase.coprocessor.region.classes,hbase.regionserver.coprocessor.heap.memory,hbase.coprocessor.region.classes != null => hbase.regionserver.coprocessor.heap.memory > 0,control
-2455,hbase.table.lock.enable,hbase.cluster.distributed,hbase.cluster.distributed = true => hbase.table.lock.enable = true,control
-1562,hbase.regionserver.port,hbase.regionserver.info.port,hbase.regionserver.port != ANY => hbase.regionserver.info.port != ANY,control
-1824,hbase.table.max.rowsize,hbase.hregion.max.filesize,hbase.table.max.rowsize > ANY => hbase.hregion.max.filesize > hbase.table.max.rowsize,control
-2326,hbase.master.infoserver.redirect,hbase.cluster.distributed,hbase.cluster.distributed = true => hbase.master.infoserver.redirect = true,control
-1672,hbase.normalizer.period,hbase.normalizer.enabled,hbase.normalizer.enabled = true => hbase.normalizer.period > 0,control
-1588,hbase.regionserver.global.memstore.size,hbase.regionserver.java.heapsize,hbase.regionserver.global.memstore.size > 0.4 => hbase.regionserver.java.heapsize > [8..ANY],control
-1659,hbase.client.scanner.timeout.period,hbase.rpc.timeout,hbase.client.scanner.timeout.period > 0 => hbase.rpc.timeout > hbase.client.scanner.timeout.period,control
-1631,hbase.client.write.buffer,hbase.regionserver.global.memstore.size,hbase.client.write.buffer > 4194304 => hbase.regionserver.global.memstore.size > 0.4,control
-1536,hbase.rootdir,hbase.cluster.distributed,hbase.rootdir in {{ 'hdfs://...' }} => hbase.cluster.distributed = true,control
-1626,hbase.zookeeper.property.clientPort,hbase.regionserver.port,hbase.zookeeper.property.clientPort = X => hbase.regionserver.port != X,control
-1580,hbase.regionserver.logroll.errors.tolerated,hbase.regionserver.logroll.multiplier,hbase.regionserver.logroll.errors.tolerated > 0 => hbase.regionserver.logroll.multiplier > 1.0,control
-732,hbase.security.authentication,hbase.ipc.client.fallback-to-simple-auth-allowed,hbase.security.authentication != null => hbase.ipc.client.fallback-to-simple-auth-allowed != null,control
-2329,hbase.regionserver.info.port,hbase.cluster.distributed,hbase.cluster.distributed = true => hbase.regionserver.info.port != null,control
-2445,hbase.coprocessor.enabled,hbase.coprocessor.region.classes,hbase.coprocessor.enabled = true => hbase.coprocessor.region.classes != null,control
-698,hbase.offpeak.end.hour,hbase.hstore.time.to.purge.deletes,hbase.offpeak.end.hour != null => hbase.hstore.time.to.purge.deletes != null,control
-1613,hbase.zookeeper.dns.interface,hbase.zookeeper.quorum,hbase.zookeeper.dns.interface != null => hbase.zookeeper.quorum != null,control
-1841,hbase.wal.dir.perms,hbase.regionserver.hlog.syncer.count,"hbase.wal.dir.perms in {{""700"", ""755"", ""777""}} => hbase.regionserver.hlog.syncer.count > 1",control
-2462,hbase.snapshot.enabled,hbase.cluster.distributed,hbase.cluster.distributed = true => hbase.snapshot.enabled = true,control
-2472,hbase.status.published,hbase.cluster.distributed,hbase.cluster.distributed = true => hbase.status.published = true,control
-1644,hbase.client.max.perserver.tasks,hbase.client.max.perregion.tasks,hbase.client.max.perserver.tasks > {{X}} => hbase.client.max.perregion.tasks < {{Y}},control
-1566,hbase.regionserver.handler.count,hbase.regionserver.executor.threads,hbase.regionserver.handler.count > 50 => hbase.regionserver.executor.threads > hbase.regionserver.handler.count,control
-2435,hbase.master.keytab.file,hbase.security.authentication,hbase.security.authentication = kerberos => hbase.master.keytab.file != null,control
-1867,hbase.client.scanner.max.result.size,hbase.regionserver.handler.count,hbase.client.scanner.max.result.size > ANY => hbase.regionserver.handler.count > ANY,control
-2447,hbase.coprocessor.enabled,hbase.coprocessor.abortonerror,hbase.coprocessor.enabled = true => hbase.coprocessor.abortonerror != null,control
-1862,hbase.hstore.bytes.per.checksum,hbase.hstore.blockingStoreFiles,hbase.hstore.bytes.per.checksum > 0 => hbase.hstore.blockingStoreFiles > 0,control
-2485,hbase.master.loadbalancer.class,hbase.cluster.distributed,hbase.cluster.distributed = true => hbase.master.loadbalancer.class != null,control
-1572,hbase.ipc.server.callqueue.scan.ratio,hbase.ipc.server.max.callqueue.length,hbase.ipc.server.callqueue.scan.ratio > 0.5 => hbase.ipc.server.max.callqueue.length > 1000,control
-2483,hbase.security.authentication,hbase.security.exec.permission.checks,"hbase.security.authentication = ""kerberos"" => hbase.security.exec.permission.checks = true",control
-2361,hbase.zookeeper.property.dataDir,hbase.cluster.distributed,hbase.cluster.distributed = true => hbase.zookeeper.property.dataDir != null,control
-2315,hbase.zookeeper.quorum,hbase.zookeeper.property.clientPort,hbase.zookeeper.property.clientPort = null => hbase.zookeeper.quorum != null,default
-2345,hbase.regionserver.dns.interface,hbase.zookeeper.dns.interface,hbase.regionserver.dns.interface = ANY => hbase.zookeeper.dns.interface = ANY,default
-2363,hbase.zookeeper.property.dataDir,hbase.tmp.dir,hbase.tmp.dir = ANY => hbase.zookeeper.property.dataDir = {hbase.tmp.dir}/zookeeper,default
-2319,hbase.local.dir,hbase.rootdir,hbase.rootdir = null => hbase.local.dir = ANY,default
-693,hbase.hstore.compactionThreshold,hbase.hstore.compaction.min,hbase.hstore.compactionThreshold = ANY => hbase.hstore.compaction.min = hbase.hstore.compactionThreshold,default
-2477,hbase.dynamic.jars.dir,hbase.rootdir,hbase.rootdir = ANY => hbase.dynamic.jars.dir = ${hbase.rootdir}/lib,default
-677,hbase.regionserver.global.memstore.lowerLimit,hbase.systemtables.compacting.memstore.type,hbase.regionserver.global.memstore.lowerLimit != null => hbase.systemtables.compacting.memstore.type = NONE,default
-2316,hbase.zookeeper.quorum,hbase.zookeeper.property.dataDir,hbase.zookeeper.property.dataDir = null => hbase.zookeeper.quorum != null,default
-2491,hbase.security.exec.permission.checks,hadoop.policy.file,hadoop.policy.file != null => hbase.security.exec.permission.checks = true,default
-2478,hbase.dynamic.jars.dir,hbase.tmp.dir,hbase.tmp.dir = ANY => hbase.dynamic.jars.dir = ${hbase.tmp.dir}/hbase-dynamic-jars,default
-663,hbase.tmp.dir,hbase.rootdir,hbase.tmp.dir = ANY => hbase.rootdir = ${hbase.tmp.dir}/hbase,default
-2421,hbase.offpeak.start.hour,hbase.offpeak.end.hour,hbase.offpeak.start.hour != null => hbase.offpeak.end.hour != null,value
-2428,hbase.rpc.timeout,hbase.rpc.shortoperation.timeout,hbase.rpc.shortoperation.timeout < hbase.rpc.timeout,value
-2358,hbase.zookeeper.leaderport,hbase.zookeeper.peerport,hbase.zookeeper.peerport = ANY => hbase.zookeeper.leaderport = hbase.zookeeper.peerport + 1,value
-2410,hbase.hstore.compaction.min.size,hbase.hstore.compaction.min,hbase.hstore.compaction.min.size > hbase.hstore.compaction.min => hbase.hstore.compaction.min.size = ANY,value
-2375,hbase.client.retries.number,hbase.rpc.timeout,hbase.rpc.timeout > 0 => hbase.client.retries.number = ANY,value
-722,hbase.server.thread.wakefrequency,hbase.lease.recovery.dfs.timeout,hbase.server.thread.wakefrequency * 1000 < hbase.lease.recovery.dfs.timeout,value
-2374,hbase.client.retries.number,zookeeper.recovery.retry.maxsleeptime,zookeeper.recovery.retry.maxsleeptime > 0 => hbase.client.retries.number = ANY,value
-2454,hbase.rest.threads.min,hbase.rest.threads.max,hbase.rest.threads.max > hbase.rest.threads.min,value
-2335,hbase.ipc.server.callqueue.read.ratio,hbase.regionserver.handler.count,hbase.regionserver.handler.count > 0 => hbase.ipc.server.callqueue.read.ratio = ANY,value
-1649,hbase.client.max.perregion.tasks,hbase.client.operation.timeout,hbase.client.max.perregion.tasks > default => hbase.client.operation.timeout > default,value
-689,hbase.client.max.perserver.tasks,hbase.client.max.perregion.tasks,hbase.client.max.perserver.tasks > hbase.client.max.perregion.tasks => hbase.client.max.perregion.tasks < hbase.client.max.perserver.tasks,value
-2405,hbase.hstore.compaction.min,hbase.hstore.compaction.ratio,hbase.hstore.compaction.ratio > hbase.hstore.compaction.min,value
-2394,hbase.hregion.max.filesize,hbase.hstore.compactionThreshold,hbase.hstore.compactionThreshold < hbase.hregion.max.filesize => hbase.hregion.max.filesize > hbase.hstore.compactionThreshold,value
-2337,hbase.ipc.server.callqueue.scan.ratio,hbase.ipc.server.callqueue.handler.factor,hbase.ipc.server.callqueue.scan.ratio * hbase.ipc.server.callqueue.handler.factor > 0,value
-2334,hbase.ipc.server.callqueue.read.ratio,hbase.ipc.server.callqueue.scan.ratio,hbase.ipc.server.callqueue.scan.ratio > 0 => hbase.ipc.server.callqueue.read.ratio = ANY,value
-2324,hbase.master.procedurewalcleaner.ttl,hbase.master.logcleaner.ttl,hbase.master.logcleaner.ttl = hbase.master.procedurewalcleaner.ttl,value
-2458,hbase.thrift.maxWorkerThreads,hbase.thrift.maxQueuedRequests,hbase.thrift.maxQueuedRequests > hbase.thrift.maxWorkerThreads => hbase.thrift.maxQueuedRequests > hbase.thrift.maxWorkerThreads,value
-2453,hbase.coprocessor.abortonerror,hbase.regionserver.handler.abort.on.error.percent,hbase.regionserver.handler.abort.on.error.percent > 0 => hbase.coprocessor.abortonerror = true,value
-2339,hbase.regionserver.global.memstore.size,hbase.regionserver.global.memstore.size.lower.limit,hbase.regionserver.global.memstore.size > 0 => hbase.regionserver.global.memstore.size.lower.limit < hbase.regionserver.global.memstore.size,value
-2367,hbase.client.write.buffer,hbase.regionserver.global.memstore.size,hbase.client.write.buffer > 0 => hbase.regionserver.global.memstore.size > hbase.client.write.buffer,value
-2409,hbase.hstore.compaction.max,hbase.hstore.compaction.ratio,hbase.hstore.compaction.ratio * hbase.hstore.compaction.min.size <= hbase.hstore.compaction.max.size,value
-2441,hbase.regionserver.keytab.file,hbase.regionserver.kerberos.principal,hbase.regionserver.kerberos.principal != null => hbase.regionserver.keytab.file != null,value
-692,hbase.hregion.majorcompaction,hbase.hregion.majorcompaction.jitter,hbase.hregion.majorcompaction != 0 => hbase.hregion.majorcompaction.jitter = 0.50,value
-2418,hbase.hstore.compaction.max.size,hbase.hstore.compactionThreshold,hbase.hstore.compactionThreshold = ANY => hbase.hstore.compaction.max.size > hbase.hstore.compaction.min.size,value
-2377,hbase.client.max.total.tasks,hbase.client.max.perserver.tasks,hbase.client.max.perserver.tasks < hbase.client.max.total.tasks,value
-2426,hbase.bucketcache.size,hbase.regionserver.global.memstore.size,hbase.regionserver.global.memstore.size + hbase.bucketcache.size < 0.8 => hbase.bucketcache.size = ANY,value
-2500,hbase.snapshot.master.timeout.millis,zookeeper.session.timeout,zookeeper.session.timeout < hbase.snapshot.master.timeout.millis => hbase.snapshot.master.timeout.millis > zookeeper.session.timeout,value
-2475,hbase.status.published,hbase.regionserver.info.port,hbase.regionserver.info.port > 0 => hbase.status.published = true,value
-2395,hbase.hregion.max.filesize,hbase.hstore.blockingStoreFiles,hbase.hstore.blockingStoreFiles > 0 => hbase.hregion.max.filesize > 0,value
-2497,hbase.replication.source.maxthreads,hbase.regionserver.handler.count,hbase.regionserver.handler.count > 0 => hbase.replication.source.maxthreads < hbase.regionserver.handler.count,value
-2412,hbase.hstore.compaction.min.size,hbase.hstore.compaction.max.size,hbase.hstore.compaction.min.size < hbase.hstore.compaction.max.size => hbase.hstore.compaction.min.size = ANY,value
-2498,hbase.snapshot.master.timeout.millis,hbase.rpc.timeout,hbase.rpc.timeout < hbase.snapshot.master.timeout.millis => hbase.snapshot.master.timeout.millis > hbase.rpc.timeout,value
-2391,hbase.hregion.percolumnfamilyflush.size.lower.bound.min,hbase.hregion.memstore.flush.size,hbase.hregion.memstore.flush.size > hbase.hregion.percolumnfamilyflush.size.lower.bound.min => hbase.hregion.percolumnfamilyflush.size.lower.bound.min < hbase.hregion.memstore.flush.size,value
-2340,hbase.regionserver.global.memstore.size,hbase.hregion.memstore.flush.size,hbase.regionserver.global.memstore.size > 0 => hbase.hregion.memstore.flush.size < hbase.regionserver.global.memstore.size,value
-717,hbase.thrift.minWorkerThreads,hbase.thrift.maxWorkerThreads,hbase.thrift.minWorkerThreads < hbase.thrift.maxWorkerThreads => hbase.thrift.maxWorkerThreads > hbase.thrift.minWorkerThreads,value
-2386,hbase.client.scanner.timeout.period,zookeeper.session.timeout,zookeeper.session.timeout < hbase.client.scanner.timeout.period => hbase.client.scanner.timeout.period = zookeeper.session.timeout + 1000,value
-2420,hbase.offpeak.start.hour,hbase.hstore.compaction.ratio.offpeak,hbase.offpeak.start.hour != null => hbase.hstore.compaction.ratio.offpeak != null,value
-2413,hbase.hstore.compaction.min.size,hbase.hstore.compaction.ratio,hbase.hstore.compaction.min.size * hbase.hstore.compaction.ratio < hbase.hstore.compaction.max.size => hbase.hstore.compaction.min.size = ANY,value
-2408,hbase.hstore.compaction.max,hbase.hstore.blockingStoreFiles,hbase.hstore.blockingStoreFiles > hbase.hstore.compaction.max,value
-2465,hbase.snapshot.restore.take.failsafe.snapshot,hbase.snapshot.restore.failsafe.name,hbase.snapshot.restore.failsafe.name != null => hbase.snapshot.restore.take.failsafe.snapshot = ANY,value
-2417,hbase.hstore.compaction.max.size,hbase.hstore.compaction.ratio,hbase.hstore.compaction.ratio = ANY => hbase.hstore.compaction.max.size > hbase.hstore.compaction.min.size,value
-2380,hbase.client.max.perserver.tasks,hbase.client.max.perregion.tasks,hbase.client.max.perregion.tasks < hbase.client.max.perserver.tasks => hbase.client.max.perserver.tasks > hbase.client.max.perregion.tasks,value
-2397,hbase.hstore.compactionThreshold,hbase.hstore.compaction.min,hbase.hstore.compactionThreshold > hbase.hstore.compaction.min => hbase.hstore.compaction.min < hbase.hstore.compactionThreshold,value
-723,hbase.lease.recovery.timeout,hbase.lease.recovery.dfs.timeout,hbase.lease.recovery.dfs.timeout < hbase.lease.recovery.timeout,value
-2401,hbase.hstore.blockingWaitTime,hbase.hstore.compactionThreshold,hbase.hstore.compactionThreshold > 0 => hbase.hstore.blockingWaitTime > 0,value
-2368,hbase.client.write.buffer,hbase.hregion.memstore.flush.size,hbase.client.write.buffer > 0 => hbase.hregion.memstore.flush.size > hbase.client.write.buffer,value
-2376,hbase.client.retries.number,hbase.client.operation.timeout,hbase.client.operation.timeout > 0 => hbase.client.retries.number = ANY,value
-2338,hbase.ipc.server.callqueue.scan.ratio,hbase.regionserver.handler.count,hbase.ipc.server.callqueue.scan.ratio * hbase.regionserver.handler.count > 0,value
-2443,hbase.regionserver.kerberos.principal,hbase.master.kerberos.principal,hbase.master.kerberos.principal = ANY => hbase.regionserver.kerberos.principal = ANY,value
-2382,hbase.client.keyvalue.maxsize,hbase.server.keyvalue.maxsize,hbase.server.keyvalue.maxsize = hbase.client.keyvalue.maxsize,value
-2427,hbase.rpc.timeout,hbase.client.operation.timeout,hbase.client.operation.timeout > hbase.rpc.timeout,value
-2474,hbase.status.published,hbase.master.info.port,hbase.master.info.port > 0 => hbase.status.published = true,value
-2425,hbase.bucketcache.size,hfile.block.cache.size,hfile.block.cache.size + hbase.bucketcache.size < 1.0 => hbase.bucketcache.size = ANY,value
-2341,hbase.regionserver.global.memstore.size,hfile.block.cache.size,hbase.regionserver.global.memstore.size > 0 => hfile.block.cache.size + hbase.regionserver.global.memstore.size <= 1.0,value
-2371,hbase.client.pause,hbase.client.operation.timeout,hbase.client.operation.timeout > 0 => hbase.client.pause < hbase.client.operation.timeout,value
-2385,hbase.client.scanner.timeout.period,hbase.client.operation.timeout,hbase.client.operation.timeout < hbase.client.scanner.timeout.period => hbase.client.scanner.timeout.period = hbase.client.operation.timeout + 1000,value
-2369,hbase.client.pause,hbase.client.retries.number,hbase.client.retries.number > 0 => hbase.client.pause > 0,value
-2403,hbase.hstore.compaction.min,hbase.hstore.compaction.max,hbase.hstore.compaction.max > hbase.hstore.compaction.min,value
-2486,hbase.master.loadbalancer.class,hbase.master.loadbalance.bytable,hbase.master.loadbalance.bytable = true => hbase.master.loadbalancer.class in {org.apache.hadoop.hbase.master.balancer.TableLoadBalancer},value
-2331,hbase.regionserver.handler.count,hbase.ipc.server.callqueue.handler.factor,hbase.ipc.server.callqueue.handler.factor = ANY => hbase.regionserver.handler.count = ANY,value
-2419,hbase.hstore.compaction.max.size,hbase.hstore.blockingStoreFiles,hbase.hstore.blockingStoreFiles = ANY => hbase.hstore.compaction.max.size > hbase.hstore.compaction.min.size,value
-2411,hbase.hstore.compaction.min.size,hbase.hstore.compaction.max,hbase.hstore.compaction.min.size < hbase.hstore.compaction.max => hbase.hstore.compaction.min.size = ANY,value
-2499,hbase.snapshot.master.timeout.millis,hbase.client.operation.timeout,hbase.client.operation.timeout < hbase.snapshot.master.timeout.millis => hbase.snapshot.master.timeout.millis > hbase.client.operation.timeout,value
-2390,hbase.hregion.memstore.flush.size,hbase.hregion.max.filesize,hbase.hregion.max.filesize > hbase.hregion.memstore.flush.size,value
-2384,hbase.client.scanner.timeout.period,hbase.rpc.timeout,hbase.rpc.timeout < hbase.client.scanner.timeout.period => hbase.client.scanner.timeout.period = hbase.rpc.timeout + 1000,value
-2333,hbase.ipc.server.callqueue.read.ratio,hbase.ipc.server.callqueue.handler.factor,hbase.ipc.server.callqueue.handler.factor > 0 => hbase.ipc.server.callqueue.read.ratio = ANY,value
-2399,hbase.hstore.compactionThreshold,hbase.hstore.compaction.ratio,hbase.hstore.compactionThreshold = hbase.hstore.compaction.ratio => hbase.hstore.compaction.ratio = hbase.hstore.compactionThreshold,value
-2466,hbase.lease.recovery.timeout,hbase.lease.recovery.dfs.timeout,hbase.lease.recovery.dfs.timeout > hbase.lease.recovery.timeout,value
-666,hbase.master.port,hbase.master.info.port,hbase.master.port = 16000 => hbase.master.info.port = 16010,value
-2398,hbase.hstore.compactionThreshold,hbase.hstore.compaction.max,hbase.hstore.compactionThreshold < hbase.hstore.compaction.max => hbase.hstore.compaction.max > hbase.hstore.compactionThreshold,value
-2372,hbase.client.pause,zookeeper.recovery.retry.maxsleeptime,zookeeper.recovery.retry.maxsleeptime > 0 => hbase.client.pause < zookeeper.recovery.retry.maxsleeptime,value
-2469,hbase.lease.recovery.dfs.timeout,zookeeper.session.timeout,zookeeper.session.timeout < hbase.lease.recovery.dfs.timeout,value
-2414,hbase.hstore.compaction.min.size,hbase.hstore.compaction.ratio.offpeak,hbase.hstore.compaction.min.size * hbase.hstore.compaction.ratio.offpeak < hbase.hstore.compaction.max.size => hbase.hstore.compaction.min.size = ANY,value
-2323,hbase.master.info.port,hbase.regionserver.info.port,hbase.regionserver.info.port = Y => hbase.master.info.port = Y + 1,value
-2436,hbase.master.keytab.file,hbase.master.kerberos.principal,hbase.master.kerberos.principal != null => hbase.master.keytab_file != null,value
-721,hbase.server.compactchecker.interval.multiplier,hbase.server.thread.wakefrequency,hbase.server.compactchecker.interval.multiplier * hbase.server.thread.wakefrequency = <valueExpression>,value
-2370,hbase.client.pause,hbase.rpc.timeout,hbase.rpc.timeout > 0 => hbase.client.pause < hbase.rpc.timeout,value
-2311,hbase.cluster.distributed,hbase.regionserver.handler.count,hbase.cluster.distributed = true => hbase.regionserver.handler.count > 10,value
-2359,hbase.zookeeper.property.initLimit,hbase.zookeeper.property.syncLimit,hbase.zookeeper.property.syncLimit = hbase.zookeeper.property.initLimit,value
-2322,hbase.master.info.port,hbase.master.port,hbase.master.port = X => hbase.master.info.port = X + 1000,value
-2492,hbase.security.exec.permission.checks,hbase.superuser,"hbase.superuser in {""admin"", ""root""} => hbase.security.exec.permission.checks = true",value
-2378,hbase.client.max.total.tasks,hbase.client.max.perregion.tasks,hbase.client.max.perregion.tasks < hbase.client.max.total.tasks,value
-2355,hbase.zookeeper.dns.interface,hbase.zookeeper.dns.nameserver,hbase.zookeeper.dns.nameserver = hbase.zookeeper.dns.interface,value
-737,hbase.mob.file.cache.size,hbase.mob.cache.evict.remain.ratio,hbase.mob.file.cache.size > 0 => hbase.mob.cache.evict.remain.ratio in [0.0..1.0],value
-2388,hbase.hregion.memstore.flush.size,hbase.regionserver.global.memstore.size.lower.limit,hbase.regionserver.global.memstore.size.lower.limit < hbase.regionserver.global.memstore.size,value
-2422,hbase.offpeak.end.hour,hbase.hstore.compaction.ratio.offpeak,hbase.offpeak.end.hour != null => hbase.hstore.compaction.ratio.offpeak != null,value
-691,hbase.hregion.memstore.flush.size,hbase.hregion.memstore.block.multiplier,hbase.hregion.memstore.flush.size * hbase.hregion.memstore.block.multiplier > 0,value
-2456,hbase.thrift.minWorkerThreads,hbase.thrift.maxWorkerThreads,hbase.thrift.maxWorkerThreads > hbase.thrift.minWorkerThreads,value
+1,hbase.regionserver.msginterval,hbase.regionserver.lease.period,hbase.regionserver.msginterval > 1000 => hbase.regionserver.lease.period > 60000,behavior
+2,hbase.bucketcache.bucket.sizes,hbase.bucketcache.ioengine,"hbase.bucketcache.bucket.sizes != null => hbase.bucketcache.ioengine in {{""offheap"", ""file""}}",behavior
+3,hbase.thrift.maxWorkerThreads,hbase.thrift.queueSize,hbase.thrift.maxWorkerThreads > {{current_value}} => hbase.thrift.queueSize > {{current_queue_size}},behavior
+4,hbase.regionserver.logroll.period,hbase.regionserver.logroll.multiplier,hbase.regionserver.logroll.period < 3600 => hbase.regionserver.logroll.multiplier < 0.95,behavior
+5,hbase.coprocessor.enabled,hbase.coprocessor.user.enabled,hbase.coprocessor.enabled = true => hbase.coprocessor.user.enabled != null,control
+6,hbase.bucketcache.ioengine,hbase.bucketcache.percentage.in.combinedcache,hbase.bucketcache.ioengine != null => hbase.bucketcache.percentage.in.combinedcache in [0..100],control
+7,hbase.zookeeper.peerport,hbase.zookeeper.leaderport,hbase.zookeeper.peerport != null => hbase.zookeeper.leaderport != hbase.zookeeper.peerport,control
+8,hbase.coprocessor.user.enabled,hbase.cluster.distributed,hbase.cluster.distributed = true => hbase.coprocessor.user.enabled = ANY,control
+9,hbase.regionserver.hlog.reader.impl,hbase.regionserver.hlog.syncer.count,hbase.regionserver.hlog.reader.impl != default => hbase.regionserver.hlog.syncer.count > 1,control
+10,hbase.ipc.server.callqueue.handler.factor,hbase.regionserver.handler.count,hbase.ipc.server.callqueue.handler.factor > 1 => hbase.regionserver.handler.count > hbase.regionserver.handler.count * hbase.ipc.server.callqueue.handler.factor,control
+11,hbase.status.publisher.class,hbase.status.multithreaded.publisher.threads,"hbase.status.publisher.class in {{org.apache.hadoop.hbase.MultiThreadedStatusPublisher, com.custom.MultiThreadedPublisher}} => hbase.status.multithreaded.publisher.threads > 1",control
+12,hbase.client.pause,hbase.rpc.timeout,hbase.client.pause > 100 => hbase.rpc.timeout > hbase.client.pause * hbase.client.retries.number,control
+13,hbase.rootdir,hbase.zookeeper.quorum,hbase.cluster.distributed = true => hbase.zookeeper.quorum != null,control
+14,hbase.offpeak.start.hour,hbase.hstore.time.to.purge.deletes,hbase.offpeak.start.hour != null => hbase.hstore.time.to.purge.deletes != null,control
+15,hbase.security.authentication,hbase.auth.token.max.lifetime,hbase.security.authentication != null => hbase.auth.token.max.lifetime != null,control
+16,hbase.zookeeper.leaderport,hbase.zookeeper.quorum,hbase.zookeeper.quorum != null => hbase.zookeeper.leaderport = ANY,control
+17,hbase.zookeeper.peerport,hbase.zookeeper.clientport,hbase.zookeeper.peerport != null => hbase.zookeeper.clientport != hbase.zookeeper.peerport,control
+18,hbase.ipc.server.callqueue.read.ratio,hbase.ipc.server.max.callqueue.length,hbase.ipc.server.callqueue.read.ratio > 0 => hbase.ipc.server.max.callqueue.length > 0,control
+19,hbase.regionserver.hlog.writer.impl,hbase.regionserver.hlog.syncer.count,hbase.regionserver.hlog.writer.impl in {{custom_writer_impl}} => hbase.regionserver.hlog.syncer.count > 1,control
+20,hbase.regionserver.hostname,hbase.regionserver.hostname.disable.master.reversedns,hbase.regionserver.hostname != null => hbase.regionserver.hostname.disable.master.reversedns = false,control
+21,hbase.dfs.client.read.shortcircuit.buffer.size,dfs.domain.socket.path,hbase.dfs.client.read.shortcircuit.buffer.size > 0 => dfs.domain.socket.path != null,control
+22,hbase.client.localityCheck.threadPoolSize,hbase.regionserver.handler.count,hbase.client.localityCheck.threadPoolSize in {{a..b}} => hbase.regionserver.handler.count in {{c..d}},control
+23,hbase.storescanner.parallel.seek.threads,hbase.storescanner.parallel.seek.enable,hbase.storescanner.parallel.seek.enable = true => hbase.storescanner.parallel.seek.threads > 0,control
+24,hbase.client.scanner.caching,hbase.regionserver.handler.count,hbase.client.scanner.caching > 100 => hbase.regionserver.handler.count > 30,control
+25,hbase.coprocessor.region.classes,hbase.regionserver.coprocessor.heap.memory,hbase.coprocessor.region.classes != null => hbase.regionserver.coprocessor.heap.memory > 0,control
+26,hbase.table.lock.enable,hbase.cluster.distributed,hbase.cluster.distributed = true => hbase.table.lock.enable = true,control
+27,hbase.regionserver.port,hbase.regionserver.info.port,hbase.regionserver.port != ANY => hbase.regionserver.info.port != ANY,control
+28,hbase.table.max.rowsize,hbase.hregion.max.filesize,hbase.table.max.rowsize > ANY => hbase.hregion.max.filesize > hbase.table.max.rowsize,control
+29,hbase.master.infoserver.redirect,hbase.cluster.distributed,hbase.cluster.distributed = true => hbase.master.infoserver.redirect = true,control
+30,hbase.normalizer.period,hbase.normalizer.enabled,hbase.normalizer.enabled = true => hbase.normalizer.period > 0,control
+31,hbase.regionserver.global.memstore.size,hbase.regionserver.java.heapsize,hbase.regionserver.global.memstore.size > 0.4 => hbase.regionserver.java.heapsize > [8..ANY],control
+32,hbase.client.scanner.timeout.period,hbase.rpc.timeout,hbase.client.scanner.timeout.period > 0 => hbase.rpc.timeout > hbase.client.scanner.timeout.period,control
+33,hbase.client.write.buffer,hbase.regionserver.global.memstore.size,hbase.client.write.buffer > 4194304 => hbase.regionserver.global.memstore.size > 0.4,control
+34,hbase.rootdir,hbase.cluster.distributed,hbase.rootdir in {{ 'hdfs://...' }} => hbase.cluster.distributed = true,control
+35,hbase.zookeeper.property.clientPort,hbase.regionserver.port,hbase.zookeeper.property.clientPort = X => hbase.regionserver.port != X,control
+36,hbase.regionserver.logroll.errors.tolerated,hbase.regionserver.logroll.multiplier,hbase.regionserver.logroll.errors.tolerated > 0 => hbase.regionserver.logroll.multiplier > 1.0,control
+37,hbase.security.authentication,hbase.ipc.client.fallback-to-simple-auth-allowed,hbase.security.authentication != null => hbase.ipc.client.fallback-to-simple-auth-allowed != null,control
+38,hbase.regionserver.info.port,hbase.cluster.distributed,hbase.cluster.distributed = true => hbase.regionserver.info.port != null,control
+39,hbase.coprocessor.enabled,hbase.coprocessor.region.classes,hbase.coprocessor.enabled = true => hbase.coprocessor.region.classes != null,control
+40,hbase.offpeak.end.hour,hbase.hstore.time.to.purge.deletes,hbase.offpeak.end.hour != null => hbase.hstore.time.to.purge.deletes != null,control
+41,hbase.zookeeper.dns.interface,hbase.zookeeper.quorum,hbase.zookeeper.dns.interface != null => hbase.zookeeper.quorum != null,control
+42,hbase.wal.dir.perms,hbase.regionserver.hlog.syncer.count,"hbase.wal.dir.perms in {{""700"", ""755"", ""777""}} => hbase.regionserver.hlog.syncer.count > 1",control
+43,hbase.snapshot.enabled,hbase.cluster.distributed,hbase.cluster.distributed = true => hbase.snapshot.enabled = true,control
+44,hbase.status.published,hbase.cluster.distributed,hbase.cluster.distributed = true => hbase.status.published = true,control
+45,hbase.client.max.perserver.tasks,hbase.client.max.perregion.tasks,hbase.client.max.perserver.tasks > {{X}} => hbase.client.max.perregion.tasks < {{Y}},control
+46,hbase.regionserver.handler.count,hbase.regionserver.executor.threads,hbase.regionserver.handler.count > 50 => hbase.regionserver.executor.threads > hbase.regionserver.handler.count,control
+47,hbase.master.keytab.file,hbase.security.authentication,hbase.security.authentication = kerberos => hbase.master.keytab.file != null,control
+48,hbase.client.scanner.max.result.size,hbase.regionserver.handler.count,hbase.client.scanner.max.result.size > ANY => hbase.regionserver.handler.count > ANY,control
+49,hbase.coprocessor.enabled,hbase.coprocessor.abortonerror,hbase.coprocessor.enabled = true => hbase.coprocessor.abortonerror != null,control
+50,hbase.hstore.bytes.per.checksum,hbase.hstore.blockingStoreFiles,hbase.hstore.bytes.per.checksum > 0 => hbase.hstore.blockingStoreFiles > 0,control
+51,hbase.master.loadbalancer.class,hbase.cluster.distributed,hbase.cluster.distributed = true => hbase.master.loadbalancer.class != null,control
+52,hbase.ipc.server.callqueue.scan.ratio,hbase.ipc.server.max.callqueue.length,hbase.ipc.server.callqueue.scan.ratio > 0.5 => hbase.ipc.server.max.callqueue.length > 1000,control
+53,hbase.security.authentication,hbase.security.exec.permission.checks,"hbase.security.authentication = ""kerberos"" => hbase.security.exec.permission.checks = true",control
+54,hbase.zookeeper.property.dataDir,hbase.cluster.distributed,hbase.cluster.distributed = true => hbase.zookeeper.property.dataDir != null,control
+55,hbase.zookeeper.quorum,hbase.zookeeper.property.clientPort,hbase.zookeeper.property.clientPort = null => hbase.zookeeper.quorum != null,default
+56,hbase.regionserver.dns.interface,hbase.zookeeper.dns.interface,hbase.regionserver.dns.interface = ANY => hbase.zookeeper.dns.interface = ANY,default
+57,hbase.zookeeper.property.dataDir,hbase.tmp.dir,hbase.tmp.dir = ANY => hbase.zookeeper.property.dataDir = {hbase.tmp.dir}/zookeeper,default
+58,hbase.local.dir,hbase.rootdir,hbase.rootdir = null => hbase.local.dir = ANY,default
+59,hbase.hstore.compactionThreshold,hbase.hstore.compaction.min,hbase.hstore.compactionThreshold = ANY => hbase.hstore.compaction.min = hbase.hstore.compactionThreshold,default
+60,hbase.dynamic.jars.dir,hbase.rootdir,hbase.rootdir = ANY => hbase.dynamic.jars.dir = ${hbase.rootdir}/lib,default
+61,hbase.regionserver.global.memstore.lowerLimit,hbase.systemtables.compacting.memstore.type,hbase.regionserver.global.memstore.lowerLimit != null => hbase.systemtables.compacting.memstore.type = NONE,default
+62,hbase.zookeeper.quorum,hbase.zookeeper.property.dataDir,hbase.zookeeper.property.dataDir = null => hbase.zookeeper.quorum != null,default
+63,hbase.security.exec.permission.checks,hadoop.policy.file,hadoop.policy.file != null => hbase.security.exec.permission.checks = true,default
+64,hbase.dynamic.jars.dir,hbase.tmp.dir,hbase.tmp.dir = ANY => hbase.dynamic.jars.dir = ${hbase.tmp.dir}/hbase-dynamic-jars,default
+65,hbase.tmp.dir,hbase.rootdir,hbase.tmp.dir = ANY => hbase.rootdir = ${hbase.tmp.dir}/hbase,default
+66,hbase.offpeak.start.hour,hbase.offpeak.end.hour,hbase.offpeak.start.hour != null => hbase.offpeak.end.hour != null,value
+67,hbase.rpc.timeout,hbase.rpc.shortoperation.timeout,hbase.rpc.shortoperation.timeout < hbase.rpc.timeout,value
+68,hbase.zookeeper.leaderport,hbase.zookeeper.peerport,hbase.zookeeper.peerport = ANY => hbase.zookeeper.leaderport = hbase.zookeeper.peerport + 1,value
+69,hbase.hstore.compaction.min.size,hbase.hstore.compaction.min,hbase.hstore.compaction.min.size > hbase.hstore.compaction.min => hbase.hstore.compaction.min.size = ANY,value
+70,hbase.client.retries.number,hbase.rpc.timeout,hbase.rpc.timeout > 0 => hbase.client.retries.number = ANY,value
+71,hbase.server.thread.wakefrequency,hbase.lease.recovery.dfs.timeout,hbase.server.thread.wakefrequency * 1000 < hbase.lease.recovery.dfs.timeout,value
+72,hbase.client.retries.number,zookeeper.recovery.retry.maxsleeptime,zookeeper.recovery.retry.maxsleeptime > 0 => hbase.client.retries.number = ANY,value
+73,hbase.rest.threads.min,hbase.rest.threads.max,hbase.rest.threads.max > hbase.rest.threads.min,value
+74,hbase.ipc.server.callqueue.read.ratio,hbase.regionserver.handler.count,hbase.regionserver.handler.count > 0 => hbase.ipc.server.callqueue.read.ratio = ANY,value
+75,hbase.client.max.perregion.tasks,hbase.client.operation.timeout,hbase.client.max.perregion.tasks > default => hbase.client.operation.timeout > default,value
+76,hbase.client.max.perserver.tasks,hbase.client.max.perregion.tasks,hbase.client.max.perserver.tasks > hbase.client.max.perregion.tasks => hbase.client.max.perregion.tasks < hbase.client.max.perserver.tasks,value
+77,hbase.hstore.compaction.min,hbase.hstore.compaction.ratio,hbase.hstore.compaction.ratio > hbase.hstore.compaction.min,value
+78,hbase.hregion.max.filesize,hbase.hstore.compactionThreshold,hbase.hstore.compactionThreshold < hbase.hregion.max.filesize => hbase.hregion.max.filesize > hbase.hstore.compactionThreshold,value
+79,hbase.ipc.server.callqueue.scan.ratio,hbase.ipc.server.callqueue.handler.factor,hbase.ipc.server.callqueue.scan.ratio * hbase.ipc.server.callqueue.handler.factor > 0,value
+80,hbase.ipc.server.callqueue.read.ratio,hbase.ipc.server.callqueue.scan.ratio,hbase.ipc.server.callqueue.scan.ratio > 0 => hbase.ipc.server.callqueue.read.ratio = ANY,value
+81,hbase.master.procedurewalcleaner.ttl,hbase.master.logcleaner.ttl,hbase.master.logcleaner.ttl = hbase.master.procedurewalcleaner.ttl,value
+82,hbase.thrift.maxWorkerThreads,hbase.thrift.maxQueuedRequests,hbase.thrift.maxQueuedRequests > hbase.thrift.maxWorkerThreads => hbase.thrift.maxQueuedRequests > hbase.thrift.maxWorkerThreads,value
+83,hbase.coprocessor.abortonerror,hbase.regionserver.handler.abort.on.error.percent,hbase.regionserver.handler.abort.on.error.percent > 0 => hbase.coprocessor.abortonerror = true,value
+84,hbase.regionserver.global.memstore.size,hbase.regionserver.global.memstore.size.lower.limit,hbase.regionserver.global.memstore.size > 0 => hbase.regionserver.global.memstore.size.lower.limit < hbase.regionserver.global.memstore.size,value
+85,hbase.client.write.buffer,hbase.regionserver.global.memstore.size,hbase.client.write.buffer > 0 => hbase.regionserver.global.memstore.size > hbase.client.write.buffer,value
+86,hbase.hstore.compaction.max,hbase.hstore.compaction.ratio,hbase.hstore.compaction.ratio * hbase.hstore.compaction.min.size <= hbase.hstore.compaction.max.size,value
+87,hbase.regionserver.keytab.file,hbase.regionserver.kerberos.principal,hbase.regionserver.kerberos.principal != null => hbase.regionserver.keytab.file != null,value
+88,hbase.hregion.majorcompaction,hbase.hregion.majorcompaction.jitter,hbase.hregion.majorcompaction != 0 => hbase.hregion.majorcompaction.jitter = 0.50,value
+89,hbase.hstore.compaction.max.size,hbase.hstore.compactionThreshold,hbase.hstore.compactionThreshold = ANY => hbase.hstore.compaction.max.size > hbase.hstore.compaction.min.size,value
+90,hbase.client.max.total.tasks,hbase.client.max.perserver.tasks,hbase.client.max.perserver.tasks < hbase.client.max.total.tasks,value
+91,hbase.bucketcache.size,hbase.regionserver.global.memstore.size,hbase.regionserver.global.memstore.size + hbase.bucketcache.size < 0.8 => hbase.bucketcache.size = ANY,value
+92,hbase.snapshot.master.timeout.millis,zookeeper.session.timeout,zookeeper.session.timeout < hbase.snapshot.master.timeout.millis => hbase.snapshot.master.timeout.millis > zookeeper.session.timeout,value
+93,hbase.status.published,hbase.regionserver.info.port,hbase.regionserver.info.port > 0 => hbase.status.published = true,value
+94,hbase.hregion.max.filesize,hbase.hstore.blockingStoreFiles,hbase.hstore.blockingStoreFiles > 0 => hbase.hregion.max.filesize > 0,value
+95,hbase.replication.source.maxthreads,hbase.regionserver.handler.count,hbase.regionserver.handler.count > 0 => hbase.replication.source.maxthreads < hbase.regionserver.handler.count,value
+96,hbase.hstore.compaction.min.size,hbase.hstore.compaction.max.size,hbase.hstore.compaction.min.size < hbase.hstore.compaction.max.size => hbase.hstore.compaction.min.size = ANY,value
+97,hbase.snapshot.master.timeout.millis,hbase.rpc.timeout,hbase.rpc.timeout < hbase.snapshot.master.timeout.millis => hbase.snapshot.master.timeout.millis > hbase.rpc.timeout,value
+98,hbase.hregion.percolumnfamilyflush.size.lower.bound.min,hbase.hregion.memstore.flush.size,hbase.hregion.memstore.flush.size > hbase.hregion.percolumnfamilyflush.size.lower.bound.min => hbase.hregion.percolumnfamilyflush.size.lower.bound.min < hbase.hregion.memstore.flush.size,value
+99,hbase.regionserver.global.memstore.size,hbase.hregion.memstore.flush.size,hbase.regionserver.global.memstore.size > 0 => hbase.hregion.memstore.flush.size < hbase.regionserver.global.memstore.size,value
+100,hbase.thrift.minWorkerThreads,hbase.thrift.maxWorkerThreads,hbase.thrift.minWorkerThreads < hbase.thrift.maxWorkerThreads => hbase.thrift.maxWorkerThreads > hbase.thrift.minWorkerThreads,value
+101,hbase.client.scanner.timeout.period,zookeeper.session.timeout,zookeeper.session.timeout < hbase.client.scanner.timeout.period => hbase.client.scanner.timeout.period = zookeeper.session.timeout + 1000,value
+102,hbase.offpeak.start.hour,hbase.hstore.compaction.ratio.offpeak,hbase.offpeak.start.hour != null => hbase.hstore.compaction.ratio.offpeak != null,value
+103,hbase.hstore.compaction.min.size,hbase.hstore.compaction.ratio,hbase.hstore.compaction.min.size * hbase.hstore.compaction.ratio < hbase.hstore.compaction.max.size => hbase.hstore.compaction.min.size = ANY,value
+104,hbase.hstore.compaction.max,hbase.hstore.blockingStoreFiles,hbase.hstore.blockingStoreFiles > hbase.hstore.compaction.max,value
+105,hbase.snapshot.restore.take.failsafe.snapshot,hbase.snapshot.restore.failsafe.name,hbase.snapshot.restore.failsafe.name != null => hbase.snapshot.restore.take.failsafe.snapshot = ANY,value
+106,hbase.hstore.compaction.max.size,hbase.hstore.compaction.ratio,hbase.hstore.compaction.ratio = ANY => hbase.hstore.compaction.max.size > hbase.hstore.compaction.min.size,value
+107,hbase.client.max.perserver.tasks,hbase.client.max.perregion.tasks,hbase.client.max.perregion.tasks < hbase.client.max.perserver.tasks => hbase.client.max.perserver.tasks > hbase.client.max.perregion.tasks,value
+108,hbase.hstore.compactionThreshold,hbase.hstore.compaction.min,hbase.hstore.compactionThreshold > hbase.hstore.compaction.min => hbase.hstore.compaction.min < hbase.hstore.compactionThreshold,value
+109,hbase.lease.recovery.timeout,hbase.lease.recovery.dfs.timeout,hbase.lease.recovery.dfs.timeout < hbase.lease.recovery.timeout,value
+110,hbase.hstore.blockingWaitTime,hbase.hstore.compactionThreshold,hbase.hstore.compactionThreshold > 0 => hbase.hstore.blockingWaitTime > 0,value
+111,hbase.client.write.buffer,hbase.hregion.memstore.flush.size,hbase.client.write.buffer > 0 => hbase.hregion.memstore.flush.size > hbase.client.write.buffer,value
+112,hbase.client.retries.number,hbase.client.operation.timeout,hbase.client.operation.timeout > 0 => hbase.client.retries.number = ANY,value
+113,hbase.ipc.server.callqueue.scan.ratio,hbase.regionserver.handler.count,hbase.ipc.server.callqueue.scan.ratio * hbase.regionserver.handler.count > 0,value
+114,hbase.regionserver.kerberos.principal,hbase.master.kerberos.principal,hbase.master.kerberos.principal = ANY => hbase.regionserver.kerberos.principal = ANY,value
+115,hbase.client.keyvalue.maxsize,hbase.server.keyvalue.maxsize,hbase.server.keyvalue.maxsize = hbase.client.keyvalue.maxsize,value
+116,hbase.rpc.timeout,hbase.client.operation.timeout,hbase.client.operation.timeout > hbase.rpc.timeout,value
+117,hbase.status.published,hbase.master.info.port,hbase.master.info.port > 0 => hbase.status.published = true,value
+118,hbase.bucketcache.size,hfile.block.cache.size,hfile.block.cache.size + hbase.bucketcache.size < 1.0 => hbase.bucketcache.size = ANY,value
+119,hbase.regionserver.global.memstore.size,hfile.block.cache.size,hbase.regionserver.global.memstore.size > 0 => hfile.block.cache.size + hbase.regionserver.global.memstore.size <= 1.0,value
+120,hbase.client.pause,hbase.client.operation.timeout,hbase.client.operation.timeout > 0 => hbase.client.pause < hbase.client.operation.timeout,value
+121,hbase.client.scanner.timeout.period,hbase.client.operation.timeout,hbase.client.operation.timeout < hbase.client.scanner.timeout.period => hbase.client.scanner.timeout.period = hbase.client.operation.timeout + 1000,value
+122,hbase.client.pause,hbase.client.retries.number,hbase.client.retries.number > 0 => hbase.client.pause > 0,value
+123,hbase.hstore.compaction.min,hbase.hstore.compaction.max,hbase.hstore.compaction.max > hbase.hstore.compaction.min,value
+124,hbase.master.loadbalancer.class,hbase.master.loadbalance.bytable,hbase.master.loadbalance.bytable = true => hbase.master.loadbalancer.class in {org.apache.hadoop.hbase.master.balancer.TableLoadBalancer},value
+125,hbase.regionserver.handler.count,hbase.ipc.server.callqueue.handler.factor,hbase.ipc.server.callqueue.handler.factor = ANY => hbase.regionserver.handler.count = ANY,value
+126,hbase.hstore.compaction.max.size,hbase.hstore.blockingStoreFiles,hbase.hstore.blockingStoreFiles = ANY => hbase.hstore.compaction.max.size > hbase.hstore.compaction.min.size,value
+127,hbase.hstore.compaction.min.size,hbase.hstore.compaction.max,hbase.hstore.compaction.min.size < hbase.hstore.compaction.max => hbase.hstore.compaction.min.size = ANY,value
+128,hbase.snapshot.master.timeout.millis,hbase.client.operation.timeout,hbase.client.operation.timeout < hbase.snapshot.master.timeout.millis => hbase.snapshot.master.timeout.millis > hbase.client.operation.timeout,value
+129,hbase.hregion.memstore.flush.size,hbase.hregion.max.filesize,hbase.hregion.max.filesize > hbase.hregion.memstore.flush.size,value
+130,hbase.client.scanner.timeout.period,hbase.rpc.timeout,hbase.rpc.timeout < hbase.client.scanner.timeout.period => hbase.client.scanner.timeout.period = hbase.rpc.timeout + 1000,value
+131,hbase.ipc.server.callqueue.read.ratio,hbase.ipc.server.callqueue.handler.factor,hbase.ipc.server.callqueue.handler.factor > 0 => hbase.ipc.server.callqueue.read.ratio = ANY,value
+132,hbase.hstore.compactionThreshold,hbase.hstore.compaction.ratio,hbase.hstore.compactionThreshold = hbase.hstore.compaction.ratio => hbase.hstore.compaction.ratio = hbase.hstore.compactionThreshold,value
+133,hbase.lease.recovery.timeout,hbase.lease.recovery.dfs.timeout,hbase.lease.recovery.dfs.timeout > hbase.lease.recovery.timeout,value
+134,hbase.master.port,hbase.master.info.port,hbase.master.port = 16000 => hbase.master.info.port = 16010,value
+135,hbase.hstore.compactionThreshold,hbase.hstore.compaction.max,hbase.hstore.compactionThreshold < hbase.hstore.compaction.max => hbase.hstore.compaction.max > hbase.hstore.compactionThreshold,value
+136,hbase.client.pause,zookeeper.recovery.retry.maxsleeptime,zookeeper.recovery.retry.maxsleeptime > 0 => hbase.client.pause < zookeeper.recovery.retry.maxsleeptime,value
+137,hbase.lease.recovery.dfs.timeout,zookeeper.session.timeout,zookeeper.session.timeout < hbase.lease.recovery.dfs.timeout,value
+138,hbase.hstore.compaction.min.size,hbase.hstore.compaction.ratio.offpeak,hbase.hstore.compaction.min.size * hbase.hstore.compaction.ratio.offpeak < hbase.hstore.compaction.max.size => hbase.hstore.compaction.min.size = ANY,value
+139,hbase.master.info.port,hbase.regionserver.info.port,hbase.regionserver.info.port = Y => hbase.master.info.port = Y + 1,value
+140,hbase.master.keytab.file,hbase.master.kerberos.principal,hbase.master.kerberos.principal != null => hbase.master.keytab_file != null,value
+141,hbase.server.compactchecker.interval.multiplier,hbase.server.thread.wakefrequency,hbase.server.compactchecker.interval.multiplier * hbase.server.thread.wakefrequency = <valueExpression>,value
+142,hbase.client.pause,hbase.rpc.timeout,hbase.rpc.timeout > 0 => hbase.client.pause < hbase.rpc.timeout,value
+143,hbase.cluster.distributed,hbase.regionserver.handler.count,hbase.cluster.distributed = true => hbase.regionserver.handler.count > 10,value
+144,hbase.zookeeper.property.initLimit,hbase.zookeeper.property.syncLimit,hbase.zookeeper.property.syncLimit = hbase.zookeeper.property.initLimit,value
+145,hbase.master.info.port,hbase.master.port,hbase.master.port = X => hbase.master.info.port = X + 1000,value
+146,hbase.security.exec.permission.checks,hbase.superuser,"hbase.superuser in {""admin"", ""root""} => hbase.security.exec.permission.checks = true",value
+147,hbase.client.max.total.tasks,hbase.client.max.perregion.tasks,hbase.client.max.perregion.tasks < hbase.client.max.total.tasks,value
+148,hbase.zookeeper.dns.interface,hbase.zookeeper.dns.nameserver,hbase.zookeeper.dns.nameserver = hbase.zookeeper.dns.interface,value
+149,hbase.mob.file.cache.size,hbase.mob.cache.evict.remain.ratio,hbase.mob.file.cache.size > 0 => hbase.mob.cache.evict.remain.ratio in [0.0..1.0],value
+150,hbase.hregion.memstore.flush.size,hbase.regionserver.global.memstore.size.lower.limit,hbase.regionserver.global.memstore.size.lower.limit < hbase.regionserver.global.memstore.size,value
+151,hbase.offpeak.end.hour,hbase.hstore.compaction.ratio.offpeak,hbase.offpeak.end.hour != null => hbase.hstore.compaction.ratio.offpeak != null,value
+152,hbase.hregion.memstore.flush.size,hbase.hregion.memstore.block.multiplier,hbase.hregion.memstore.flush.size * hbase.hregion.memstore.block.multiplier > 0,value
+153,hbase.thrift.minWorkerThreads,hbase.thrift.maxWorkerThreads,hbase.thrift.maxWorkerThreads > hbase.thrift.minWorkerThreads,value

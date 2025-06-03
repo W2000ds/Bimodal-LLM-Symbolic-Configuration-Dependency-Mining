@@ -1,0 +1,7 @@
+id,Parameter1,Parameter2
+1,yarn.scheduler.minimum-allocation-mb,yarn.nodemanager.resource.memory-mb
+2,yarn.resourcemanager.nm-tokens.master-key-rolling-interval-secs,yarn.nm.liveness-monitor.expiry-interval-ms
+3,yarn.resourcemanager.bind-host,yarn.resourcemanager.admin.address
+4,yarn.nodemanager.remote-app-log-dir-suffix,yarn.log-aggregation-enable
+5,yarn.client.failover-max-attempts,yarn.client.failover-retries
+6,yarn.nodemanager.disk-health-checker.disk-utilization-watermark-low-per-disk-percentage,yarn.nodemanager.disk-health-checker.max-disk-utilization-per-disk-percentage

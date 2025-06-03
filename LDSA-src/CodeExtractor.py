@@ -10,31 +10,27 @@ class CodeExtractor:
         self.output_csv_file = Code_Basecsv
         self.extract_code()
 
-    # def class_name_to_file_path(self, class_name):
-    #     """将类名转换为文件路径"""
-    #     file_path = class_name.replace('.', os.sep) + '.java'
-    #     return os.path.join(self.root_dir, file_path)
 
     def build_method_pattern(self, return_type, method_name, param_count):
-        """构造方法匹配的正则表达式"""
+
         simplified_return_type = return_type.split('.')[-1]
         if param_count > 0:
             param_pattern = r'\s*\w+\s+\w+(?:\s*,\s*\w+\s+\w+){' + str(param_count - 1) + '}'
         else:
             param_pattern = r'\s*'
         full_pattern = (
-            rf'\b(?:public|protected|private|static|final)?\s+'  # 可选修饰符
-            rf'{re.escape(simplified_return_type)}\s+'           # 返回值类型
-            rf'{re.escape(method_name)}'                         # 方法名
-            rf'\s*\('                                           # 匹配左括号
-            rf'{param_pattern}'                                 # 参数列表
-            rf'\)\s*'                                          # 匹配右括号
-            r'.*\s*{'                                          # 方法体开始
+            rf'\b(?:public|protected|private|static|final)?\s+'  
+            rf'{re.escape(simplified_return_type)}\s+'           
+            rf'{re.escape(method_name)}'                         
+            rf'\s*\('                                           
+            rf'{param_pattern}'                                 
+            rf'\)\s*'                                          
+            r'.*\s*{'                                          
         )
         return re.compile(full_pattern)
 
     def get_function_code(self, lines, return_type, method_name, param_count, line_number):
-        """获取方法定义的完整代码块"""
+
         if method_name is None and return_type is None:
             start_line = max(0, line_number - 11)
             end_line = min(len(lines), line_number + 10)
@@ -49,26 +45,26 @@ class CodeExtractor:
 
         for line in lines:
             if not inside_function:
-                if method_pattern.search(line):  # 匹配方法定义
+                if method_pattern.search(line):  
                     inside_function = True
                     brace_count += line.count('{') - line.count('}')
                     function_lines.append(line.strip())
             else:
                 brace_count += line.count('{') - line.count('}')
                 function_lines.append(line.strip())
-                if brace_count == 0:  # 大括号匹配结束
+                if brace_count == 0:  
                     break
 
         return "\n".join(function_lines)
 
     def get_line_code(self, lines, line_number):
-        """获取指定行号的代码"""
+
         if 1 <= line_number <= len(lines):
             return lines[line_number - 1].strip()
         return "Error: Line number out of range."
 
     def parse_method_signature(self, method_signature):
-        """解析方法签名，提取返回值类型、方法名和参数数量"""
+
         pattern = re.compile(r'^\s*(\w+)\s+(\w+)\((.*?)\)\s*$')
         match = pattern.match(method_signature.strip())
         if not match:
@@ -88,11 +84,10 @@ class CodeExtractor:
             writer = csv.writer(out_file)
             rows = list(reader)
 
-            # 写入表头
             writer.writerow(["QID", "Parameter1", "Parameter2" , "Line Code", "Method Code"])
 
             i = 0
-            # 从第二行开始处理 CSV 中的数据
+
             for row in rows[1:]:
                 try:
                     if len(row) < 7:
@@ -102,7 +97,7 @@ class CodeExtractor:
                     i += 1
                     para1 = row[1]
                     para2 = row[2]
-                    class_name = row[4]       # 完整包名+类名，例如：org.apache.hadoop.net.SocketIOWithTimeout
+                    class_name = row[4]      
                     method_signature = row[5]
                     line_number = int(row[7])
 
@@ -141,8 +136,8 @@ class CodeExtractor:
                     print(f"Error processing row {row}: {str(e)}")
 
 if __name__ == '__main__':
-    TA_resultcsv = '/dataset-hadoop-3.3.5/cdepdataset/cdep2.0result/cdep-hdfs.csv'
-    root_dir = '/home/lhy/cDep/cdep2/cdep-fse-ae/app/hadoop-2.9.2-src/'
+    TA_resultcsv = 'temp/TAresult.csv'
+    root_dir = 'path/to/your/software/src/directory'  # Replace with your actual root directory
     Code_Basecsv = '/CodeDepBase.csv'
 
     extractor = CodeExtractor(TA_resultcsv, root_dir, Code_Basecsv)

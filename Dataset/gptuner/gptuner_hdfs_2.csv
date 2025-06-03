@@ -1,0 +1,7 @@
+id,Parameter1,Parameter2
+1,dfs.client.block.write.replace-datanode-on-failure.enable,dfs.client.block.write.replace-datanode-on-failure.best-effort
+2,dfs.datanode.fsdataset.volume.choosing.policy,dfs.datanode.available-space-volume-choosing-policy.balanced-space-threshold
+3,dfs.heartbeat.interval,dfs.datanode.lifeline.interval.seconds
+4,dfs.ha.automatic-failover.enabled,dfs.ha.zkfc.port
+5,dfs.namenode.edit.log.autoroll.multiplier.threshold,dfs.namenode.checkpoint.txns
+6,dfs.replication,dfs.namenode.maintenance.replication.min

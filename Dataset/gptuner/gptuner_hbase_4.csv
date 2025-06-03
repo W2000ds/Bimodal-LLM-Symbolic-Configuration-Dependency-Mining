@@ -1,0 +1,3 @@
+id,Parameter1,Parameter2
+1,hbase.replication.rpc.codec,hbase.rpc.timeout
+2,hbase.client.scanner.caching,hbase.client.scanner.max.result.size

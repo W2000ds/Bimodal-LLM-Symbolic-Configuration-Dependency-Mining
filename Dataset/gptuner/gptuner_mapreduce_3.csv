@@ -1,0 +1,14 @@
+id,Parameter1,Parameter2
+1,mapreduce.job.end-notification.retry.interval,mapreduce.job.end-notification.max.retry.interval
+2,mapreduce.task.profile.params,mapreduce.task.profile.reduce.params
+3,mapreduce.reduce.cpu.vcores,yarn.app.mapreduce.am.resource.cpu-vcores
+4,mapreduce.output.fileoutputformat.compress,mapreduce.output.fileoutputformat.compress.codec
+5,mapreduce.task.io.sort.factor,mapreduce.map.sort.spill.percent
+6,mapreduce.task.userlog.limit.kb,mapreduce.cluster.log.retain.hours
+7,mapreduce.reduce.skip.maxgroups,mapreduce.task.skip.max.attempts
+8,mapreduce.reduce.node-label-expression,mapreduce.reduce.cpu.vcores
+9,mapreduce.map.skip.proc-count.auto-incr,mapreduce.task.skip.start.attempts
+10,mapreduce.reduce.speculative,mapreduce.job.speculative.speculative-cap-running-tasks
+11,mapreduce.shuffle.max.connections,mapreduce.shuffle.parallel.copies
+12,mapreduce.job.classloader.system.classes,mapreduce.job.classloader
+13,mapreduce.reduce.shuffle.read.timeout,mapreduce.task.timeout

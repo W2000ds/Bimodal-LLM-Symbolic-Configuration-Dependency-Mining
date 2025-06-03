@@ -1,0 +1,14 @@
+id,Parameter1,Parameter2
+1,dfs.namenode.resource.du.reserved,dfs.datanode.du.reserved.pct
+2,dfs.client.retry.window.base,dfs.client.retry.max.attempts
+3,dfs.nameservices,dfs.ha.fencing.methods
+4,dfs.journalnode.rpc-bind-host,dfs.ha.automatic-failover.enabled
+5,dfs.namenode.checkpoint.edits.dir,dfs.namenode.checkpoint.txns
+6,dfs.namenode.delegation.key.update-interval,dfs.namenode.delegation.token.max-lifetime
+7,dfs.namenode.lifeline.handler.ratio,dfs.namenode.lifeline.handler.count
+8,dfs.journalnode.kerberos.internal.spnego.principal,hadoop.http.authentication.type
+9,dfs.namenode.checkpoint.dir,dfs.namenode.checkpoint.edits.dir
+10,dfs.namenode.avoid.write.stale.datanode,dfs.namenode.stale.datanode.interval
+11,dfs.ha.zkfc.nn.http.timeout.ms,dfs.ha.zkfc.port
+12,dfs.ha.namenode.id,dfs.ha.automatic-failover.enabled
+13,dfs.journalnode.https-bind-host,dfs.journalnode.https-address

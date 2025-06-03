@@ -1,0 +1,8 @@
+id,Parameter1,Parameter2
+1,yarn.app.mapreduce.client.job.max-retries,mapreduce.job.max.split.locations
+2,yarn.app.mapreduce.client-am.ipc.max-retries,yarn.app.mapreduce.client-am.ipc.max-retries-on-timeouts
+3,yarn.nodemanager.amrmproxy.enabled,yarn.nodemanager.amrmproxy.ha.enable
+4,yarn.nodemanager.amrmproxy.address,yarn.nodemanager.address
+5,yarn.nodemanager.remote-app-log-dir,yarn.nodemanager.remote-app-log-dir-suffix
+6,yarn.resourcemanager.nm-tokens.master-key-rolling-interval-secs,yarn.nm.liveness-monitor.expiry-interval-ms
+7,yarn.scheduler.configuration.leveldb-store.compaction-interval-secs,yarn.scheduler.configuration.store.max-logs
