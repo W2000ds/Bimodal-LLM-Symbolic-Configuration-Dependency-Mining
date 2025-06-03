@@ -33,7 +33,7 @@ This is repository of paper
   
 
 
-##Repository structure:
+## Repository structure:
 
 > |——RQ_Supplementary: Contains the specific supplementary files for tables in our paper.
 
