@@ -5,7 +5,7 @@ import requests
 import os
 import re
 import json
-from LLMChat import dpseek_chat, siliconflow_chat, qwen_chat,doubao_chat,dpseek_qwen_chat
+from src.TailoredTools.COT.LLMChat import dpseek_chat, siliconflow_chat, qwen_chat,doubao_chat,dpseek_qwen_chat
 
 
 class ManualClassifyer:
@@ -167,8 +167,8 @@ if __name__ == '__main__':
     for model in ["dpseek"]:
         for software in ["cinder","glance","hdfs"]:  # Replace with your actual software name
             manualdepbase  = f"./ManualParser/dependency/{software}Dependency.csv"
-            resultfile = f"./ldsa-result/manual/{model}-{software}.csv"
-            prompt_file = "./prompt3.txt"
+            resultfile = f"./cot-result/{model}-{software}.csv"
+            prompt_file = "./promptcot.txt"
             manualclassifyer = ManualClassifyer(manualdepbase, resultfile, prompt_file,model)
             manualclassifyer.Find()
             print("Done!")

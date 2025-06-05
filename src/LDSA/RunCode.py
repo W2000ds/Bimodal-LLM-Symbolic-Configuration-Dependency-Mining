@@ -28,7 +28,7 @@ if __name__ == "__main__":
         DepIdentifyer.Find()
         print("Identify Done!")
 
-        # 启动classifyer
+        # classifyer
         df = pd.read_csv(Identifyerresultfile)
         df = pd.read_csv(Identifyerresultfile, encoding='ISO-8859-1')
         current_yes_ids = df[df['ans'] == 'Yes']['id'].tolist()

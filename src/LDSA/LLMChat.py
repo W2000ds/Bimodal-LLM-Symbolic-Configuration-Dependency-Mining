@@ -3,7 +3,7 @@ import requests
 
 def dpseek_chat(question):
 
-    client = OpenAI(api_key="sk-23c9c90c502840c0b43c9d92bd403504", base_url="https://api.deepseek.com")
+    client = OpenAI(api_key="your api-key", base_url="https://api.deepseek.com")
     
     system_message = {"role": "system", "content": "You are an experienced software engineering expert"}
     
@@ -20,7 +20,7 @@ def dpseek_chat(question):
     return responsetext
 
 def doubao_chat(question):
-    client = OpenAI(base_url="https://ark.cn-beijing.volces.com/api/v3",api_key="fa38bef1-f5d2-4679-b752-fc56e770a5f4")
+    client = OpenAI(base_url="https://ark.cn-beijing.volces.com/api/v3",api_key="your api-key")
 
     system_message = {"role": "system", "content": "You are an experienced software engineering expert"}
     
@@ -38,7 +38,7 @@ def doubao_chat(question):
 
 
 def qwen_chat(question):
-    client = OpenAI(base_url="https://dashscope.aliyuncs.com/compatible-mode/v1",api_key="sk-89b18a26982d43b1952518f03c346f5e")
+    client = OpenAI(base_url="https://dashscope.aliyuncs.com/compatible-mode/v1",api_key="your api-key")
 
     system_message = {"role": "system", "content": "You are an experienced software engineering expert"}
     
@@ -56,7 +56,7 @@ def qwen_chat(question):
     return responsetext
 
 def dpseek_qwen_chat(question):
-    client = OpenAI(base_url="https://dashscope.aliyuncs.com/compatible-mode/v1",api_key="sk-89b18a26982d43b1952518f03c346f5e")
+    client = OpenAI(base_url="https://dashscope.aliyuncs.com/compatible-mode/v1",api_key="your api-key")
 
     system_message = {"role": "system", "content": "You are an experienced software engineering expert"}
     

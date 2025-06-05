@@ -25,9 +25,6 @@ This is repository of paper
 - **[GPTuner](https://github.com/SolidLao/GPTuner)**  
   Leverages LLMs to parse user manuals for extracting dependencies between configuration options, enabling automated performance tuning.
 
-- **[Ciri](https://github.com/xlab-uiuc/ciri/tree/main/icse25_data)**  
-  Integrates LLMs to detect dependency-related misconfigurations by analyzing source code and configuration files, identifying potential violations.
-
 - **[CDep](https://github.com/xlab-uiuc/cdep-fse-ae)**  
   uses code coloring and pattern matching for classifying dependencies, empowered with inter procedure analysis to extract the variable assignments of option values. 
   
@@ -35,8 +32,6 @@ This is repository of paper
 
 ## Repository structure:
 
-> |——RQ_Supplementary: Contains the specific supplementary files for tables in our paper.
-
->  |——Dataset: All result of each method with multi runs and groundtruth result.
-
-> |—— LDSA-src: The source code of LDSA.
+> |——RQ_Supplementary: Contains the specific supplementary files for tables in our paper.  
+|——Dataset: All result of each method with multi runs and groundtruth result.  
+|——src: The source code of methods mentioned in paper.  

@@ -4,7 +4,7 @@ import csv
 import requests
 import os
 import re
-from LLMChat import dpseek_chat, doubao_chat,qwen_chat,dpseek_qwen_chat
+from src.TailoredTools.COT.LLMChat import dpseek_chat, doubao_chat,qwen_chat,dpseek_qwen_chat
 
 
 class DepIdentifyer:
