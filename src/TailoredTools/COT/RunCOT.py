@@ -74,7 +74,7 @@ class ManualClassifyer:
         if os.path.exists(resultfile) and os.stat(resultfile).st_size > 0:
             with open(resultfile, mode='r', encoding='utf-8') as file:
                 reader = csv.reader(file)
-                next(reader)  # 跳过表头
+                next(reader)  
                 for row in reader:
                     if len(row) >= 2 and row[3] != '':
                         qid, answer = row[0], row[3]
@@ -124,9 +124,6 @@ class ManualClassifyer:
                         f"{prompt_content}\n\n"
                         f"Parameter 1: {para1}\n"
                         f"Parameter 2: {para2}\n"
-                        f"Documentation Snippet:\n"
-                        f"{para1}:{description1}\n"
-                        f"{para2}:{description2}\n"
                     )
                     
                     if self.model == 'dpseek':
