@@ -1,4 +1,4 @@
-# 污点分析控制
+
 import csv
 
 from varanalys import DependencyAnalyzer
@@ -15,7 +15,7 @@ for software in softwarelist:
 
     # with open(var_csv, newline='') as csvfile:
     #         reader = csv.reader(csvfile)
-    #         varnames = [row[0] for row in reader if row]  # 跳过空行
+    #         varnames = [row[0] for row in reader if row] 
     #         for variablename in varnames:
     #             analyzer.run_var_traces(variablename)
 

@@ -1,4 +1,4 @@
-# 污点分析参数位置
+
 import ast
 import os
 from collections import defaultdict
