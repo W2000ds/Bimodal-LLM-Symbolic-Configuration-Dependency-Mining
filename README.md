@@ -131,7 +131,5 @@ For each model and software, the script will:
   - `Parameter1`: First configuration parameter
   - `Parameter2`: Second configuration parameter
   - `BNF`: Extracted BNF formula
-  - `Type`: Dependency type
   - `FullResponse`: Full LLM response for reference
-
 ---
