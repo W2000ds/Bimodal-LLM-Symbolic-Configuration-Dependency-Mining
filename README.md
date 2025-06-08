@@ -28,10 +28,10 @@ This is repository of paper
 - **[CDep](https://github.com/xlab-uiuc/cdep-fse-ae)**  
   Use code coloring and pattern matching for classifying dependencies, empowered with inter procedure analysis to extract the variable assignments of option values. 
   
-- **[COT]
+- [COT]
   Please check \src\TailoredTools\COT for more detail.
 
--**[LLM-RAG]
+- [LLM-RAG]
   Please check \src\TailoredTools\LLM-RAG for more detail.
 
 ## Repository structure:
