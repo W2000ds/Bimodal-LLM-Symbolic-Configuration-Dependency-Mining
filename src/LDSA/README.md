@@ -46,7 +46,6 @@ The script will perform the following steps for each model in `modellist`:
 ---
 **Example directory structure:**
 ```
-project_root/
 ├── src/
 │   └── LDSA/
 │       ├── RunCode.py
@@ -127,7 +126,6 @@ For each model and software, the script will:
 
 **Example directory structure:**
 ```
-project_root/
 ├── src/
 │   └── LDSA/
 │       ├── RunManual.py
