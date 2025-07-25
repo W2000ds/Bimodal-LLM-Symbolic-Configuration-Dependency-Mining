@@ -1,0 +1,42 @@
+You are an expert in software configuration analysis. Your task is to analyze the dependency relationships between the provided configuration options and output the identified dependencies using the given BNF grammar rules.
+
+First, please read the following two configuration parameters: 
+<ConfigParam1>
+{{CONFIG\_PARAM1}} 
+</ConfigParam1> 
+<ConfigParam2>
+{{CONFIG\_PARAM2}} 
+</ConfigParam2>
+
+Next, read the following BNF grammar rules: <BNFGrammarRules>
+{{BNF\_GRAMMAR\_RULES}} </BNFGrammarRules>
+
+When analyzing the dependency relationships between these two configuration parameters, please follow these steps:
+
+1. Respectively think about the constraints of the two configuration parameters and check if there are any dependency relationships between them.
+2. If there are dependency relationships, analyze how these configuration options influence each other based on your knowledge such as default values, valid conditions, usage constraints, or fallback behaviors.
+3. Express the dependency using the given BNF grammar rules.
+4. If there are no dependency relationships, output "NULL".
+
+Example:
+<ConfigParam1>
+maxRetries
+</ConfigParam1> 
+<ConfigParam2>
+retries
+</ConfigParam2>
+
+Output:
+<Answer>
+maxRetries = \"ANY\" => retries <= maxRetries"
+</Answer>
+
+Before giving the final result, please conduct a detailed analysis in the <Thought> tag. Then, output the identified dependencies that conform to the BNF grammar rules in the <Answer> tag.
+
+<Thought>  
+[Provide a detailed analysis of the dependencies here]  
+</Thought>
+
+<Answer>  
+[Output the identified dependencies using the BNF grammar rules here]  
+</Answer>

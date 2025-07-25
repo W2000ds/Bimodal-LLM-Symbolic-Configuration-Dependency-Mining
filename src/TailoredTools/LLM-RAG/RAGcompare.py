@@ -75,8 +75,8 @@ if __name__ == '__main__':
     for software in software_list:
         openai_instance = Openai_model(api_key=api_key, base_url=base_url, embedding_model=embedding_model,software=software)
         csv_file = f"ManualParser/manual/{software}-defaultConfig.csv"
-        result_file = f"./Comparative/Result/rag/{software}.csv"
-        prompt_file = "Comparative/RAGPrompt.txt"
+        result_file = f"./Result/rag/{software}.csv"
+        prompt_file = "./RAGPrompt.txt"
 
         processor = RAGProcessor(csv_file, result_file, prompt_file, openai_instance)
         processor.process()

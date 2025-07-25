@@ -1,0 +1,58 @@
+You are an expert in software configuration analysis. Your task is to analyze the dependencies between two given configuration options and output the identified dependencies using the provided BNF grammar rules.
+1.Read the following two configuration parameters:
+
+<ConfigParam1>
+{{CONFIG_PARAM1}}
+</ConfigParam1>
+
+<ConfigParam2>
+{{CONFIG_PARAM2}}
+</ConfigParam2>
+
+2.Read the relevant code or natural language information for each configuration parameter:
+
+<ConfigParam1info>
+{{CONFIG_PARAM1INFO}}
+</ConfigParam1info>
+
+<ConfigParam2info>
+{{CONFIG_PARAM2INFO}}
+</ConfigParam2info>
+
+3.Review the following BNF grammar rules:
+
+<BNFGrammarRules>
+{{BNF_GRAMMAR_RULES}}
+</BNFGrammarRules>
+
+You should study the configuration parameters and their related information,
+and then identify the dependencies. 
+Express these dependencies using the provided BNF grammar rules in the <Answer> tag.. 
+If there are no dependency relationships, output "NULL".
+<Answer>  
+[Output the identified dependencies using the BNF grammar rules here]  
+</Answer>
+
+Example:
+<ConfigParam1>
+maxRetries
+</ConfigParam1> 
+
+<ConfigParam2>
+retries
+</ConfigParam2>
+
+<ConfigParam1info>
+retries: Used to control the number of automatic retries initiated by the system when a single file upload request fails in the file upload service.
+int retries = config.getRetries();int maxRetries = config.getMaxRetries();if (retries > maxRetries) {return error}
+</ConfigParam1info>
+
+<ConfigParam2info>
+maxRetries: This parameter serves as a system-level protection for the file upload service. It is used to limit the maximum number of retries for all upload tasks, preventing resource waste caused by an excessively high retries configuration. If the configured retries exceeds maxRetries, the file upload service will reject the upload.
+int retries = config.getRetries();int maxRetries = config.getMaxRetries();if (retries > maxRetries) {return error}
+</ConfigParam2info>
+
+Output:
+<Answer>
+maxRetries = \"ANY\" => retries <= maxRetries"
+</Answer>

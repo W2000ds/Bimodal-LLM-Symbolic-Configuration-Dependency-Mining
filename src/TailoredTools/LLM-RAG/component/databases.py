@@ -42,7 +42,7 @@ class Vectordatabase:
         return embedding_model.compare_v(vector1, vector2)
     
 
-    def query(self, query: str, EmbeddingModel, k: int = 1) -> List[str]:
+    def query(self, query: str, EmbeddingModel, k: int = 3) -> List[str]:
         query_vector = EmbeddingModel.get_embedding(query)
         result = np.array([self.get_similarity(query_vector, vector,EmbeddingModel)
                           for vector in self.vectors])
