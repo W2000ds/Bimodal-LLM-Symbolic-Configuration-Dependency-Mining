@@ -1,0 +1,62 @@
+Example 1:
+Code:
+if (conf.getBoolean("feature.enabled", false)) {
+    int size = conf.getInt("feature.size", 1024);
+}
+Output:
+{
+  "BNF formula": "{ feature.enabled = true => feature.size != null }"
+}
+
+Example 2:
+Code:
+String mode = conf.get("operation.mode");
+if ("FAST".equals(mode)) {
+    conf.setInt("operation.timeout", 30);
+}
+Output:
+{
+  "BNF formula": "{ operation.mode = "FAST" => operation.timeout = 30 }"
+}
+
+Example 3:
+Code:
+int retries = config.getRetries();
+int maxRetries = config.getMaxRetries();
+if (retries > maxRetries) {
+    return error
+}
+Output:
+{
+  "BNF formula": "maxRetries = “ANY" => retries <= maxRetries"
+}
+
+Example 4:
+Code:
+int shards = conf.getInt("shard.count", 1);
+int cacheKB = conf.getInt("cache.size.kb", -1); 
+if (cacheKB < 0) {
+    cacheKB = shards * 2048;
+}
+cache.init(cacheKB);
+
+Output:
+{
+    "BNF formula": "cache.size.kb = NULL ⇒ cache.size.kb = shard.count * 2048"
+}
+
+Example 5:
+Code:
+boolean compression = conf.getBoolean("http.compression", false);
+boolean cacheEnabled = conf.getBoolean("http.cache", false);
+
+PipelineMode mode = PipelineMode.BASIC;
+if (compression && cacheEnabled) {
+    mode = PipelineMode.STREAMING;
+}
+pipeline.setMode(mode);
+
+Output:
+{
+    "BNF formula": "http.compression = TRUE && http.cache = TRUE) ⇒ pipeline.mode = STREAMING"
+}

@@ -1,0 +1,47 @@
+
+Example 1:
+Code:
+boolean sslEnabled = conf.getBoolean("server.ssl.enabled", false);
+int sslPort = conf.getInt("server.ssl.port", 8443);
+if (sslEnabled) {
+    startSslListener(sslPort);
+}
+Output:
+{
+  "ans": "Yes"
+}
+
+Example 2:
+Code:
+String user = conf.get("db.user", "root");
+String logLevel = conf.get("log.level", "INFO");
+logger.setLevel(logLevel);
+db.connect(user);
+Output:
+{
+  "ans": "No"
+}
+
+Example 3:
+Code:
+
+int maxConns = conf.getInt("db.max.connections", 100);
+int minConns = conf.getInt("db.min.connections", 1);
+if (minConns > maxConns) {
+    throw new IllegalArgumentException("Invalid pool size config");
+}
+Output:
+{
+  "ans": "Yes"
+}
+
+Example 4:
+Code:
+int poolSize = conf.getInt("worker.pool.size", 8);
+String logDir = conf.get("worker.log.dir", "/var/log/app");
+ExecutorService pool = Executors.newFixedThreadPool(poolSize);
+Logger logger = new FileLogger(logDir);
+Output:
+{
+  "ans": "No"
+}
