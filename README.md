@@ -32,7 +32,7 @@ This is repository of paper
   Please check \src\TailoredTools\COT for more detail.
 
 - [LLM-RAG]
-  Please check \src\TailoredTools\LLM-RAG for more detail.
+  Please check [https://github.com/simisimon/dependency-validation-rag](https://github.com/simisimon/dependency-validation-rag) for more detail.
 
 ## Repository structure:
 
